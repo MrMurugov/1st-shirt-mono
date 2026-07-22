@@ -2,6 +2,8 @@
 
 Статический прототип B2B-каталога одежды и печати. Сайт собирается на Eleventy 3 и публикуется в GitHub Pages; структура шаблонов и данных рассчитана на последующий перенос в WordPress.
 
+**Живой прототип:** https://mrmurugov.github.io/1st-shirt/
+
 ## Локальный запуск
 
 Требуется Node.js 22 или новее.
@@ -29,7 +31,7 @@ npm run check
 
 Workflow `.github/workflows/pages.yml` собирает ветку `main` и публикует каталог `dist` через GitHub Pages. В настройках репозитория выберите **Settings → Pages → Source → GitHub Actions**.
 
-Проект настроен для адреса `https://<владелец>.github.io/1st-shirt/` с `pathPrefix: "/1st-shirt/"`.
+Проект настроен для адреса `https://mrmurugov.github.io/1st-shirt/` с `pathPrefix: "/1st-shirt/"`.
 
 ## Перенос в WordPress
 
