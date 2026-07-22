@@ -1,0 +1,76 @@
+---
+layout: layouts/base.njk
+title: Каталог одягу для брендування — FORMA BUREAU
+description: 18 моделей одягу та аксесуарів для корпоративних тиражів від 20 одиниць.
+bodyClass: catalog-page
+---
+
+<section class="page-intro page-intro--catalog" aria-labelledby="catalog-title">
+  <div class="container page-intro__inner">
+    <nav class="breadcrumb" aria-label="Хлібні крихти">
+      <ol><li><a href="{{ '/' | url }}">Головна</a></li><li aria-current="page">Каталог</li></ol>
+    </nav>
+    <div class="page-intro__grid">
+      <div>
+        <p class="eyebrow">Основа вашої форми</p>
+        <h1 class="page-intro__title" id="catalog-title">Каталог одягу для брендування</h1>
+      </div>
+      <div class="page-intro__copy">
+        <p>Виберіть модель, а ми перевіримо доступність кольорів і розмірів, підберемо нанесення та розрахуємо весь тираж.</p>
+        <p class="page-intro__note">Мінімальне замовлення — {{ site.minimumOrder }} одиниць. Ціни вказані без нанесення.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="catalog" aria-labelledby="catalog-products-title" data-catalog>
+  <div class="container">
+    <div class="catalog-toolbar">
+      <div class="catalog-toolbar__group">
+        <p class="catalog-toolbar__label" id="category-filter-label">Категорія</p>
+        <div class="filter-chips" role="group" aria-labelledby="category-filter-label" data-filter-group="category">
+          <button class="filter-chip is-active" type="button" data-filter-category="all" aria-pressed="true">Усі моделі</button>
+          {% for category in categories %}
+            {% if not category.parentId %}<button class="filter-chip" type="button" data-filter-category="{{ category.id }}" aria-pressed="false">{{ category.name }}</button>{% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="catalog-toolbar__controls">
+        <label class="catalog-search">
+          <span class="visually-hidden">Пошук за назвою</span>
+          <input class="catalog-search__input" type="search" placeholder="Знайти модель" autocomplete="off" data-product-search>
+        </label>
+        <label class="catalog-select">
+          <span class="visually-hidden">Фільтр за нанесенням</span>
+          <select class="catalog-select__control" data-filter-method>
+            <option value="all">Будь-яке нанесення</option>
+            {% for method in printMethods %}<option value="{{ method.id }}">{{ method.shortName }}</option>{% endfor %}
+          </select>
+        </label>
+        <button class="catalog-reset" type="button" data-filter-reset>Скинути</button>
+      </div>
+    </div>
+
+    <div class="catalog-summary">
+      <h2 class="catalog-summary__title" id="catalog-products-title">Усі моделі</h2>
+      <p class="catalog-summary__count"><span data-product-count>{{ products.length }}</span> товарів</p>
+    </div>
+
+    <div class="product-grid catalog__grid" data-product-grid>
+      {% for product in products %}{% include "components/product-card.njk" %}{% endfor %}
+    </div>
+    <p class="catalog__empty" hidden data-catalog-empty>За цими параметрами нічого не знайдено. Скиньте фільтри або напишіть нам — підберемо альтернативу.</p>
+  </div>
+</section>
+
+<section class="catalog-cta" aria-labelledby="catalog-cta-title">
+  <div class="container catalog-cta__inner">
+    <div>
+      <p class="eyebrow eyebrow--light">Не знайшли потрібну модель?</p>
+      <h2 class="catalog-cta__title" id="catalog-cta-title">Підберемо текстиль поза каталогом</h2>
+    </div>
+    <p>Опишіть посадку, тканину, колір і бюджет — запропонуємо доступні варіанти під ваш тираж.</p>
+    <a class="button button--accent" href="{{ '/quote/' | url }}" data-quote-open data-modal-open="quote">Розрахувати тираж</a>
+  </div>
+</section>

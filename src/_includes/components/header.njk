@@ -1,0 +1,51 @@
+<div class="topbar" role="note">
+  <div class="container topbar__inner">
+    <p class="topbar__notice">{{ site.brandStatus }} · Мінімальний тираж від {{ site.minimumOrder }} одиниць</p>
+    <a class="topbar__contact" href="tel:{{ site.contact.phoneHref }}">{{ site.contact.phone }}</a>
+  </div>
+</div>
+
+<header class="site-header" data-site-header>
+  <div class="container site-header__inner">
+    <a class="brand" href="{{ '/' | url }}" aria-label="{{ site.name }} — на головну">
+      <span class="brand__mark" aria-hidden="true">FB</span>
+      <span class="brand__name">FORMA<br>BUREAU</span>
+    </a>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="site-navigation"
+      aria-label="Відкрити меню"
+      data-menu-toggle
+    >
+      <span class="menu-toggle__line" aria-hidden="true"></span>
+      <span class="menu-toggle__line" aria-hidden="true"></span>
+      <span class="menu-toggle__label">Меню</span>
+    </button>
+
+    <nav class="site-nav" id="site-navigation" aria-label="Головна навігація" data-site-nav>
+      <ul class="site-nav__list">
+        {% for item in site.navigation %}
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="{{ item.url | url }}">{{ item.label }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+      <a
+        class="button button--accent site-nav__mobile-cta"
+        href="{{ '/quote/' | url }}"
+        data-quote-open
+        data-modal-open="quote"
+      >Розрахувати тираж</a>
+    </nav>
+
+    <a
+      class="button button--dark site-header__cta"
+      href="{{ '/quote/' | url }}"
+      data-quote-open
+      data-modal-open="quote"
+    >Розрахувати тираж</a>
+  </div>
+</header>

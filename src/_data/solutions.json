@@ -1,0 +1,146 @@
+[
+  {
+    "id": "corporate",
+    "slug": "korporatyvni-komandy",
+    "title": "Корпоративні команди",
+    "eyebrow": "Офіси та розподілені команди",
+    "description": "Повсякденний одяг, welcome-набори та подарунки, які підтримують культуру компанії й не виглядають як стандартне промо.",
+    "image": "/assets/images/solutions/corporate.webp",
+    "productIds": ["tshirt-premium", "hoodie-classic", "sweatshirt-core", "tote-everyday"],
+    "benefits": [
+      "Розмірні сітки для різних типів фігури",
+      "Персональне комплектування наборів",
+      "Зберігання макетів для повторних замовлень"
+    ],
+    "featured": true,
+    "order": 1
+  },
+  {
+    "id": "horeca",
+    "slug": "horeca",
+    "title": "HoReCa",
+    "eyebrow": "Кав'ярні, ресторани та готелі",
+    "description": "Практична форма для залу, бару й кухні, що витримує часте прання та підсилює впізнаваність закладу.",
+    "image": "/assets/images/solutions/horeca.webp",
+    "productIds": ["polo-pro", "shirt-staff", "apron-bistro", "cap-six-panel"],
+    "benefits": [
+      "Тканини для інтенсивного використання",
+      "Окремі комплекти для різних ролей",
+      "Зручне дозамовлення одиничних розмірів"
+    ],
+    "featured": true,
+    "order": 2
+  },
+  {
+    "id": "retail",
+    "slug": "ryteil",
+    "title": "Ритейл і шоуруми",
+    "eyebrow": "Магазини та клієнтські простори",
+    "description": "Форма консультантів, пакування й мерч в одному візуальному коді — від стриманої вишивки до яскравих сезонних принтів.",
+    "image": "/assets/images/solutions/retail.webp",
+    "productIds": ["tshirt-base", "polo-pro", "vest-urban", "tote-everyday"],
+    "benefits": [
+      "Моделі, зручні протягом повної зміни",
+      "Брендування у фірмовій палітрі",
+      "Серії для персоналу й покупців"
+    ],
+    "featured": true,
+    "order": 3
+  },
+  {
+    "id": "events",
+    "slug": "podii-ta-promo",
+    "title": "Події та промо",
+    "eyebrow": "Фестивалі, конференції та активації",
+    "description": "Помітний одяг для організаторів, волонтерів і гостей із маркуванням ролей та швидким виробничим циклом.",
+    "image": "/assets/images/solutions/events.webp",
+    "productIds": ["tshirt-base", "longsleeve-base", "jacket-softshell", "cap-six-panel"],
+    "benefits": [
+      "Кольорове кодування команд",
+      "Персоналізація іменами та ролями",
+      "Комплектування за зонами або змінами"
+    ],
+    "featured": true,
+    "order": 4
+  },
+  {
+    "id": "workwear",
+    "slug": "vyrobnytstvo-ta-servis",
+    "title": "Виробництво та сервіс",
+    "eyebrow": "Майстерні, склади й технічні служби",
+    "description": "Зносостійкі комплекти з функціональними кишенями, підсиленнями та добре помітним корпоративним маркуванням.",
+    "image": "/assets/images/solutions/workwear.webp",
+    "productIds": ["bib-overall-pro", "work-jacket-strong", "work-trousers-strong", "polo-pro"],
+    "benefits": [
+      "Посилені зони для інтенсивної роботи",
+      "Іменні патчі та маркування підрозділів",
+      "Сумісні позиції для модульних комплектів"
+    ],
+    "featured": true,
+    "order": 5
+  },
+  {
+    "id": "delivery",
+    "slug": "dostavka-ta-mobilni-komandy",
+    "title": "Доставка та мобільні команди",
+    "eyebrow": "Кур'єри, монтажники та виїзний сервіс",
+    "description": "Багатошарова форма для роботи в русі: базовий одяг, утеплення й захисний верхній шар із помітним брендуванням.",
+    "image": "/assets/images/solutions/delivery.webp",
+    "productIds": ["polo-pro", "hoodie-zip", "vest-urban", "jacket-softshell"],
+    "benefits": [
+      "Комплекти для різних сезонів",
+      "Світловідбивні елементи",
+      "Зносостійке нанесення на верхній одяг"
+    ],
+    "featured": false,
+    "order": 6
+  },
+  {
+    "id": "education",
+    "slug": "osvitni-proiekty",
+    "title": "Освітні проєкти",
+    "eyebrow": "Школи, курси та студентські спільноти",
+    "description": "Одяг для викладачів, команд, випускників і подій, який можна персоналізувати за групами, роками чи ролями.",
+    "image": "/assets/images/solutions/education.webp",
+    "productIds": ["tshirt-base", "longsleeve-base", "sweatshirt-core", "hoodie-classic"],
+    "benefits": [
+      "Гнучке поєднання моделей і розмірів",
+      "Персоналізація в межах одного тиражу",
+      "Повторне виробництво для нових наборів"
+    ],
+    "featured": false,
+    "order": 7
+  },
+  {
+    "id": "healthcare",
+    "slug": "medytsyna-ta-wellness",
+    "title": "Медицина та wellness",
+    "eyebrow": "Клініки, лабораторії та студії",
+    "description": "Охайна форма для фахівців і адміністраторів із чітким маркуванням ролей та комфортом протягом робочого дня.",
+    "image": "/assets/images/solutions/healthcare.webp",
+    "productIds": ["shirt-staff", "polo-pro", "tshirt-base"],
+    "benefits": [
+      "Окремі кольори для підрозділів",
+      "Делікатна вишивка імені та посади",
+      "Матеріали, прості в догляді"
+    ],
+    "featured": false,
+    "order": 8
+  },
+  {
+    "id": "creative",
+    "slug": "kreatyvni-industrii",
+    "title": "Креативні індустрії",
+    "eyebrow": "Агенції, студії та локальні бренди",
+    "description": "Виразні капсули й лімітовані серії з нестандартним розміщенням графіки, фактурною вишивкою та продуманою палітрою.",
+    "image": "/assets/images/solutions/creative.webp",
+    "productIds": ["tshirt-premium", "hoodie-classic", "apron-bistro", "tote-everyday"],
+    "benefits": [
+      "Тестовий зразок перед запуском",
+      "Комбінація кількох способів нанесення",
+      "Підбір текстилю під характер колекції"
+    ],
+    "featured": false,
+    "order": 9
+  }
+]

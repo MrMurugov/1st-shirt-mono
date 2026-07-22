@@ -1,0 +1,35 @@
+---
+layout: layouts/base.njk
+title: Наші роботи — FORMA BUREAU
+description: Демонстраційні кейси корпоративного одягу, форми та мерчу для різних команд.
+bodyClass: cases-page
+---
+
+<section class="page-intro" aria-labelledby="cases-page-title">
+  <div class="container page-intro__inner">
+    <nav class="breadcrumb" aria-label="Хлібні крихти"><ol><li><a href="{{ '/' | url }}">Головна</a></li><li aria-current="page">Наші роботи</li></ol></nav>
+    <div class="page-intro__grid"><div><p class="eyebrow">Кейси</p><h1 class="page-intro__title" id="cases-page-title">Рішення, зібрані під реальні сценарії</h1></div><div class="page-intro__copy"><p>Від welcome-набору до комплекту спецодягу: показуємо логіку підбору, тираж і виробничий строк.</p><p class="page-intro__note">Назви клієнтів і комерційні дані на сторінці демонстраційні.</p></div></div>
+  </div>
+</section>
+
+<section class="section cases-archive" aria-label="Кейси виробництва">
+  <div class="container case-grid case-grid--archive">
+    {% for case in cases %}{% include "components/case-card.njk" %}{% endfor %}
+  </div>
+</section>
+
+<section class="section section--tint case-insights" aria-labelledby="case-insights-title">
+  <div class="container">
+    <header class="section-heading"><p class="eyebrow">Як формуємо рішення</p><h2 class="section-heading__title" id="case-insights-title">Задача, рішення, вимірюваний результат</h2></header>
+    <div class="case-insights__grid">
+      {% for case in cases %}
+        <article class="case-insight">
+          <span class="case-insight__number">0{{ loop.index }}</span><h3>{{ case.title }}</h3>
+          <dl><div><dt>Задача</dt><dd>{{ case.challenge }}</dd></div><div><dt>Рішення</dt><dd>{{ case.solution }}</dd></div><div><dt>Результат</dt><dd>{{ case.result }}</dd></div></dl>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="page-cta" aria-labelledby="cases-cta-title"><div class="container page-cta__inner"><div><p class="eyebrow eyebrow--light">Ваш проєкт — наступний</p><h2 id="cases-cta-title">Зберемо комплект під вашу команду</h2></div><p>Розкажіть про людей, умови роботи й бажаний образ — запропонуємо практичне рішення.</p><a class="button button--accent" href="{{ '/quote/' | url }}" data-quote-open data-modal-open="quote">Розрахувати тираж</a></div></section>

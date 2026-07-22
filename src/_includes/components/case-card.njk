@@ -1,0 +1,15 @@
+<article class="case-card" id="case-{{ case.slug }}">
+  <a class="case-card__media" href="{{ ('/cases/#case-' ~ case.slug) | url }}" aria-label="Докладніше про кейс: {{ case.title }}">
+    <img class="case-card__image" src="{{ case.image | url }}" alt="{{ case.title }}" loading="lazy" width="960" height="720">
+    <span class="case-card__quantity">{{ case.quantity }} одиниць</span>
+  </a>
+  <div class="case-card__body">
+    <p class="case-card__client">{{ case.client }}</p>
+    <h3 class="case-card__title"><a href="{{ ('/cases/#case-' ~ case.slug) | url }}">{{ case.title }}</a></h3>
+    <p class="case-card__result">{{ case.result }}</p>
+    <dl class="case-card__meta">
+      <div><dt>Тираж</dt><dd>{{ case.quantity }} шт.</dd></div>
+      <div><dt>Строк</dt><dd>{{ case.leadTime }}</dd></div>
+    </dl>
+  </div>
+</article>

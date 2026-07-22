@@ -1,0 +1,141 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: products
+  size: 1
+  alias: product
+permalink: "products/{{ product.slug }}/index.html"
+eleventyComputed:
+  title: "{{ product.name }} — FORMA BUREAU"
+  description: "{{ product.excerpt }}"
+bodyClass: product-page
+---
+
+<article class="product-detail">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Хлібні крихти">
+      <ol>
+        <li><a href="{{ '/' | url }}">Головна</a></li>
+        <li><a href="{{ '/catalog/' | url }}">Каталог</a></li>
+        {% for category in categories %}
+          {% if category.id == product.categoryId %}<li><a href="{{ ('/catalog/?category=' ~ category.id) | url }}">{{ category.name }}</a></li>{% endif %}
+        {% endfor %}
+        <li aria-current="page">{{ product.name }}</li>
+      </ol>
+    </nav>
+
+    <div class="product-detail__hero">
+      <div class="product-gallery">
+        {% if product.badge %}<span class="product-gallery__badge">{{ product.badge }}</span>{% endif %}
+        <img class="product-gallery__image" src="{{ product.image | url }}" alt="{{ product.name }}" width="960" height="1120">
+      </div>
+
+      <div class="product-summary">
+        <p class="product-summary__sku">Артикул {{ product.sku }}</p>
+        <h1 class="product-summary__title">{{ product.name }}</h1>
+        <p class="product-summary__excerpt">{{ product.excerpt }}</p>
+        <div class="product-summary__price">
+          <span class="product-summary__price-label">Орієнтовна ціна від</span>
+          <strong>{{ product.tierPrices[3].unitPrice }} {{ site.currencySymbol }} <small>/ шт.</small></strong>
+          <span>{{ product.priceNote }}</span>
+        </div>
+
+        <div class="product-option">
+          <div class="product-option__heading"><h2>Кольори</h2><span>{{ product.colors.length }} варіантів</span></div>
+          <div class="swatches" role="list" aria-label="Доступні кольори">
+            {% for color in product.colors %}
+              <span class="swatch" role="listitem"><span class="swatch__color" style="--swatch: {{ color.hex }}" aria-hidden="true"></span><span class="swatch__name">{{ color.name }}</span></span>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="product-option">
+          <div class="product-option__heading"><h2>Розміри</h2><span>можна міксувати в тиражі</span></div>
+          <div class="size-list" aria-label="Доступні розміри">
+            {% for size in product.sizes %}<span class="size-list__item">{{ size }}</span>{% endfor %}
+          </div>
+        </div>
+
+        <dl class="product-summary__quick-facts">
+          <div><dt>Мінімальний тираж</dt><dd>від {{ product.minOrder }} шт.</dd></div>
+          <div><dt>Строк виробництва</dt><dd>{{ product.leadTime }}</dd></div>
+        </dl>
+
+        <a
+          class="button button--accent button--wide"
+          href="{{ ('/quote/?product=' ~ product.slug) | url }}"
+          data-quote-open
+          data-modal-open="quote"
+          data-product-slug="{{ product.slug }}"
+          data-product-name="{{ product.name }}"
+        >Розрахувати тираж</a>
+        <p class="product-summary__note">Менеджер перевірить наявність і додасть вартість обраного нанесення.</p>
+      </div>
+    </div>
+
+    <div class="product-detail__info">
+      <section class="product-description" aria-labelledby="description-title">
+        <p class="eyebrow">Про модель</p>
+        <h2 id="description-title">Зручна основа для щоденного використання</h2>
+        <p>{{ product.description }}</p>
+      </section>
+      <section class="product-specs" aria-labelledby="specs-title">
+        <h2 id="specs-title">Характеристики</h2>
+        <dl>
+          <div><dt>Матеріал</dt><dd>{{ product.material }}</dd></div>
+          <div><dt>Склад</dt><dd>{{ product.composition }}</dd></div>
+          <div><dt>Щільність</dt><dd>{{ product.density }}</dd></div>
+          <div><dt>Посадка</dt><dd>{{ product.fit }}</dd></div>
+        </dl>
+      </section>
+    </div>
+
+    <section class="tier-prices" aria-labelledby="tier-prices-title">
+      <header class="section-heading section-heading--split">
+        <div><p class="eyebrow">Вартість основи</p><h2 class="section-heading__title" id="tier-prices-title">Ціна залежить від кількості</h2></div>
+        <p class="section-heading__aside">Остаточний кошторис включатиме текстиль, підготовку макета, нанесення, пакування та доставку.</p>
+      </header>
+      <div class="table-wrap">
+        <table class="price-table">
+          <caption class="visually-hidden">Ціна {{ product.name }} залежно від кількості</caption>
+          <thead><tr><th scope="col">Тираж</th><th scope="col">Ціна за виріб</th><th scope="col">Основа тиражу</th></tr></thead>
+          <tbody>
+            {% for tier in product.tierPrices %}
+              <tr><th scope="row">від {{ tier.quantity }} шт.</th><td>{{ tier.unitPrice }} {{ site.currencySymbol }}</td><td>від {{ tier.quantity * tier.unitPrice }} {{ site.currencySymbol }}</td></tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <p class="tier-prices__note">{{ product.priceNote }}. Дані демонстраційні й не є публічною офертою.</p>
+    </section>
+  </div>
+
+  <section class="section section--dark compatible-methods" aria-labelledby="compatible-methods-title">
+    <div class="container">
+      <header class="section-heading section-heading--split section-heading--light">
+        <div><p class="eyebrow eyebrow--light">Сумісні технології</p><h2 class="section-heading__title" id="compatible-methods-title">Варіанти нанесення для цієї моделі</h2></div>
+        <a class="text-link text-link--light" href="{{ '/printing/' | url }}">Порівняти технології <span aria-hidden="true">↗</span></a>
+      </header>
+      <div class="method-list">
+        {% for methodId in product.printMethods %}
+          {% for method in printMethods %}
+            {% if method.id == methodId %}
+              <article class="method-list__item">
+                <img src="{{ method.image | url }}" alt="{{ method.name }}" loading="lazy" width="560" height="420">
+                <div><p>від {{ method.minOrder }} шт.</p><h3>{{ method.name }}</h3><span>{{ method.tagline }}</span></div>
+              </article>
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+</article>
+
+<section class="product-cta" aria-labelledby="product-cta-title">
+  <div class="container product-cta__inner">
+    <div><p class="eyebrow">Готові почати?</p><h2 id="product-cta-title">Отримайте точний розрахунок {{ product.name }}</h2></div>
+    <p>Вкажіть тираж, кольори й спосіб нанесення — підготуємо пропозицію протягом робочого дня.</p>
+    <a class="button button--dark" href="{{ ('/quote/?product=' ~ product.slug) | url }}" data-quote-open data-modal-open="quote" data-product-slug="{{ product.slug }}" data-product-name="{{ product.name }}">Розрахувати тираж</a>
+  </div>
+</section>

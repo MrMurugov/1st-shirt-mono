@@ -1,0 +1,68 @@
+<form class="quote-form" action="#" method="post" enctype="multipart/form-data" data-quote-form>
+  {% if product %}
+    <input type="hidden" name="product" value="{{ product.slug }}" data-quote-product>
+  {% else %}
+    <input type="hidden" name="product" value="" data-quote-product>
+  {% endif %}
+
+  <div class="quote-form__grid">
+    <label class="field">
+      <span class="field__label">Ім’я та прізвище *</span>
+      <input class="field__control" type="text" name="name" autocomplete="name" placeholder="Як до вас звертатися" required>
+    </label>
+    <label class="field">
+      <span class="field__label">Компанія</span>
+      <input class="field__control" type="text" name="company" autocomplete="organization" placeholder="Назва компанії">
+    </label>
+    <label class="field">
+      <span class="field__label">Телефон *</span>
+      <input class="field__control" type="tel" name="phone" autocomplete="tel" inputmode="tel" placeholder="+380" required>
+    </label>
+    <label class="field">
+      <span class="field__label">Email *</span>
+      <input class="field__control" type="email" name="email" autocomplete="email" placeholder="name@company.ua" required>
+    </label>
+    <label class="field">
+      <span class="field__label">Що потрібно забрендувати?</span>
+      <select class="field__control" name="category">
+        <option value="">Оберіть категорію</option>
+        {% for category in categories %}
+          {% if not category.parentId %}<option value="{{ category.id }}">{{ category.name }}</option>{% endif %}
+        {% endfor %}
+        <option value="other">Інше / потрібна консультація</option>
+      </select>
+    </label>
+    <label class="field">
+      <span class="field__label">Орієнтовний тираж *</span>
+      <input class="field__control" type="number" name="quantity" inputmode="numeric" min="{{ site.minimumOrder }}" step="1" value="{{ site.minimumOrder }}" required>
+    </label>
+    <label class="field">
+      <span class="field__label">Бажаний спосіб нанесення</span>
+      <select class="field__control" name="printMethod">
+        <option value="">Порадьте оптимальний</option>
+        {% for method in printMethods %}<option value="{{ method.id }}">{{ method.name }}</option>{% endfor %}
+      </select>
+    </label>
+    <label class="field">
+      <span class="field__label">Бажаний строк</span>
+      <input class="field__control" type="text" name="deadline" placeholder="Наприклад, до 20 вересня">
+    </label>
+    <label class="field field--full">
+      <span class="field__label">Розкажіть про задачу</span>
+      <textarea class="field__control field__control--textarea" name="message" rows="4" placeholder="Моделі, кольори, розміри нанесення, міста доставки"></textarea>
+    </label>
+    <label class="field field--full field--file">
+      <span class="field__label">Логотип або макет</span>
+      <input class="field__control" type="file" name="artwork" accept=".ai,.eps,.svg,.pdf,.png,.jpg,.jpeg">
+      <span class="field__hint">AI, EPS, SVG, PDF, PNG або JPG · до 20 МБ</span>
+    </label>
+  </div>
+
+  <label class="quote-form__consent">
+    <input type="checkbox" name="privacy" required>
+    <span>{{ site.quoteForm.privacyNote }}</span>
+  </label>
+
+  <button class="button button--accent quote-form__submit" type="submit">{{ site.quoteForm.submitLabel }}</button>
+  <p class="quote-form__status" role="status" aria-live="polite" data-form-status></p>
+</form>

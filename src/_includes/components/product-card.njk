@@ -1,0 +1,44 @@
+<article
+  class="product-card"
+  data-product-card
+  data-category="{{ product.categoryId }}"
+  data-parent-category="{% for category in categories %}{% if category.id == product.categoryId %}{{ category.parentId or category.id }}{% endif %}{% endfor %}"
+  data-methods="{{ product.printMethods | join(' ') }}"
+  data-name="{{ product.name | lower }}"
+>
+  <a class="product-card__media" href="{{ ('/products/' ~ product.slug ~ '/') | url }}" aria-label="Переглянути {{ product.name }}">
+    {% if product.badge %}<span class="product-card__badge">{{ product.badge }}</span>{% endif %}
+    <img class="product-card__image" src="{{ product.image | url }}" alt="{{ product.name }}" loading="lazy" width="720" height="860">
+    <span class="product-card__more" aria-hidden="true">Переглянути ↗</span>
+  </a>
+  <div class="product-card__body">
+    <div class="product-card__meta">
+      <span>{{ product.sku }}</span>
+      <span>від {{ product.minOrder }} шт.</span>
+    </div>
+    <h3 class="product-card__title">
+      <a href="{{ ('/products/' ~ product.slug ~ '/') | url }}">{{ product.name }}</a>
+    </h3>
+    <p class="product-card__excerpt">{{ product.excerpt }}</p>
+    <div class="product-card__colors" aria-label="Доступні кольори">
+      {% for color in product.colors %}
+        {% if loop.index <= 5 %}
+          <span class="color-dot" style="--swatch: {{ color.hex }}" title="{{ color.name }}" aria-label="{{ color.name }}"></span>
+        {% endif %}
+      {% endfor %}
+      {% if product.colors.length > 5 %}<span class="product-card__color-count">+{{ product.colors.length - 5 }}</span>{% endif %}
+    </div>
+    <div class="product-card__footer">
+      <p class="product-card__price"><span>від</span> {{ product.tierPrices[3].unitPrice }} {{ site.currencySymbol }} <small>/ шт.</small></p>
+      <a
+        class="product-card__quote"
+        href="{{ ('/quote/?product=' ~ product.slug) | url }}"
+        aria-label="Розрахувати тираж: {{ product.name }}"
+        data-quote-open
+        data-modal-open="quote"
+        data-product-slug="{{ product.slug }}"
+        data-product-name="{{ product.name }}"
+      >Розрахувати</a>
+    </div>
+  </div>
+</article>

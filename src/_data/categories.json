@@ -1,0 +1,202 @@
+[
+  {
+    "id": "summer-wear",
+    "slug": "litnii-odiah",
+    "name": "Літній одяг",
+    "parentId": null,
+    "description": "Базові моделі для промокоманд, офісів, подій і корпоративного мерчу.",
+    "image": "/assets/images/categories/summer-wear.webp",
+    "featured": true,
+    "order": 1
+  },
+  {
+    "id": "t-shirts",
+    "slug": "futbolky",
+    "name": "Футболки",
+    "parentId": "summer-wear",
+    "description": "Футболки різної щільності та посадки для друку й вишивки.",
+    "image": "/assets/images/products/tshirt-base.webp",
+    "featured": true,
+    "order": 1
+  },
+  {
+    "id": "polo",
+    "slug": "polo",
+    "name": "Поло",
+    "parentId": "summer-wear",
+    "description": "Поло для персоналу, сервісних команд і представницьких комплектів.",
+    "image": "/assets/images/products/polo-pro.webp",
+    "featured": false,
+    "order": 2
+  },
+  {
+    "id": "long-sleeves",
+    "slug": "lonhslyvy",
+    "name": "Лонгсліви",
+    "parentId": "summer-wear",
+    "description": "Трикотажні моделі з довгим рукавом для міжсезоння.",
+    "image": "/assets/images/products/longsleeve-base.webp",
+    "featured": false,
+    "order": 3
+  },
+  {
+    "id": "sweaters",
+    "slug": "kofty",
+    "name": "Кофти",
+    "parentId": null,
+    "description": "Теплий корпоративний одяг із начосом або петльовою виворітною стороною.",
+    "image": "/assets/images/categories/sweaters.webp",
+    "featured": true,
+    "order": 2
+  },
+  {
+    "id": "sweatshirts",
+    "slug": "svitshoty",
+    "name": "Світшоти",
+    "parentId": "sweaters",
+    "description": "Лаконічні світшоти під шовкодрук, DTF і вишивку.",
+    "image": "/assets/images/products/sweatshirt-core.webp",
+    "featured": false,
+    "order": 1
+  },
+  {
+    "id": "track-jackets",
+    "slug": "olimpiiky",
+    "name": "Олімпійки",
+    "parentId": "sweaters",
+    "description": "Кофти на блискавці для командної форми та активних подій.",
+    "image": "/assets/images/products/track-jacket-team.webp",
+    "featured": false,
+    "order": 2
+  },
+  {
+    "id": "hoodies",
+    "slug": "khudi",
+    "name": "Худі",
+    "parentId": "sweaters",
+    "description": "Універсальні худі для внутрішніх команд, подарунків і мерчу.",
+    "image": "/assets/images/products/hoodie-classic.webp",
+    "featured": true,
+    "order": 3
+  },
+  {
+    "id": "trousers",
+    "slug": "shtany",
+    "name": "Штани",
+    "parentId": null,
+    "description": "Трикотажні штани для комплектів із худі та світшотами.",
+    "image": "/assets/images/products/joggers-core.webp",
+    "featured": false,
+    "order": 3
+  },
+  {
+    "id": "shirts-robes",
+    "slug": "sorochky-khalaty",
+    "name": "Сорочки та халати",
+    "parentId": null,
+    "description": "Практичний одяг для сервісу, виробництва, лабораторій і персоналу.",
+    "image": "/assets/images/products/shirt-staff.webp",
+    "featured": false,
+    "order": 4
+  },
+  {
+    "id": "outerwear",
+    "slug": "verkhnii-odiah",
+    "name": "Верхній одяг",
+    "parentId": null,
+    "description": "Захисний верхній шар для виїзних команд і роботи просто неба.",
+    "image": "/assets/images/categories/outerwear.webp",
+    "featured": true,
+    "order": 5
+  },
+  {
+    "id": "jackets",
+    "slug": "kurtky",
+    "name": "Куртки",
+    "parentId": "outerwear",
+    "description": "Демісезонні куртки та софтшели з корпоративним брендуванням.",
+    "image": "/assets/images/products/jacket-softshell.webp",
+    "featured": false,
+    "order": 1
+  },
+  {
+    "id": "vests",
+    "slug": "zhyletky",
+    "name": "Жилетки",
+    "parentId": "outerwear",
+    "description": "Утеплені жилетки для мобільних команд і персоналу закладів.",
+    "image": "/assets/images/products/vest-urban.webp",
+    "featured": false,
+    "order": 2
+  },
+  {
+    "id": "workwear",
+    "slug": "spetsodiah",
+    "name": "Спецодяг",
+    "parentId": null,
+    "description": "Зносостійкий робочий одяг із функціональними кишенями та посиленими зонами.",
+    "image": "/assets/images/categories/workwear.webp",
+    "featured": true,
+    "order": 6
+  },
+  {
+    "id": "bib-overalls",
+    "slug": "napivkombinezony",
+    "name": "Напівкомбінезони",
+    "parentId": "workwear",
+    "description": "Робочі напівкомбінезони для монтажних, сервісних і виробничих команд.",
+    "image": "/assets/images/products/bib-overall-pro.webp",
+    "featured": false,
+    "order": 1
+  },
+  {
+    "id": "work-jackets",
+    "slug": "robochi-kurtky",
+    "name": "Робочі куртки",
+    "parentId": "workwear",
+    "description": "Куртки з посиленими швами та зонами для нанесення логотипа.",
+    "image": "/assets/images/products/work-jacket-strong.webp",
+    "featured": false,
+    "order": 2
+  },
+  {
+    "id": "work-trousers",
+    "slug": "robochi-shtany",
+    "name": "Робочі штани",
+    "parentId": "workwear",
+    "description": "Функціональні штани для щоденного інтенсивного використання.",
+    "image": "/assets/images/products/work-trousers-strong.webp",
+    "featured": false,
+    "order": 3
+  },
+  {
+    "id": "headwear",
+    "slug": "holovni-ubory",
+    "name": "Головні убори",
+    "parentId": null,
+    "description": "Кепки, панами та шапки для командних комплектів і промоакцій.",
+    "image": "/assets/images/products/cap-six-panel.webp",
+    "featured": false,
+    "order": 7
+  },
+  {
+    "id": "aprons",
+    "slug": "fartukhy",
+    "name": "Фартухи",
+    "parentId": null,
+    "description": "Фартухи для бариста, кухарів, майстрів і консультантів.",
+    "image": "/assets/images/products/apron-bistro.webp",
+    "featured": true,
+    "order": 8
+  },
+  {
+    "id": "tote-bags",
+    "slug": "shopery",
+    "name": "Шопери",
+    "parentId": null,
+    "description": "Багаторазові текстильні сумки для welcome-наборів, подій і ритейлу.",
+    "image": "/assets/images/products/tote-everyday.webp",
+    "featured": true,
+    "order": 9
+  }
+]

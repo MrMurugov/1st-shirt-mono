@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ description or site.description }}">
+    <meta name="theme-color" content="#f2eee6">
+    <title>{{ title or site.name }}</title>
+    <link rel="icon" href="{{ '/assets/images/favicon.svg' | url }}" type="image/svg+xml">
+    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | url }}">
+  </head>
+  <body class="page{% if bodyClass %} {{ bodyClass }}{% endif %}">
+    <a class="skip-link" href="#main-content">Перейти до вмісту</a>
+
+    {% include "components/header.njk" %}
+
+    <main id="main-content" tabindex="-1">
+      {{ content | safe }}
+    </main>
+
+    {% include "components/footer.njk" %}
+
+    <dialog class="quote-modal" id="quote-modal" aria-labelledby="quote-modal-title" data-quote-modal>
+      <div class="quote-modal__inner">
+        <button class="quote-modal__close" type="button" aria-label="Закрити форму" data-quote-close>×</button>
+        <div class="quote-modal__heading">
+          <p class="eyebrow">Запит на прорахунок</p>
+          <h2 class="quote-modal__title" id="quote-modal-title">{{ site.quoteForm.title }}</h2>
+          <p class="quote-modal__text">{{ site.quoteForm.text }}</p>
+        </div>
+        {% include "components/quote-form.njk" %}
+      </div>
+    </dialog>
+
+    <script src="{{ '/assets/js/main.js' | url }}" defer></script>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "1st-shirt",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "eleventy --serve",
+    "build": "node scripts/clean.mjs && eleventy",
+    "check": "npm run build && node --check src/assets/js/main.js && node scripts/validate-build.mjs"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  }
+}

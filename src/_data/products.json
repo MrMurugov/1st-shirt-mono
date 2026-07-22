@@ -1,0 +1,675 @@
+[
+  {
+    "id": "tshirt-base",
+    "slug": "futbolka-base-180",
+    "sku": "FB-TS-180",
+    "name": "Футболка Base 180",
+    "categoryId": "t-shirts",
+    "excerpt": "Щільна базова футболка унісекс для корпоративних тиражів.",
+    "description": "Гладка гребінна бавовна добре тримає форму та підходить для великих зон друку. Посилена горловина й стабілізуюча тасьма розраховані на регулярне носіння.",
+    "image": "/assets/images/products/tshirt-base.webp",
+    "gallery": [
+      "/assets/images/products/tshirt-base.webp"
+    ],
+    "material": "Кулірна гладь, гребінна бавовна",
+    "composition": "100% бавовна",
+    "density": "180 г/м²",
+    "fit": "Унісекс, прямий крій",
+    "minOrder": 20,
+    "leadTime": "7–10 робочих днів",
+    "sizes": ["XS", "S", "M", "L", "XL", "2XL", "3XL"],
+    "colors": [
+      { "name": "Молочний", "hex": "#F2ECDD" },
+      { "name": "Чорний", "hex": "#171717" },
+      { "name": "Графіт", "hex": "#4D5154" },
+      { "name": "Темно-синій", "hex": "#18283D" },
+      { "name": "Шавлія", "hex": "#8B9784" }
+    ],
+    "printMethods": ["screen-printing", "dtf", "embroidery", "transfer"],
+    "industries": ["corporate", "events", "retail", "education"],
+    "tierPrices": [
+      { "quantity": 20, "unitPrice": 318 },
+      { "quantity": 50, "unitPrice": 286 },
+      { "quantity": 100, "unitPrice": 262 },
+      { "quantity": 300, "unitPrice": 235 }
+    ],
+    "priceNote": "Орієнтовна ціна за виріб без нанесення",
+    "featured": true,
+    "badge": "Бестселер"
+  },
+  {
+    "id": "tshirt-premium",
+    "slug": "futbolka-premium-210",
+    "sku": "FB-TS-210",
+    "name": "Футболка Premium 210",
+    "categoryId": "t-shirts",
+    "excerpt": "Преміальна футболка з м'якою фактурою та сучасною посадкою.",
+    "description": "Щільний трикотаж із компактною поверхнею створений для лаконічного мерчу та подарункових наборів. Невелика частка еластану допомагає виробу зберігати силует.",
+    "image": "/assets/images/products/tshirt-premium.webp",
+    "gallery": [
+      "/assets/images/products/tshirt-premium.webp"
+    ],
+    "material": "Компакт-пеньє",
+    "composition": "95% бавовна, 5% еластан",
+    "density": "210 г/м²",
+    "fit": "Унісекс, вільний крій",
+    "minOrder": 20,
+    "leadTime": "7–10 робочих днів",
+    "sizes": ["XS", "S", "M", "L", "XL", "2XL"],
+    "colors": [
+      { "name": "Білий", "hex": "#F8F8F5" },
+      { "name": "Чорний", "hex": "#171717" },
+      { "name": "Кобальт", "hex": "#2047A8" },
+      { "name": "Бордо", "hex": "#682D39" },
+      { "name": "Пісочний", "hex": "#CBB89A" }
+    ],
+    "printMethods": ["screen-printing", "dtf", "embroidery"],
+    "industries": ["corporate", "events", "retail", "creative"],
+    "tierPrices": [
+      { "quantity": 20, "unitPrice": 426 },
+      { "quantity": 50, "unitPrice": 388 },
+      { "quantity": 100, "unitPrice": 354 },
+      { "quantity": 300, "unitPrice": 318 }
+    ],
+    "priceNote": "Орієнтовна ціна за виріб без нанесення",
+    "featured": true,
+    "badge": "Premium"
+  },
+  {
+    "id": "polo-pro",
+    "slug": "polo-pro-200",
+    "sku": "FB-PO-200",
+    "name": "Поло Pro 200",
+    "categoryId": "polo",
+    "excerpt": "Зносостійке поло для персоналу та виїзних команд.",
+    "description": "Трикотаж піке пропускає повітря та витримує часте прання. Комір і манжети зберігають форму, а планка на три ґудзики надає охайного вигляду.",
+    "image": "/assets/images/products/polo-pro.webp",
+    "gallery": [
+      "/assets/images/products/polo-pro.webp"
+    ],
+    "material": "Трикотаж піке",
+    "composition": "65% бавовна, 35% поліестер",
+    "density": "200 г/м²",
+    "fit": "Унісекс, напівприлеглий крій",
+    "minOrder": 20,
+    "leadTime": "8–12 робочих днів",
+    "sizes": ["XS", "S", "M", "L", "XL", "2XL", "3XL"],
+    "colors": [
+      { "name": "Білий", "hex": "#F8F8F5" },
+      { "name": "Чорний", "hex": "#171717" },
+      { "name": "Темно-синій", "hex": "#18283D" },
+      { "name": "Зелений", "hex": "#285A46" },
+      { "name": "Червоний", "hex": "#A83338" }
+    ],
+    "printMethods": ["embroidery", "dtf", "transfer"],
+    "industries": ["horeca", "retail", "corporate", "delivery"],
+    "tierPrices": [
+      { "quantity": 20, "unitPrice": 598 },
+      { "quantity": 50, "unitPrice": 548 },
+      { "quantity": 100, "unitPrice": 498 },
+      { "quantity": 300, "unitPrice": 452 }
+    ],
+    "priceNote": "Орієнтовна ціна за виріб без нанесення",
+    "featured": true,
+    "badge": "Для персоналу"
+  },
+  {
+    "id": "longsleeve-base",
+    "slug": "lonhslyv-base-190",
+    "sku": "FB-LS-190",
+    "name": "Лонгслів Base 190",
+    "categoryId": "long-sleeves",
+    "excerpt": "Бавовняний лонгслів для демісезонних комплектів.",
+    "description": "М'який трикотаж середньої щільності комфортний у приміщенні та як перший шар. Рівна поверхня дає чистий результат під час шовкодруку й DTF-нанесення.",
+    "image": "/assets/images/products/longsleeve-base.webp",
+    "gallery": [
+      "/assets/images/products/longsleeve-base.webp"
+    ],
+    "material": "Кулірна гладь",
+    "composition": "100% бавовна",
+    "density": "190 г/м²",
+    "fit": "Унісекс, прямий крій",
+    "minOrder": 20,
+    "leadTime": "7–10 робочих днів",
+    "sizes": ["XS", "S", "M", "L", "XL", "2XL"],
+    "colors": [
+      { "name": "Молочний", "hex": "#F2ECDD" },
+      { "name": "Чорний", "hex": "#171717" },
+      { "name": "Графіт", "hex": "#4D5154" },
+      { "name": "Темно-синій", "hex": "#18283D" }
+    ],
+    "printMethods": ["screen-printing", "dtf", "embroidery"],
+    "industries": ["corporate", "events", "education", "creative"],
+    "tierPrices": [
+      { "quantity": 20, "unitPrice": 536 },
+      { "quantity": 50, "unitPrice": 492 },
+      { "quantity": 100, "unitPrice": 448 },
+      { "quantity": 300, "unitPrice": 402 }
+    ],
+    "priceNote": "Орієнтовна ціна за виріб без нанесення",
+    "featured": false,
+    "badge": null
+  },
+  {
+    "id": "sweatshirt-core",
+    "slug": "svitshot-core-300",
+    "sku": "FB-SW-300",
+    "name": "Світшот Core 300",
+    "categoryId": "sweatshirts",
+    "excerpt": "Стриманий світшот із щільного футера для командного мерчу.",
+    "description": "Футер із петльовою виворітною стороною підходить для цілорічного використання. Еластичні манжети й пояс формують акуратний силует без зайвого об'єму.",
+    "image": "/assets/images/products/sweatshirt-core.webp",
+    "gallery": [
+      "/assets/images/products/sweatshirt-core.webp"
+    ],
+    "material": "Футер тринитка без начосу",
+    "composition": "80% бавовна, 20% поліестер",
+    "density": "300 г/м²",
+    "fit": "Унісекс, relaxed fit",
+    "minOrder": 20,
+    "leadTime": "8–12 робочих днів",
+    "sizes": ["XS", "S", "M", "L", "XL", "2XL", "3XL"],
+    "colors": [
+      { "name": "Меланж", "hex": "#B8B9B7" },
+      { "name": "Чорний", "hex": "#171717" },
+      { "name": "Темно-синій", "hex": "#18283D" },
+      { "name": "Олива", "hex": "#59624A" },
+      { "name": "Теракота", "hex": "#A45D49" }
+    ],
+    "printMethods": ["screen-printing", "dtf", "embroidery"],
+    "industries": ["corporate", "events", "education", "creative"],
+    "tierPrices": [
+      { "quantity": 20, "unitPrice": 898 },
+      { "quantity": 50, "unitPrice": 824 },
+      { "quantity": 100, "unitPrice": 756 },
+      { "quantity": 300, "unitPrice": 688 }
+    ],
+    "priceNote": "Орієнтовна ціна за виріб без нанесення",
+    "featured": true,
+    "badge": "Новинка"
+  },
+  {
+    "id": "track-jacket-team",
+    "slug": "olimpiika-team",
+    "sku": "FB-TJ-280",
+    "name": "Олімпійка Team",
+    "categoryId": "track-jackets",
+    "excerpt": "Командна кофта на блискавці зі стійким коміром.",
+    "description": "Еластичний інтерлок не обмежує рухів і швидко відводить вологу. Контрастні деталі можна адаптувати до кольорів бренду під час виробництва тиражу.",
+    "image": "/assets/images/products/track-jacket-team.webp",
+    "gallery": [
+      "/assets/images/products/track-jacket-team.webp"
+    ],
+    "material": "Еластичний інтерлок",
+    "composition": "92% поліестер, 8% еластан",
+    "density": "280 г/м²",
+    "fit": "Унісекс, спортивний крій",
+    "minOrder": 20,
+    "leadTime": "10–14 робочих днів",
+    "sizes": ["XS", "S", "M", "L", "XL", "2XL"],
+    "colors": [
+      { "name": "Чорний", "hex": "#171717" },
+      { "name": "Темно-синій", "hex": "#18283D" },
+      { "name": "Графіт", "hex": "#4D5154" },
+      { "name": "Кобальт", "hex": "#2047A8" }
+    ],
+    "printMethods": ["sublimation", "embroidery", "dtf", "transfer"],
+    "industries": ["events", "delivery", "education", "corporate"],
+    "tierPrices": [
+      { "quantity": 20, "unitPrice": 1186 },
+      { "quantity": 50, "unitPrice": 1084 },
+      { "quantity": 100, "unitPrice": 986 },
+      { "quantity": 300, "unitPrice": 898 }
+    ],
+    "priceNote": "Орієнтовна ціна за виріб без нанесення",
+    "featured": false,
+    "badge": null
+  },
+  {
+    "id": "hoodie-classic",
+    "slug": "khudi-classic-320",
+    "sku": "FB-HD-320",
+    "name": "Худі Classic 320",
+    "categoryId": "hoodies",
+    "excerpt": "Об'ємне худі з подвійним капюшоном і кишенею-кенгуру.",
+    "description": "Щільний футер із м'яким начосом тримає об'єм і комфортний у прохолодну погоду. Модель без зовнішнього шнурка виглядає чисто в корпоративних комплектах.",
+    "image": "/assets/images/products/hoodie-classic.webp",
+    "gallery": [
+      "/assets/images/products/hoodie-classic.webp"
+    ],
+    "material": "Футер тринитка з начосом",
+    "composition": "80% бавовна, 20% поліестер",
+    "density": "320 г/м²",
+    "fit": "Унісекс, вільний крій",
+    "minOrder": 20,
+    "leadTime": "8–12 робочих днів",
+    "sizes": ["XS", "S", "M", "L", "XL", "2XL", "3XL"],
+    "colors": [
+      { "name": "Молочний", "hex": "#F2ECDD" },
+      { "name": "Чорний", "hex": "#171717" },
+      { "name": "Графіт", "hex": "#4D5154" },
+      { "name": "Олива", "hex": "#59624A" },
+      { "name": "Лавандовий", "hex": "#AAA0BF" }
+    ],
+    "printMethods": ["screen-printing", "dtf", "embroidery"],
+    "industries": ["corporate", "creative", "education", "events"],
+    "tierPrices": [
+      { "quantity": 20, "unitPrice": 1058 },
+      { "quantity": 50, "unitPrice": 966 },
+      { "quantity": 100, "unitPrice": 878 },
+      { "quantity": 300, "unitPrice": 792 }
+    ],
+    "priceNote": "Орієнтовна ціна за виріб без нанесення",
+    "featured": true,
+    "badge": "Вибір команд"
+  },
+  {
+    "id": "hoodie-zip",
+    "slug": "khudi-zip-330",
+    "sku": "FB-HZ-330",
+    "name": "Худі Zip 330",
+    "categoryId": "hoodies",
+    "excerpt": "Тепле худі на блискавці для персоналу та виїзних команд.",
+    "description": "Повнорозмірна блискавка, подвійний капюшон і дві передні кишені роблять модель зручною для щоденної роботи. Щільний футер підходить для вишивки на грудях і рукаві.",
+    "image": "/assets/images/products/hoodie-zip.webp",
+    "gallery": [
+      "/assets/images/products/hoodie-zip.webp"
+    ],
+    "material": "Футер тринитка з начосом",
+    "composition": "80% бавовна, 20% поліестер",
+    "density": "330 г/м²",
+    "fit": "Унісекс, прямий крій",
+    "minOrder": 20,
+    "leadTime": "10–14 робочих днів",
+    "sizes": ["XS", "S", "M", "L", "XL", "2XL", "3XL"],
+    "colors": [
+      { "name": "Чорний", "hex": "#171717" },
+      { "name": "Графіт", "hex": "#4D5154" },
+      { "name": "Темно-синій", "hex": "#18283D" },
+      { "name": "Олива", "hex": "#59624A" }
+    ],
+    "printMethods": ["embroidery", "dtf", "transfer"],
+    "industries": ["corporate", "delivery", "retail", "events"],
+    "tierPrices": [
+      { "quantity": 20, "unitPrice": 1328 },
+      { "quantity": 50, "unitPrice": 1214 },
+      { "quantity": 100, "unitPrice": 1106 },
+      { "quantity": 300, "unitPrice": 998 }
+    ],
+    "priceNote": "Орієнтовна ціна за виріб без нанесення",
+    "featured": false,
+    "badge": null
+  },
+  {
+    "id": "joggers-core",
+    "slug": "shtany-jogger-core",
+    "sku": "FB-JG-310",
+    "name": "Штани Jogger Core",
+    "categoryId": "trousers",
+    "excerpt": "Трикотажні джогери для повного командного комплекту.",
+    "description": "Модель із середньою посадкою, еластичним поясом і місткими боковими кишенями. Поєднується зі світшотами та худі Core і Classic.",
+    "image": "/assets/images/products/joggers-core.webp",
+    "gallery": [
+      "/assets/images/products/joggers-core.webp"
+    ],
+    "material": "Футер тринитка без начосу",
+    "composition": "80% бавовна, 20% поліестер",
+    "density": "310 г/м²",
+    "fit": "Унісекс, звужений крій",
+    "minOrder": 20,
+    "leadTime": "8–12 робочих днів",
+    "sizes": ["XS", "S", "M", "L", "XL", "2XL"],
+    "colors": [
+      { "name": "Чорний", "hex": "#171717" },
+      { "name": "Графіт", "hex": "#4D5154" },
+      { "name": "Меланж", "hex": "#B8B9B7" },
+      { "name": "Олива", "hex": "#59624A" }
+    ],
+    "printMethods": ["embroidery", "dtf", "transfer"],
+    "industries": ["corporate", "education", "events", "creative"],
+    "tierPrices": [
+      { "quantity": 20, "unitPrice": 858 },
+      { "quantity": 50, "unitPrice": 786 },
+      { "quantity": 100, "unitPrice": 716 },
+      { "quantity": 300, "unitPrice": 648 }
+    ],
+    "priceNote": "Орієнтовна ціна за виріб без нанесення",
+    "featured": false,
+    "badge": null
+  },
+  {
+    "id": "shirt-staff",
+    "slug": "sorochka-staff",
+    "sku": "FB-SH-125",
+    "name": "Сорочка Staff",
+    "categoryId": "shirts-robes",
+    "excerpt": "Практична сорочка для адміністраторів, консультантів і сервісу.",
+    "description": "Сумішова тканина мало мнеться, швидко сохне й зберігає охайний вигляд протягом зміни. Лаконічний крій залишає достатньо місця для вишивки логотипа.",
+    "image": "/assets/images/products/shirt-staff.webp",
+    "gallery": [
+      "/assets/images/products/shirt-staff.webp"
+    ],
+    "material": "Сорочкова сумішова тканина",
+    "composition": "60% бавовна, 40% поліестер",
+    "density": "125 г/м²",
+    "fit": "Чоловічий і жіночий крій",
+    "minOrder": 20,
+    "leadTime": "10–14 робочих днів",
+    "sizes": ["XS", "S", "M", "L", "XL", "2XL", "3XL"],
+    "colors": [
+      { "name": "Білий", "hex": "#F8F8F5" },
+      { "name": "Блакитний", "hex": "#B8D1E3" },
+      { "name": "Чорний", "hex": "#171717" },
+      { "name": "Темно-синій", "hex": "#18283D" }
+    ],
+    "printMethods": ["embroidery", "transfer", "dtf"],
+    "industries": ["horeca", "retail", "corporate", "healthcare"],
+    "tierPrices": [
+      { "quantity": 20, "unitPrice": 748 },
+      { "quantity": 50, "unitPrice": 686 },
+      { "quantity": 100, "unitPrice": 622 },
+      { "quantity": 300, "unitPrice": 558 }
+    ],
+    "priceNote": "Орієнтовна ціна за виріб без нанесення",
+    "featured": false,
+    "badge": null
+  },
+  {
+    "id": "jacket-softshell",
+    "slug": "kurtka-softshell-pro",
+    "sku": "FB-JK-300",
+    "name": "Куртка Softshell Pro",
+    "categoryId": "jackets",
+    "excerpt": "Вітрозахисна куртка для польових і мобільних команд.",
+    "description": "Тришаровий софтшел захищає від вітру та короткочасного дощу, а еластична тканина не сковує рухів. Передбачені нагрудна й бокові кишені на блискавках.",
+    "image": "/assets/images/products/jacket-softshell.webp",
+    "gallery": [
+      "/assets/images/products/jacket-softshell.webp"
+    ],
+    "material": "Тришаровий софтшел із мембраною",
+    "composition": "94% поліестер, 6% еластан",
+    "density": "300 г/м²",
+    "fit": "Унісекс, анатомічний крій",
+    "minOrder": 20,
+    "leadTime": "10–14 робочих днів",
+    "sizes": ["S", "M", "L", "XL", "2XL", "3XL", "4XL"],
+    "colors": [
+      { "name": "Чорний", "hex": "#171717" },
+      { "name": "Графіт", "hex": "#4D5154" },
+      { "name": "Темно-синій", "hex": "#18283D" },
+      { "name": "Сигнальний синій", "hex": "#2668A8" }
+    ],
+    "printMethods": ["embroidery", "transfer"],
+    "industries": ["delivery", "workwear", "events", "corporate"],
+    "tierPrices": [
+      { "quantity": 20, "unitPrice": 1818 },
+      { "quantity": 50, "unitPrice": 1668 },
+      { "quantity": 100, "unitPrice": 1528 },
+      { "quantity": 300, "unitPrice": 1398 }
+    ],
+    "priceNote": "Орієнтовна ціна за виріб без нанесення",
+    "featured": true,
+    "badge": "Для виїзних команд"
+  },
+  {
+    "id": "vest-urban",
+    "slug": "zhyletka-urban",
+    "sku": "FB-VS-180",
+    "name": "Жилетка Urban",
+    "categoryId": "vests",
+    "excerpt": "Легка утеплена жилетка для багатошарової корпоративної форми.",
+    "description": "Стримана стьобана модель із високим коміром і двома кишенями на блискавках. Компактний утеплювач не додає зайвого об'єму та зручний у русі.",
+    "image": "/assets/images/products/vest-urban.webp",
+    "gallery": [
+      "/assets/images/products/vest-urban.webp"
+    ],
+    "material": "Водовідштовхувальний поліестер, синтетичний утеплювач",
+    "composition": "100% поліестер",
+    "density": "180 г/м²",
+    "fit": "Унісекс, прямий крій",
+    "minOrder": 20,
+    "leadTime": "10–14 робочих днів",
+    "sizes": ["S", "M", "L", "XL", "2XL", "3XL"],
+    "colors": [
+      { "name": "Чорний", "hex": "#171717" },
+      { "name": "Темно-синій", "hex": "#18283D" },
+      { "name": "Олива", "hex": "#59624A" },
+      { "name": "Графіт", "hex": "#4D5154" }
+    ],
+    "printMethods": ["embroidery", "transfer"],
+    "industries": ["delivery", "retail", "horeca", "corporate"],
+    "tierPrices": [
+      { "quantity": 20, "unitPrice": 1518 },
+      { "quantity": 50, "unitPrice": 1396 },
+      { "quantity": 100, "unitPrice": 1272 },
+      { "quantity": 300, "unitPrice": 1158 }
+    ],
+    "priceNote": "Орієнтовна ціна за виріб без нанесення",
+    "featured": false,
+    "badge": null
+  },
+  {
+    "id": "bib-overall-pro",
+    "slug": "napivkombinezon-pro",
+    "sku": "FB-BO-245",
+    "name": "Напівкомбінезон Pro",
+    "categoryId": "bib-overalls",
+    "excerpt": "Функціональний напівкомбінезон для технічних і виробничих команд.",
+    "description": "Зносостійка саржа, регульовані бретелі та посилені коліна розраховані на активну роботу. Нагрудна, бокові та інструментальні кишені допомагають тримати необхідне поруч.",
+    "image": "/assets/images/products/bib-overall-pro.webp",
+    "gallery": [
+      "/assets/images/products/bib-overall-pro.webp"
+    ],
+    "material": "Сумішова саржа з посиленими зонами",
+    "composition": "65% поліестер, 35% бавовна",
+    "density": "245 г/м²",
+    "fit": "Унісекс, робочий крій",
+    "minOrder": 20,
+    "leadTime": "10–15 робочих днів",
+    "sizes": ["S", "M", "L", "XL", "2XL", "3XL", "4XL"],
+    "colors": [
+      { "name": "Графіт", "hex": "#4D5154" },
+      { "name": "Темно-синій", "hex": "#18283D" },
+      { "name": "Васильковий", "hex": "#315D8A" },
+      { "name": "Хакі", "hex": "#5E6249" }
+    ],
+    "printMethods": ["embroidery", "transfer", "dtf"],
+    "industries": ["workwear", "delivery", "retail"],
+    "tierPrices": [
+      { "quantity": 20, "unitPrice": 1288 },
+      { "quantity": 50, "unitPrice": 1178 },
+      { "quantity": 100, "unitPrice": 1072 },
+      { "quantity": 300, "unitPrice": 968 }
+    ],
+    "priceNote": "Орієнтовна ціна за виріб без нанесення",
+    "featured": true,
+    "badge": "Посилені коліна"
+  },
+  {
+    "id": "work-jacket-strong",
+    "slug": "robocha-kurtka-strong",
+    "sku": "FB-WJ-245",
+    "name": "Робоча куртка Strong",
+    "categoryId": "work-jackets",
+    "excerpt": "Куртка для щоденної роботи з функціональними кишенями.",
+    "description": "Щільна саржа витримує інтенсивне використання, а підсилення в зоні ліктів збільшує ресурс виробу. Манжети та низ регулюються для зручної посадки.",
+    "image": "/assets/images/products/work-jacket-strong.webp",
+    "gallery": [
+      "/assets/images/products/work-jacket-strong.webp"
+    ],
+    "material": "Сумішова саржа з підсиленнями",
+    "composition": "65% поліестер, 35% бавовна",
+    "density": "245 г/м²",
+    "fit": "Унісекс, робочий крій",
+    "minOrder": 20,
+    "leadTime": "10–15 робочих днів",
+    "sizes": ["S", "M", "L", "XL", "2XL", "3XL", "4XL"],
+    "colors": [
+      { "name": "Графіт", "hex": "#4D5154" },
+      { "name": "Темно-синій", "hex": "#18283D" },
+      { "name": "Васильковий", "hex": "#315D8A" },
+      { "name": "Хакі", "hex": "#5E6249" }
+    ],
+    "printMethods": ["embroidery", "transfer", "dtf"],
+    "industries": ["workwear", "delivery", "retail"],
+    "tierPrices": [
+      { "quantity": 20, "unitPrice": 1418 },
+      { "quantity": 50, "unitPrice": 1298 },
+      { "quantity": 100, "unitPrice": 1178 },
+      { "quantity": 300, "unitPrice": 1058 }
+    ],
+    "priceNote": "Орієнтовна ціна за виріб без нанесення",
+    "featured": false,
+    "badge": null
+  },
+  {
+    "id": "work-trousers-strong",
+    "slug": "robochi-shtany-strong",
+    "sku": "FB-WT-245",
+    "name": "Робочі штани Strong",
+    "categoryId": "work-trousers",
+    "excerpt": "Зносостійкі штани з підсиленими колінами та місткими кишенями.",
+    "description": "Ергономічний крій дає свободу рухів, а кишені для наколінників і інструментів адаптовані до робочої зміни. Світловідбивні канти підвищують помітність.",
+    "image": "/assets/images/products/work-trousers-strong.webp",
+    "gallery": [
+      "/assets/images/products/work-trousers-strong.webp"
+    ],
+    "material": "Сумішова саржа з підсиленнями",
+    "composition": "65% поліестер, 35% бавовна",
+    "density": "245 г/м²",
+    "fit": "Унісекс, ергономічний крій",
+    "minOrder": 20,
+    "leadTime": "10–15 робочих днів",
+    "sizes": ["S", "M", "L", "XL", "2XL", "3XL", "4XL"],
+    "colors": [
+      { "name": "Графіт", "hex": "#4D5154" },
+      { "name": "Темно-синій", "hex": "#18283D" },
+      { "name": "Васильковий", "hex": "#315D8A" },
+      { "name": "Хакі", "hex": "#5E6249" }
+    ],
+    "printMethods": ["embroidery", "transfer", "dtf"],
+    "industries": ["workwear", "delivery", "retail"],
+    "tierPrices": [
+      { "quantity": 20, "unitPrice": 1218 },
+      { "quantity": 50, "unitPrice": 1112 },
+      { "quantity": 100, "unitPrice": 1014 },
+      { "quantity": 300, "unitPrice": 918 }
+    ],
+    "priceNote": "Орієнтовна ціна за виріб без нанесення",
+    "featured": false,
+    "badge": null
+  },
+  {
+    "id": "cap-six-panel",
+    "slug": "kepka-six-panel",
+    "sku": "FB-CP-260",
+    "name": "Кепка Six Panel",
+    "categoryId": "headwear",
+    "excerpt": "Класична шестипанельна кепка для вишивки й термотрансферу.",
+    "description": "Щільний бавовняний твіл, вигнутий козирок і металева застібка створюють універсальну посадку. Посилена передня панель добре тримає невелику вишивку.",
+    "image": "/assets/images/products/cap-six-panel.webp",
+    "gallery": [
+      "/assets/images/products/cap-six-panel.webp"
+    ],
+    "material": "Бавовняний твіл",
+    "composition": "100% бавовна",
+    "density": "260 г/м²",
+    "fit": "Унісекс, регульований обхват 54–61 см",
+    "minOrder": 20,
+    "leadTime": "7–10 робочих днів",
+    "sizes": ["One size"],
+    "colors": [
+      { "name": "Молочний", "hex": "#F2ECDD" },
+      { "name": "Чорний", "hex": "#171717" },
+      { "name": "Темно-синій", "hex": "#18283D" },
+      { "name": "Олива", "hex": "#59624A" },
+      { "name": "Червоний", "hex": "#A83338" }
+    ],
+    "printMethods": ["embroidery", "transfer", "dtf"],
+    "industries": ["events", "retail", "delivery", "horeca"],
+    "tierPrices": [
+      { "quantity": 20, "unitPrice": 288 },
+      { "quantity": 50, "unitPrice": 264 },
+      { "quantity": 100, "unitPrice": 238 },
+      { "quantity": 300, "unitPrice": 208 }
+    ],
+    "priceNote": "Орієнтовна ціна за виріб без нанесення",
+    "featured": true,
+    "badge": "Для промо"
+  },
+  {
+    "id": "apron-bistro",
+    "slug": "fartukh-bistro",
+    "sku": "FB-AP-240",
+    "name": "Фартух Bistro",
+    "categoryId": "aprons",
+    "excerpt": "Функціональний фартух для бариста, кухарів і майстрів.",
+    "description": "Щільна тканина із захисним просоченням легко очищується, а регульована шийна лямка підлаштовує посадку. Велика подвійна кишеня вміщує робочі дрібниці.",
+    "image": "/assets/images/products/apron-bistro.webp",
+    "gallery": [
+      "/assets/images/products/apron-bistro.webp"
+    ],
+    "material": "Сумішова саржа з водовідштовхувальним просоченням",
+    "composition": "65% поліестер, 35% бавовна",
+    "density": "240 г/м²",
+    "fit": "Унісекс, регульована посадка",
+    "minOrder": 20,
+    "leadTime": "7–10 робочих днів",
+    "sizes": ["One size: 78 × 88 см"],
+    "colors": [
+      { "name": "Чорний", "hex": "#171717" },
+      { "name": "Графіт", "hex": "#4D5154" },
+      { "name": "Олива", "hex": "#59624A" },
+      { "name": "Карамель", "hex": "#9B6745" },
+      { "name": "Бордо", "hex": "#682D39" }
+    ],
+    "printMethods": ["embroidery", "dtf", "transfer", "screen-printing"],
+    "industries": ["horeca", "retail", "creative"],
+    "tierPrices": [
+      { "quantity": 20, "unitPrice": 498 },
+      { "quantity": 50, "unitPrice": 452 },
+      { "quantity": 100, "unitPrice": 408 },
+      { "quantity": 300, "unitPrice": 358 }
+    ],
+    "priceNote": "Орієнтовна ціна за виріб без нанесення",
+    "featured": true,
+    "badge": "HoReCa"
+  },
+  {
+    "id": "tote-everyday",
+    "slug": "shoper-everyday",
+    "sku": "FB-TB-240",
+    "name": "Шопер Everyday",
+    "categoryId": "tote-bags",
+    "excerpt": "Щільний бавовняний шопер для наборів, подій і ритейлу.",
+    "description": "Посилені ручки витримують щоденне навантаження, а широка площина підходить для виразного повноколірного або трафаретного друку. Внутрішні шви закриті бейкою.",
+    "image": "/assets/images/products/tote-everyday.webp",
+    "gallery": [
+      "/assets/images/products/tote-everyday.webp"
+    ],
+    "material": "Бавовняна саржа",
+    "composition": "100% бавовна",
+    "density": "240 г/м²",
+    "fit": "38 × 42 см, ручки 68 см",
+    "minOrder": 20,
+    "leadTime": "7–10 робочих днів",
+    "sizes": ["38 × 42 см"],
+    "colors": [
+      { "name": "Натуральний", "hex": "#D8C8A8" },
+      { "name": "Чорний", "hex": "#171717" },
+      { "name": "Темно-синій", "hex": "#18283D" },
+      { "name": "Олива", "hex": "#59624A" }
+    ],
+    "printMethods": ["screen-printing", "dtf", "transfer", "embroidery"],
+    "industries": ["events", "retail", "corporate", "creative"],
+    "tierPrices": [
+      { "quantity": 20, "unitPrice": 228 },
+      { "quantity": 50, "unitPrice": 202 },
+      { "quantity": 100, "unitPrice": 178 },
+      { "quantity": 300, "unitPrice": 148 }
+    ],
+    "priceNote": "Орієнтовна ціна за виріб без нанесення",
+    "featured": true,
+    "badge": "Eco choice"
+  }
+]

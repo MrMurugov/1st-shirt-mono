@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.playwright-cli/
+
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# Editor and OS files
+.DS_Store
+*.swp

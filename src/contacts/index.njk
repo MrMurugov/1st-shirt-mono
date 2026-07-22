@@ -1,0 +1,30 @@
+---
+layout: layouts/base.njk
+title: Контакти — FORMA BUREAU
+description: Демонстраційні контакти виробництва брендованого одягу FORMA BUREAU.
+bodyClass: contacts-page
+---
+
+<section class="page-intro" aria-labelledby="contacts-title">
+  <div class="container page-intro__inner">
+    <nav class="breadcrumb" aria-label="Хлібні крихти"><ol><li><a href="{{ '/' | url }}">Головна</a></li><li aria-current="page">Контакти</li></ol></nav>
+    <div class="page-intro__grid"><div><p class="eyebrow">Зв’язок</p><h1 class="page-intro__title" id="contacts-title">Обговорімо вашу задачу</h1></div><div class="page-intro__copy"><p>Напишіть або залиште заявку. Для попереднього розрахунку достатньо категорії виробу, тиражу та бажаного строку.</p><p class="page-intro__note">{{ site.brandStatus }}: контакти нижче не використовуються для реальних замовлень.</p></div></div>
+  </div>
+</section>
+
+<section class="section contacts" aria-label="Контактна інформація">
+  <div class="container contacts__layout">
+    <div class="contacts__cards">
+      <article class="contact-card"><p class="contact-card__label">Телефон</p><a class="contact-card__value" href="tel:{{ site.contact.phoneHref }}">{{ site.contact.phone }}</a><p>Пн–Пт, 09:00–18:00</p></article>
+      <article class="contact-card"><p class="contact-card__label">Email</p><a class="contact-card__value" href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a><p>Для брифів, макетів і запитів на рахунок.</p></article>
+      <article class="contact-card"><p class="contact-card__label">Виробництво</p><address class="contact-card__value">{{ site.contact.address }}</address><p>Візит — лише після погодження часу.</p></article>
+    </div>
+    <div class="contacts__panel">
+      <p class="eyebrow eyebrow--light">Швидкий старт</p><h2>Що додати до першого повідомлення</h2>
+      <ol class="contacts__checklist"><li>Кількість людей або виробів</li><li>Тип одягу й бажані кольори</li><li>Логотип або приклад нанесення</li><li>Потрібний строк і міста доставки</li></ol>
+      <a class="button button--accent" href="{{ '/quote/' | url }}" data-quote-open data-modal-open="quote">Заповнити бриф</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tint contacts-faq" aria-labelledby="contacts-faq-title"><div class="container faq__layout"><header class="section-heading faq__heading"><p class="eyebrow">Перед зверненням</p><h2 class="section-heading__title" id="contacts-faq-title">Часті питання</h2><a class="text-link" href="{{ '/printing/' | url }}">Про види нанесення <span aria-hidden="true">↗</span></a></header><div class="accordion">{% for item in faq %}{% if loop.index <= 5 %}<details class="accordion__item"><summary class="accordion__summary"><span>{{ item.question }}</span><span class="accordion__icon" aria-hidden="true">+</span></summary><div class="accordion__content"><p>{{ item.answer }}</p></div></details>{% endif %}{% endfor %}</div></div></section>
