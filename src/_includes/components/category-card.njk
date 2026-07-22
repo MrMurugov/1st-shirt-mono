@@ -3,7 +3,7 @@
     <img class="category-card__image" src="{{ category.image | url }}" alt="{{ category.name }}" loading="lazy" width="900" height="720">
     <span class="category-card__overlay" aria-hidden="true"></span>
     <span class="category-card__content">
-      <span class="category-card__eyebrow">Категорія</span>
+      <span class="category-card__eyebrow"><span class="category-card__index" aria-hidden="true">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span> Категорія</span>
       <strong class="category-card__title">{{ category.name }}</strong>
       <span class="category-card__description">{{ category.description }}</span>
       <span class="category-card__action">Дивитися моделі ↗</span>

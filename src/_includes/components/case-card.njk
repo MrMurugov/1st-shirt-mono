@@ -4,7 +4,7 @@
     <span class="case-card__quantity">{{ case.quantity }} одиниць</span>
   </a>
   <div class="case-card__body">
-    <p class="case-card__client">{{ case.client }}</p>
+    <p class="case-card__client"><span class="case-card__index" aria-hidden="true">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span>{{ case.client }}</p>
     <h3 class="case-card__title"><a href="{{ ('/cases/#case-' ~ case.slug) | url }}">{{ case.title }}</a></h3>
     <p class="case-card__result">{{ case.result }}</p>
     <dl class="case-card__meta">

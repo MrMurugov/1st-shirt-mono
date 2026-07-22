@@ -6,27 +6,35 @@ bodyClass: home-page
 ---
 
 <section class="hero hero--full-bleed" aria-labelledby="hero-title">
-  <div class="hero__media" aria-hidden="true">
-    <img class="hero__image" src="{{ '/assets/images/hero/hero-workshop.webp' | url }}" alt="" width="1920" height="1080">
-    <span class="hero__overlay"></span>
-  </div>
   <div class="container hero__inner">
     <div class="hero__content">
-      <p class="eyebrow eyebrow--light">{{ site.hero.eyebrow }}</p>
-      <h1 class="hero__title" id="hero-title">{{ site.hero.title }}</h1>
+      <p class="eyebrow">{{ site.hero.eyebrow }}</p>
+      <h1 class="hero__title" id="hero-title">
+        <span>Одяг для команд,</span>
+        <span class="hero__title-accent">який хочеться носити.</span>
+      </h1>
       <p class="hero__text">{{ site.hero.text }}</p>
       <div class="hero__actions">
         <a class="button button--accent" href="{{ '/quote/' | url }}" data-quote-open data-modal-open="quote">{{ site.hero.primaryAction.label }}</a>
-        <a class="button button--outline-light" href="{{ site.hero.secondaryAction.url | url }}">{{ site.hero.secondaryAction.label }}</a>
+        <a class="button button--outline-light" href="{{ site.hero.secondaryAction.url | url }}">{{ site.hero.secondaryAction.label }} <span aria-hidden="true">↗</span></a>
       </div>
       <p class="hero__note"><span aria-hidden="true">●</span> {{ site.hero.note }}</p>
     </div>
-    <aside class="hero__aside" aria-label="Ключові умови">
-      <p class="hero__aside-value">{{ site.minimumOrder }}+</p>
-      <p class="hero__aside-label">виробів у корпоративному тиражі</p>
-      <span class="hero__aside-line" aria-hidden="true"></span>
-      <p>Текстиль, нанесення, контроль і пакування — в одній команді.</p>
-    </aside>
+
+    <figure class="hero__visual">
+      <div class="hero__media">
+        <img class="hero__image" src="{{ '/assets/images/hero/hero-studio-v2.png' | url }}" alt="Команда перевіряє якість синьої футболки у сучасній друкарській майстерні" width="1536" height="1024">
+        <span class="hero__overlay" aria-hidden="true"></span>
+        <span class="hero__image-label"><span aria-hidden="true">●</span> Контроль якості / 001</span>
+      </div>
+      <figcaption class="hero__caption"><span>Власна production-команда</span><span>Київ · Україна</span></figcaption>
+      <aside class="hero__aside" aria-label="Ключові умови">
+        <p class="hero__aside-value">{{ site.minimumOrder }}+</p>
+        <p class="hero__aside-label">одиниць у B2B-тиражі</p>
+        <span class="hero__aside-line" aria-hidden="true"></span>
+        <p>Текстиль · нанесення · пакування</p>
+      </aside>
+    </figure>
   </div>
 </section>
 
@@ -46,11 +54,11 @@ bodyClass: home-page
   <div class="container">
     <header class="section-heading section-heading--split">
       <div>
-        <p class="eyebrow">Каталог основ</p>
-        <h2 class="section-heading__title" id="category-title">Почніть із потрібного виробу</h2>
+        <p class="eyebrow">01 / Каталог основ</p>
+        <h2 class="section-heading__title" id="category-title">Почніть не з логотипа. Почніть із правильної основи.</h2>
       </div>
       <div class="section-heading__aside">
-        <p>Від базових футболок до функціонального спецодягу. Допоможемо зібрати комплект в одному візуальному коді.</p>
+        <p>Від базових футболок до функціонального спецодягу. Порівнюйте посадку, щільність і ціну — не лише картинку.</p>
         <a class="text-link" href="{{ '/catalog/' | url }}">Увесь каталог <span aria-hidden="true">↗</span></a>
       </div>
     </header>
@@ -71,8 +79,8 @@ bodyClass: home-page
   <div class="container">
     <header class="section-heading section-heading--split">
       <div>
-        <p class="eyebrow">Популярні моделі</p>
-        <h2 class="section-heading__title" id="featured-products-title">Перевірені основи для брендування</h2>
+        <p class="eyebrow">02 / Вибір команд</p>
+        <h2 class="section-heading__title" id="featured-products-title">Речі, що витримують робочий ритм</h2>
       </div>
       <p class="section-heading__aside">Ціни орієнтовні й указані за чистий виріб. Фінальна вартість залежить від тиражу та нанесення.</p>
     </header>
@@ -93,8 +101,8 @@ bodyClass: home-page
   <div class="container">
     <header class="section-heading section-heading--split">
       <div>
-        <p class="eyebrow">Рішення за задачею</p>
-        <h2 class="section-heading__title" id="solutions-title">Одяг працює по-різному в кожному бізнесі</h2>
+        <p class="eyebrow">03 / За сценарієм</p>
+        <h2 class="section-heading__title" id="solutions-title">Мерч, форма й одяг для зміни — це різні задачі</h2>
       </div>
       <p class="section-heading__aside">Підбираємо тканину, посадку й спосіб нанесення під сценарій використання, а не лише під картинку.</p>
     </header>
@@ -127,8 +135,8 @@ bodyClass: home-page
   <div class="container">
     <header class="section-heading section-heading--split section-heading--light">
       <div>
-        <p class="eyebrow eyebrow--light">Технології нанесення</p>
-        <h2 class="section-heading__title" id="print-title">Підберемо метод під макет і тканину</h2>
+        <p class="eyebrow eyebrow--light">04 / Друк і вишивка</p>
+        <h2 class="section-heading__title" id="print-title">Технологія має працювати, а не просто виглядати</h2>
       </div>
       <div class="section-heading__aside">
         <p>Враховуємо деталізацію логотипа, навантаження на одяг, бюджет і бажану тактильність.</p>
@@ -158,8 +166,8 @@ bodyClass: home-page
   <div class="container">
     <header class="section-heading section-heading--split">
       <div>
-        <p class="eyebrow">Реалізовані задачі</p>
-        <h2 class="section-heading__title" id="cases-title">Від брифу до готових комплектів</h2>
+        <p class="eyebrow">05 / Кейси</p>
+        <h2 class="section-heading__title" id="cases-title">Рішення видно в деталях</h2>
       </div>
       <div class="section-heading__aside">
         <p>Демонстраційні кейси показують, як ми будуємо рішення для різних команд і сценаріїв.</p>
@@ -179,8 +187,8 @@ bodyClass: home-page
   <div class="container">
     <header class="section-heading section-heading--split">
       <div>
-        <p class="eyebrow">Прозорий процес</p>
-        <h2 class="section-heading__title" id="production-title">П’ять кроків до вашого тиражу</h2>
+        <p class="eyebrow">06 / Процес</p>
+        <h2 class="section-heading__title" id="production-title">П’ять контрольних точок. Жодної магії.</h2>
       </div>
       <p class="section-heading__aside">На кожному етапі є погоджений результат: специфікація, макет, сигнальний зразок або готовий комплект.</p>
     </header>
@@ -206,8 +214,8 @@ bodyClass: home-page
 <section class="section faq" aria-labelledby="faq-title">
   <div class="container faq__layout">
     <header class="section-heading faq__heading">
-      <p class="eyebrow">Питання до старту</p>
-      <h2 class="section-heading__title" id="faq-title">Коротко про замовлення</h2>
+      <p class="eyebrow">07 / Без дрібного шрифту</p>
+      <h2 class="section-heading__title" id="faq-title">Що варто знати до замовлення</h2>
       <p>Не знайшли відповіді? Опишіть задачу — уточнимо технологію, строк і бюджет.</p>
       <a class="text-link" href="{{ '/contacts/' | url }}">Поставити запитання <span aria-hidden="true">↗</span></a>
     </header>
@@ -227,7 +235,7 @@ bodyClass: home-page
 <section class="section quote-section" id="quote" aria-labelledby="quote-title">
   <div class="container quote-section__layout">
     <div class="quote-section__intro">
-      <p class="eyebrow">Наступний крок</p>
+      <p class="eyebrow">08 / Старт</p>
       <h2 class="quote-section__title" id="quote-title">{{ site.quoteForm.title }}</h2>
       <p class="quote-section__text">{{ site.quoteForm.text }}</p>
       <ul class="quote-section__promises">

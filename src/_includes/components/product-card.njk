@@ -7,6 +7,7 @@
   data-name="{{ product.name | lower }}"
 >
   <a class="product-card__media" href="{{ ('/products/' ~ product.slug ~ '/') | url }}" aria-label="Переглянути {{ product.name }}">
+    <span class="product-card__index" aria-hidden="true">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span>
     {% if product.badge %}<span class="product-card__badge">{{ product.badge }}</span>{% endif %}
     <img class="product-card__image" src="{{ product.image | url }}" alt="{{ product.name }}" loading="lazy" width="720" height="860">
     <span class="product-card__more" aria-hidden="true">Переглянути ↗</span>
@@ -20,6 +21,7 @@
       <a href="{{ ('/products/' ~ product.slug ~ '/') | url }}">{{ product.name }}</a>
     </h3>
     <p class="product-card__excerpt">{{ product.excerpt }}</p>
+    <p class="product-card__specs"><span>{{ product.density }}</span><span>{{ product.fit }}</span></p>
     <div class="product-card__colors" aria-label="Доступні кольори">
       {% for color in product.colors %}
         {% if loop.index <= 5 %}

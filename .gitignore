@@ -1,6 +1,8 @@
 node_modules/
 dist/
 .playwright-cli/
+graphify-out/
+output/playwright/
 
 # Local environment files
 .env
