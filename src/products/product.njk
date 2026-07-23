@@ -25,9 +25,56 @@ bodyClass: product-page
     </nav>
 
     <div class="product-detail__hero">
-      <div class="product-gallery">
-        {% if product.badge %}<span class="product-gallery__badge">{{ product.badge }}</span>{% endif %}
-        <img class="product-gallery__image" src="{{ product.image | url }}" alt="{{ product.name }}" width="960" height="1120">
+      <div class="product-gallery" data-product-gallery>
+        <div class="product-gallery__stage">
+          {% if product.badge %}<span class="product-gallery__badge">{{ product.badge }}</span>{% endif %}
+          <img
+            class="product-gallery__image"
+            src="{{ product.image | url }}"
+            alt="{{ product.name }}, вигляд спереду"
+            width="960"
+            height="960"
+            data-gallery-main
+          >
+          {% if product.gallery and product.gallery.length and product.gallery[0].role %}
+            <span class="product-gallery__count" aria-live="polite" data-gallery-count>
+              01 / {% if product.gallery.length + 1 < 10 %}0{% endif %}{{ product.gallery.length + 1 }}
+            </span>
+          {% endif %}
+        </div>
+
+        {% if product.gallery and product.gallery.length and product.gallery[0].role %}
+          <div class="product-gallery__thumbs" aria-label="Фотографії товару">
+            <button
+              class="product-gallery__thumb is-active"
+              type="button"
+              aria-label="Показати фото 1: {{ product.name }}, вигляд спереду"
+              aria-pressed="true"
+              data-gallery-thumb
+              data-gallery-src="{{ product.image | url }}"
+              data-gallery-alt="{{ product.name }}, вигляд спереду"
+              data-gallery-index="01"
+            >
+              <img src="{{ product.image | url }}" alt="" loading="lazy" width="180" height="180">
+            </button>
+            {% for media in product.gallery %}
+              {% set mediaSrc = media.src or media %}
+              {% set mediaAlt = media.alt or product.name %}
+              <button
+                class="product-gallery__thumb"
+                type="button"
+                aria-label="Показати фото {{ loop.index + 1 }}: {{ mediaAlt }}"
+                aria-pressed="false"
+                data-gallery-thumb
+                data-gallery-src="{{ mediaSrc | url }}"
+                data-gallery-alt="{{ mediaAlt }}"
+                data-gallery-index="{% if loop.index + 1 < 10 %}0{% endif %}{{ loop.index + 1 }}"
+              >
+                <img src="{{ mediaSrc | url }}" alt="" loading="lazy" width="180" height="180">
+              </button>
+            {% endfor %}
+          </div>
+        {% endif %}
       </div>
 
       <div class="product-summary">

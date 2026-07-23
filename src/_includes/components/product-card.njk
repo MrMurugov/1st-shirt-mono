@@ -9,7 +9,7 @@
   <a class="product-card__media" href="{{ ('/products/' ~ product.slug ~ '/') | url }}" aria-label="Переглянути {{ product.name }}">
     <span class="product-card__index" aria-hidden="true">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span>
     {% if product.badge %}<span class="product-card__badge">{{ product.badge }}</span>{% endif %}
-    <img class="product-card__image" src="{{ product.image | url }}" alt="{{ product.name }}" loading="lazy" width="720" height="860">
+    <img class="product-card__image" src="{{ product.image | url }}" alt="{{ product.name }}" loading="lazy" width="720" height="720">
     <span class="product-card__more" aria-hidden="true">Переглянути ↗</span>
   </a>
   <div class="product-card__body">

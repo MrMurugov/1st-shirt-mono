@@ -95,6 +95,42 @@
     });
   });
 
+  document.querySelectorAll("[data-product-gallery]").forEach((gallery) => {
+    const mainImage = gallery.querySelector("[data-gallery-main]");
+    const counter = gallery.querySelector("[data-gallery-count]");
+    const thumbs = [...gallery.querySelectorAll("[data-gallery-thumb]")];
+
+    if (!mainImage || thumbs.length < 2) return;
+
+    thumbs.forEach((thumb) => {
+      thumb.addEventListener("click", () => {
+        const nextSrc = thumb.dataset.gallerySrc;
+        const nextAlt = thumb.dataset.galleryAlt;
+        if (!nextSrc) return;
+
+        mainImage.src = nextSrc;
+        mainImage.alt = nextAlt || "";
+        if (counter) counter.textContent = `${thumb.dataset.galleryIndex} / ${String(thumbs.length).padStart(2, "0")}`;
+
+        thumbs.forEach((item) => {
+          const active = item === thumb;
+          item.classList.toggle("is-active", active);
+          item.setAttribute("aria-pressed", String(active));
+        });
+
+        if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          mainImage.animate(
+            [
+              { opacity: 0.45, transform: "scale(0.992)" },
+              { opacity: 1, transform: "scale(1)" }
+            ],
+            { duration: 260, easing: "ease-out" }
+          );
+        }
+      });
+    });
+  });
+
   const catalog = document.querySelector("[data-catalog]");
 
   if (catalog) {

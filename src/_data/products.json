@@ -7,9 +7,33 @@
     "categoryId": "t-shirts",
     "excerpt": "Щільна базова футболка унісекс для корпоративних тиражів.",
     "description": "Гладка гребінна бавовна добре тримає форму та підходить для великих зон друку. Посилена горловина й стабілізуюча тасьма розраховані на регулярне носіння.",
-    "image": "/assets/images/products/tshirt-base.webp",
+    "image": "/assets/images/products/tshirt-base/01-studio-front.webp",
     "gallery": [
-      "/assets/images/products/tshirt-base.webp"
+      {
+        "src": "/assets/images/products/tshirt-base/02-studio-three-quarter.webp",
+        "alt": "Футболка Base 180 з нанесенням «ВАШЕ ЛОГО», ракурс три чверті",
+        "role": "studio-three-quarter"
+      },
+      {
+        "src": "/assets/images/products/tshirt-base/03-studio-back.webp",
+        "alt": "Футболка Base 180 з нанесенням «ВАШЕ ЛОГО», вигляд ззаду",
+        "role": "studio-back"
+      },
+      {
+        "src": "/assets/images/products/tshirt-base/04-branding-detail.webp",
+        "alt": "Макродеталь шовкодруку «ВАШЕ ЛОГО» на білій бавовні",
+        "role": "branding-detail"
+      },
+      {
+        "src": "/assets/images/products/tshirt-base/05-lifestyle-single.webp",
+        "alt": "Працівник друкарні у футболці Base 180 під час роботи",
+        "role": "lifestyle-single"
+      },
+      {
+        "src": "/assets/images/products/tshirt-base/06-lifestyle-team.webp",
+        "alt": "Команда друкарні у футболках Base 180 готує замовлення",
+        "role": "lifestyle-team"
+      }
     ],
     "material": "Кулірна гладь, гребінна бавовна",
     "composition": "100% бавовна",
