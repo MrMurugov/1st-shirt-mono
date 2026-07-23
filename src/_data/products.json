@@ -10,14 +10,14 @@
     "image": "/assets/images/products/tshirt-base/01-studio-front.webp",
     "gallery": [
       {
-        "src": "/assets/images/products/tshirt-base/02-studio-three-quarter.webp",
+        "src": "/assets/images/products/tshirt-base/02-studio-three-quarter-white.webp",
         "alt": "Футболка Base 180 з нанесенням «ВАШЕ ЛОГО», ракурс три чверті",
         "role": "studio-three-quarter"
       },
       {
-        "src": "/assets/images/products/tshirt-base/03-studio-back.webp",
-        "alt": "Футболка Base 180 з нанесенням «ВАШЕ ЛОГО», вигляд ззаду",
-        "role": "studio-back"
+        "src": "/assets/images/products/tshirt-base/03-studio-back-blank.webp",
+        "alt": "Футболка Base 180, чистий вигляд ззаду без нанесення",
+        "role": "studio-back-blank"
       },
       {
         "src": "/assets/images/products/tshirt-base/04-branding-detail.webp",
@@ -25,14 +25,14 @@
         "role": "branding-detail"
       },
       {
-        "src": "/assets/images/products/tshirt-base/05-lifestyle-single.webp",
-        "alt": "Працівник друкарні у футболці Base 180 під час роботи",
-        "role": "lifestyle-single"
+        "src": "/assets/images/products/tshirt-base/05-lifestyle-barista.webp",
+        "alt": "Бариста у футболці Base 180 готує еспресо в кав’ярні",
+        "role": "lifestyle-barista"
       },
       {
-        "src": "/assets/images/products/tshirt-base/06-lifestyle-team.webp",
-        "alt": "Команда друкарні у футболках Base 180 готує замовлення",
-        "role": "lifestyle-team"
+        "src": "/assets/images/products/tshirt-base/06-lifestyle-waiter.webp",
+        "alt": "Офіціантка у футболці Base 180 обслуговує гостей ресторану",
+        "role": "lifestyle-service"
       }
     ],
     "material": "Кулірна гладь, гребінна бавовна",
