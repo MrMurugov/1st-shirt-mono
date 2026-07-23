@@ -7,6 +7,7 @@ const dataRoot = path.join(sourceRoot, "_data");
 const outputRoot = path.join(projectRoot, "dist");
 const pagesPrefix = "/1st-shirt/";
 const missing = [];
+const violations = [];
 
 async function exists(filePath) {
   try {
@@ -55,6 +56,57 @@ for (const filePath of dataFiles) {
   }
 }
 
+const products = JSON.parse(await readFile(path.join(dataRoot, "products.json"), "utf8"));
+const expectedGalleryRoles = [
+  "studio-back-blank",
+  "branding-detail",
+  "lifestyle-primary",
+  "lifestyle-secondary"
+];
+
+for (const product of products) {
+  const label = product.id || product.name || "product-without-id";
+
+  if (typeof product.image !== "string" || !product.image.endsWith(".webp")) {
+    violations.push(`${label}: image must reference a WebP file`);
+  }
+
+  if (typeof product.imageAlt !== "string" || !product.imageAlt.trim()) {
+    violations.push(`${label}: imageAlt is required`);
+  }
+
+  if (!Array.isArray(product.gallery) || product.gallery.length !== 4) {
+    violations.push(`${label}: gallery must contain exactly four secondary images`);
+    continue;
+  }
+
+  product.gallery.forEach((media, index) => {
+    const expectedRole = expectedGalleryRoles[index];
+
+    if (!media || typeof media !== "object" || Array.isArray(media)) {
+      violations.push(`${label}: gallery item ${index + 1} must be a media object`);
+      return;
+    }
+
+    if (typeof media.src !== "string" || !media.src.endsWith(".webp")) {
+      violations.push(`${label}: gallery item ${index + 1} must reference a WebP file`);
+    }
+
+    if (typeof media.alt !== "string" || !media.alt.trim()) {
+      violations.push(`${label}: gallery item ${index + 1} requires alt text`);
+    }
+
+    if (media.role !== expectedRole) {
+      violations.push(`${label}: gallery item ${index + 1} must use role "${expectedRole}"`);
+    }
+  });
+
+  const mediaPaths = [product.image, ...product.gallery.map((media) => media.src)];
+  if (new Set(mediaPaths).size !== mediaPaths.length) {
+    violations.push(`${label}: all five product images must be unique`);
+  }
+}
+
 const htmlFiles = (await listFiles(outputRoot)).filter((filePath) => filePath.endsWith(".html"));
 let internalReferenceCount = 0;
 
@@ -97,9 +149,10 @@ for (const filePath of cssFiles) {
   }
 }
 
-if (missing.length) {
-  console.error(`Build validation failed: ${missing.length} missing reference(s).`);
+if (missing.length || violations.length) {
+  console.error(`Build validation failed: ${missing.length} missing reference(s), ${violations.length} media schema violation(s).`);
   missing.forEach((item) => console.error(`- ${item}`));
+  violations.forEach((item) => console.error(`- ${item}`));
   process.exit(1);
 }
 

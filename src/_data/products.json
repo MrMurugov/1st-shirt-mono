@@ -18,17 +18,17 @@
       {
         "src": "/assets/images/products/tshirt-base/04-print-macro-v2.webp",
         "alt": "Крупний план фактури шовкодруку «ВАШЕ ЛОГО» на білій бавовні",
-        "role": "print-detail"
+        "role": "branding-detail"
       },
       {
         "src": "/assets/images/products/tshirt-base/05-lifestyle-barista.webp",
         "alt": "Бариста у футболці Base 180 готує еспресо в кав’ярні",
-        "role": "lifestyle-barista"
+        "role": "lifestyle-primary"
       },
       {
         "src": "/assets/images/products/tshirt-base/06-lifestyle-waiter.webp",
         "alt": "Офіціантка у футболці Base 180 обслуговує гостей ресторану",
-        "role": "lifestyle-service"
+        "role": "lifestyle-secondary"
       }
     ],
     "material": "Кулірна гладь, гребінна бавовна",
@@ -65,9 +65,29 @@
     "categoryId": "t-shirts",
     "excerpt": "Преміальна футболка з м'якою фактурою та сучасною посадкою.",
     "description": "Щільний трикотаж із компактною поверхнею створений для лаконічного мерчу та подарункових наборів. Невелика частка еластану допомагає виробу зберігати силует.",
-    "image": "/assets/images/products/tshirt-premium.webp",
+    "image": "/assets/images/products/tshirt-premium/01-studio-three-quarter.webp",
+    "imageAlt": "Футболка Premium 210 з нанесенням «ВАШЕ ЛОГО», ракурс три чверті",
     "gallery": [
-      "/assets/images/products/tshirt-premium.webp"
+      {
+        "src": "/assets/images/products/tshirt-premium/02-studio-back-blank.webp",
+        "alt": "Футболка Premium 210, чистий вигляд ззаду без нанесення",
+        "role": "studio-back-blank"
+      },
+      {
+        "src": "/assets/images/products/tshirt-premium/03-branding-detail.webp",
+        "alt": "Крупний план шовкодруку «ВАШЕ ЛОГО» на щільному трикотажі футболки",
+        "role": "branding-detail"
+      },
+      {
+        "src": "/assets/images/products/tshirt-premium/04-lifestyle-creative-director.webp",
+        "alt": "Креативний директор працює у футболці Premium 210 з логотипом",
+        "role": "lifestyle-primary"
+      },
+      {
+        "src": "/assets/images/products/tshirt-premium/05-lifestyle-conference-coordinator.webp",
+        "alt": "Координатор конференції у футболці Premium 210 перевіряє програму події",
+        "role": "lifestyle-secondary"
+      }
     ],
     "material": "Компакт-пеньє",
     "composition": "95% бавовна, 5% еластан",
@@ -103,9 +123,29 @@
     "categoryId": "polo",
     "excerpt": "Зносостійке поло для персоналу та виїзних команд.",
     "description": "Трикотаж піке пропускає повітря та витримує часте прання. Комір і манжети зберігають форму, а планка на три ґудзики надає охайного вигляду.",
-    "image": "/assets/images/products/polo-pro.webp",
+    "image": "/assets/images/products/polo-pro/01-studio-three-quarter.webp",
+    "imageAlt": "Поло Pro 200 з вишивкою «ВАШЕ ЛОГО», ракурс три чверті",
     "gallery": [
-      "/assets/images/products/polo-pro.webp"
+      {
+        "src": "/assets/images/products/polo-pro/02-studio-back-blank.webp",
+        "alt": "Поло Pro 200, чистий вигляд ззаду без нанесення",
+        "role": "studio-back-blank"
+      },
+      {
+        "src": "/assets/images/products/polo-pro/03-branding-detail.webp",
+        "alt": "Крупний план вишивки «ВАШЕ ЛОГО» на фактурі піке",
+        "role": "branding-detail"
+      },
+      {
+        "src": "/assets/images/products/polo-pro/04-lifestyle-restaurant-manager.webp",
+        "alt": "Менеджер ресторану працює у поло Pro 200 з логотипом",
+        "role": "lifestyle-primary"
+      },
+      {
+        "src": "/assets/images/products/polo-pro/05-lifestyle-retail-consultant.webp",
+        "alt": "Консультант магазину допомагає покупцеві у поло Pro 200",
+        "role": "lifestyle-secondary"
+      }
     ],
     "material": "Трикотаж піке",
     "composition": "65% бавовна, 35% поліестер",
@@ -141,9 +181,29 @@
     "categoryId": "long-sleeves",
     "excerpt": "Бавовняний лонгслів для демісезонних комплектів.",
     "description": "М'який трикотаж середньої щільності комфортний у приміщенні та як перший шар. Рівна поверхня дає чистий результат під час шовкодруку й DTF-нанесення.",
-    "image": "/assets/images/products/longsleeve-base.webp",
+    "image": "/assets/images/products/longsleeve-base/01-studio-three-quarter.webp",
+    "imageAlt": "Лонгслів Base 190 з нанесенням «ВАШЕ ЛОГО», ракурс три чверті",
     "gallery": [
-      "/assets/images/products/longsleeve-base.webp"
+      {
+        "src": "/assets/images/products/longsleeve-base/02-studio-back-blank.webp",
+        "alt": "Лонгслів Base 190, чистий вигляд ззаду без нанесення",
+        "role": "studio-back-blank"
+      },
+      {
+        "src": "/assets/images/products/longsleeve-base/03-branding-detail.webp",
+        "alt": "Крупний план шовкодруку «ВАШЕ ЛОГО» на бавовняному лонгсліві",
+        "role": "branding-detail"
+      },
+      {
+        "src": "/assets/images/products/longsleeve-base/04-lifestyle-florist.webp",
+        "alt": "Флорист працює у лонгсліві Base 190 з логотипом",
+        "role": "lifestyle-primary"
+      },
+      {
+        "src": "/assets/images/products/longsleeve-base/05-lifestyle-bookstore.webp",
+        "alt": "Працівник книгарні розставляє книги у лонгсліві Base 190",
+        "role": "lifestyle-secondary"
+      }
     ],
     "material": "Кулірна гладь",
     "composition": "100% бавовна",
@@ -178,9 +238,29 @@
     "categoryId": "sweatshirts",
     "excerpt": "Стриманий світшот із щільного футера для командного мерчу.",
     "description": "Футер із петльовою виворітною стороною підходить для цілорічного використання. Еластичні манжети й пояс формують акуратний силует без зайвого об'єму.",
-    "image": "/assets/images/products/sweatshirt-core.webp",
+    "image": "/assets/images/products/sweatshirt-core/01-studio-three-quarter.webp",
+    "imageAlt": "Світшот Core 300 з нанесенням «ВАШЕ ЛОГО», ракурс три чверті",
     "gallery": [
-      "/assets/images/products/sweatshirt-core.webp"
+      {
+        "src": "/assets/images/products/sweatshirt-core/02-studio-back-blank.webp",
+        "alt": "Світшот Core 300, чистий вигляд ззаду без нанесення",
+        "role": "studio-back-blank"
+      },
+      {
+        "src": "/assets/images/products/sweatshirt-core/03-branding-detail.webp",
+        "alt": "Крупний план шовкодруку «ВАШЕ ЛОГО» на щільному футері",
+        "role": "branding-detail"
+      },
+      {
+        "src": "/assets/images/products/sweatshirt-core/04-lifestyle-av-technician.webp",
+        "alt": "Технік налаштовує аудіообладнання у світшоті Core 300",
+        "role": "lifestyle-primary"
+      },
+      {
+        "src": "/assets/images/products/sweatshirt-core/05-lifestyle-workshop-coordinator.webp",
+        "alt": "Координатор майстер-класу готує робочі місця у світшоті Core 300",
+        "role": "lifestyle-secondary"
+      }
     ],
     "material": "Футер тринитка без начосу",
     "composition": "80% бавовна, 20% поліестер",
@@ -190,6 +270,7 @@
     "leadTime": "8–12 робочих днів",
     "sizes": ["XS", "S", "M", "L", "XL", "2XL", "3XL"],
     "colors": [
+      { "name": "Білий", "hex": "#F8F8F5" },
       { "name": "Меланж", "hex": "#B8B9B7" },
       { "name": "Чорний", "hex": "#171717" },
       { "name": "Темно-синій", "hex": "#18283D" },
@@ -216,9 +297,29 @@
     "categoryId": "track-jackets",
     "excerpt": "Командна кофта на блискавці зі стійким коміром.",
     "description": "Еластичний інтерлок не обмежує рухів і швидко відводить вологу. Контрастні деталі можна адаптувати до кольорів бренду під час виробництва тиражу.",
-    "image": "/assets/images/products/track-jacket-team.webp",
+    "image": "/assets/images/products/track-jacket-team/01-studio-three-quarter.webp",
+    "imageAlt": "Олімпійка Team з вишивкою «ВАШЕ ЛОГО», ракурс три чверті",
     "gallery": [
-      "/assets/images/products/track-jacket-team.webp"
+      {
+        "src": "/assets/images/products/track-jacket-team/02-studio-back-blank.webp",
+        "alt": "Олімпійка Team, чистий вигляд ззаду без нанесення",
+        "role": "studio-back-blank"
+      },
+      {
+        "src": "/assets/images/products/track-jacket-team/03-branding-detail.webp",
+        "alt": "Крупний план вишивки «ВАШЕ ЛОГО» на еластичному інтерлоку",
+        "role": "branding-detail"
+      },
+      {
+        "src": "/assets/images/products/track-jacket-team/04-lifestyle-football-coach.webp",
+        "alt": "Футбольний тренер проводить заняття в олімпійці Team",
+        "role": "lifestyle-primary"
+      },
+      {
+        "src": "/assets/images/products/track-jacket-team/05-lifestyle-delivery-coordinator.webp",
+        "alt": "Координатор доставки перевіряє маршрут в олімпійці Team",
+        "role": "lifestyle-secondary"
+      }
     ],
     "material": "Еластичний інтерлок",
     "composition": "92% поліестер, 8% еластан",
@@ -228,6 +329,7 @@
     "leadTime": "10–14 робочих днів",
     "sizes": ["XS", "S", "M", "L", "XL", "2XL"],
     "colors": [
+      { "name": "Білий", "hex": "#F8F8F5" },
       { "name": "Чорний", "hex": "#171717" },
       { "name": "Темно-синій", "hex": "#18283D" },
       { "name": "Графіт", "hex": "#4D5154" },
@@ -253,9 +355,29 @@
     "categoryId": "hoodies",
     "excerpt": "Об'ємне худі з подвійним капюшоном і кишенею-кенгуру.",
     "description": "Щільний футер із м'яким начосом тримає об'єм і комфортний у прохолодну погоду. Модель без зовнішнього шнурка виглядає чисто в корпоративних комплектах.",
-    "image": "/assets/images/products/hoodie-classic.webp",
+    "image": "/assets/images/products/hoodie-classic/01-studio-three-quarter.webp",
+    "imageAlt": "Худі Classic 320 з нанесенням «ВАШЕ ЛОГО», ракурс три чверті",
     "gallery": [
-      "/assets/images/products/hoodie-classic.webp"
+      {
+        "src": "/assets/images/products/hoodie-classic/02-studio-back-blank.webp",
+        "alt": "Худі Classic 320, чистий вигляд ззаду без нанесення",
+        "role": "studio-back-blank"
+      },
+      {
+        "src": "/assets/images/products/hoodie-classic/03-branding-detail.webp",
+        "alt": "Крупний план шовкодруку «ВАШЕ ЛОГО» на щільному футері худі",
+        "role": "branding-detail"
+      },
+      {
+        "src": "/assets/images/products/hoodie-classic/04-lifestyle-motion-designer.webp",
+        "alt": "Моушн-дизайнер працює у худі Classic 320 з логотипом",
+        "role": "lifestyle-primary"
+      },
+      {
+        "src": "/assets/images/products/hoodie-classic/05-lifestyle-ceramics-instructor.webp",
+        "alt": "Викладач кераміки готує заняття у худі Classic 320",
+        "role": "lifestyle-secondary"
+      }
     ],
     "material": "Футер тринитка з начосом",
     "composition": "80% бавовна, 20% поліестер",
@@ -291,9 +413,29 @@
     "categoryId": "hoodies",
     "excerpt": "Тепле худі на блискавці для персоналу та виїзних команд.",
     "description": "Повнорозмірна блискавка, подвійний капюшон і дві передні кишені роблять модель зручною для щоденної роботи. Щільний футер підходить для вишивки на грудях і рукаві.",
-    "image": "/assets/images/products/hoodie-zip.webp",
+    "image": "/assets/images/products/hoodie-zip/01-studio-three-quarter.webp",
+    "imageAlt": "Худі Zip 330 з вишивкою «ВАШЕ ЛОГО», ракурс три чверті",
     "gallery": [
-      "/assets/images/products/hoodie-zip.webp"
+      {
+        "src": "/assets/images/products/hoodie-zip/02-studio-back-blank.webp",
+        "alt": "Худі Zip 330, чистий вигляд ззаду без нанесення",
+        "role": "studio-back-blank"
+      },
+      {
+        "src": "/assets/images/products/hoodie-zip/03-branding-detail.webp",
+        "alt": "Крупний план вишивки «ВАШЕ ЛОГО» на футері худі",
+        "role": "branding-detail"
+      },
+      {
+        "src": "/assets/images/products/hoodie-zip/04-lifestyle-venue-technician.webp",
+        "alt": "Технік концертного майданчика працює у худі Zip 330",
+        "role": "lifestyle-primary"
+      },
+      {
+        "src": "/assets/images/products/hoodie-zip/05-lifestyle-warehouse-coordinator.webp",
+        "alt": "Координатор складу перевіряє відправлення у худі Zip 330",
+        "role": "lifestyle-secondary"
+      }
     ],
     "material": "Футер тринитка з начосом",
     "composition": "80% бавовна, 20% поліестер",
@@ -303,6 +445,7 @@
     "leadTime": "10–14 робочих днів",
     "sizes": ["XS", "S", "M", "L", "XL", "2XL", "3XL"],
     "colors": [
+      { "name": "Білий", "hex": "#F8F8F5" },
       { "name": "Чорний", "hex": "#171717" },
       { "name": "Графіт", "hex": "#4D5154" },
       { "name": "Темно-синій", "hex": "#18283D" },
@@ -328,9 +471,29 @@
     "categoryId": "trousers",
     "excerpt": "Трикотажні джогери для повного командного комплекту.",
     "description": "Модель із середньою посадкою, еластичним поясом і місткими боковими кишенями. Поєднується зі світшотами та худі Core і Classic.",
-    "image": "/assets/images/products/joggers-core.webp",
+    "image": "/assets/images/products/joggers-core/01-studio-three-quarter.webp",
+    "imageAlt": "Штани Jogger Core з вишивкою «ВАШЕ ЛОГО», ракурс три чверті",
     "gallery": [
-      "/assets/images/products/joggers-core.webp"
+      {
+        "src": "/assets/images/products/joggers-core/02-studio-back-blank.webp",
+        "alt": "Штани Jogger Core, чистий вигляд ззаду без нанесення",
+        "role": "studio-back-blank"
+      },
+      {
+        "src": "/assets/images/products/joggers-core/03-branding-detail.webp",
+        "alt": "Крупний план вишивки «ВАШЕ ЛОГО» на кишені джогерів",
+        "role": "branding-detail"
+      },
+      {
+        "src": "/assets/images/products/joggers-core/04-lifestyle-fitness-trainer.webp",
+        "alt": "Фітнес-тренер проводить заняття у штанах Jogger Core",
+        "role": "lifestyle-primary"
+      },
+      {
+        "src": "/assets/images/products/joggers-core/05-lifestyle-dance-instructor.webp",
+        "alt": "Викладач танців працює у штанах Jogger Core з логотипом",
+        "role": "lifestyle-secondary"
+      }
     ],
     "material": "Футер тринитка без начосу",
     "composition": "80% бавовна, 20% поліестер",
@@ -340,6 +503,7 @@
     "leadTime": "8–12 робочих днів",
     "sizes": ["XS", "S", "M", "L", "XL", "2XL"],
     "colors": [
+      { "name": "Білий", "hex": "#F8F8F5" },
       { "name": "Чорний", "hex": "#171717" },
       { "name": "Графіт", "hex": "#4D5154" },
       { "name": "Меланж", "hex": "#B8B9B7" },
@@ -365,9 +529,29 @@
     "categoryId": "shirts-robes",
     "excerpt": "Практична сорочка для адміністраторів, консультантів і сервісу.",
     "description": "Сумішова тканина мало мнеться, швидко сохне й зберігає охайний вигляд протягом зміни. Лаконічний крій залишає достатньо місця для вишивки логотипа.",
-    "image": "/assets/images/products/shirt-staff.webp",
+    "image": "/assets/images/products/shirt-staff/01-studio-three-quarter.webp",
+    "imageAlt": "Сорочка Staff з вишивкою «ВАШЕ ЛОГО», ракурс три чверті",
     "gallery": [
-      "/assets/images/products/shirt-staff.webp"
+      {
+        "src": "/assets/images/products/shirt-staff/02-studio-back-blank.webp",
+        "alt": "Сорочка Staff, чистий вигляд ззаду без нанесення",
+        "role": "studio-back-blank"
+      },
+      {
+        "src": "/assets/images/products/shirt-staff/03-branding-detail.webp",
+        "alt": "Крупний план вишивки «ВАШЕ ЛОГО» на сорочковій тканині",
+        "role": "branding-detail"
+      },
+      {
+        "src": "/assets/images/products/shirt-staff/04-lifestyle-hotel-reception.webp",
+        "alt": "Адміністратор готелю зустрічає гостя у сорочці Staff",
+        "role": "lifestyle-primary"
+      },
+      {
+        "src": "/assets/images/products/shirt-staff/05-lifestyle-optical-consultant.webp",
+        "alt": "Консультант оптики допомагає клієнтові у сорочці Staff",
+        "role": "lifestyle-secondary"
+      }
     ],
     "material": "Сорочкова сумішова тканина",
     "composition": "60% бавовна, 40% поліестер",
@@ -402,9 +586,29 @@
     "categoryId": "jackets",
     "excerpt": "Вітрозахисна куртка для польових і мобільних команд.",
     "description": "Тришаровий софтшел захищає від вітру та короткочасного дощу, а еластична тканина не сковує рухів. Передбачені нагрудна й бокові кишені на блискавках.",
-    "image": "/assets/images/products/jacket-softshell.webp",
+    "image": "/assets/images/products/jacket-softshell/01-studio-three-quarter.webp",
+    "imageAlt": "Куртка Softshell Pro з вишивкою «ВАШЕ ЛОГО», ракурс три чверті",
     "gallery": [
-      "/assets/images/products/jacket-softshell.webp"
+      {
+        "src": "/assets/images/products/jacket-softshell/02-studio-back-blank.webp",
+        "alt": "Куртка Softshell Pro, чистий вигляд ззаду без нанесення",
+        "role": "studio-back-blank"
+      },
+      {
+        "src": "/assets/images/products/jacket-softshell/03-branding-detail.webp",
+        "alt": "Крупний план вишивки «ВАШЕ ЛОГО» на мембранній тканині",
+        "role": "branding-detail"
+      },
+      {
+        "src": "/assets/images/products/jacket-softshell/04-lifestyle-field-surveyor.webp",
+        "alt": "Польовий інженер проводить вимірювання у куртці Softshell Pro",
+        "role": "lifestyle-primary"
+      },
+      {
+        "src": "/assets/images/products/jacket-softshell/05-lifestyle-service-engineer.webp",
+        "alt": "Сервісний інженер оглядає обладнання у куртці Softshell Pro",
+        "role": "lifestyle-secondary"
+      }
     ],
     "material": "Тришаровий софтшел із мембраною",
     "composition": "94% поліестер, 6% еластан",
@@ -414,6 +618,7 @@
     "leadTime": "10–14 робочих днів",
     "sizes": ["S", "M", "L", "XL", "2XL", "3XL", "4XL"],
     "colors": [
+      { "name": "Білий", "hex": "#F8F8F5" },
       { "name": "Чорний", "hex": "#171717" },
       { "name": "Графіт", "hex": "#4D5154" },
       { "name": "Темно-синій", "hex": "#18283D" },
@@ -439,9 +644,29 @@
     "categoryId": "vests",
     "excerpt": "Легка утеплена жилетка для багатошарової корпоративної форми.",
     "description": "Стримана стьобана модель із високим коміром і двома кишенями на блискавках. Компактний утеплювач не додає зайвого об'єму та зручний у русі.",
-    "image": "/assets/images/products/vest-urban.webp",
+    "image": "/assets/images/products/vest-urban/01-studio-three-quarter.webp",
+    "imageAlt": "Жилетка Urban з вишивкою «ВАШЕ ЛОГО», ракурс три чверті",
     "gallery": [
-      "/assets/images/products/vest-urban.webp"
+      {
+        "src": "/assets/images/products/vest-urban/02-studio-back-blank.webp",
+        "alt": "Жилетка Urban, чистий вигляд ззаду без нанесення",
+        "role": "studio-back-blank"
+      },
+      {
+        "src": "/assets/images/products/vest-urban/03-branding-detail.webp",
+        "alt": "Крупний план вишивки «ВАШЕ ЛОГО» на стьобаній жилетці",
+        "role": "branding-detail"
+      },
+      {
+        "src": "/assets/images/products/vest-urban/04-lifestyle-garden-center.webp",
+        "alt": "Працівник садового центру доглядає рослини у жилетці Urban",
+        "role": "lifestyle-primary"
+      },
+      {
+        "src": "/assets/images/products/vest-urban/05-lifestyle-delivery-coordinator.webp",
+        "alt": "Координатор доставки перевіряє вантаж у жилетці Urban",
+        "role": "lifestyle-secondary"
+      }
     ],
     "material": "Водовідштовхувальний поліестер, синтетичний утеплювач",
     "composition": "100% поліестер",
@@ -451,6 +676,7 @@
     "leadTime": "10–14 робочих днів",
     "sizes": ["S", "M", "L", "XL", "2XL", "3XL"],
     "colors": [
+      { "name": "Білий", "hex": "#F8F8F5" },
       { "name": "Чорний", "hex": "#171717" },
       { "name": "Темно-синій", "hex": "#18283D" },
       { "name": "Олива", "hex": "#59624A" },
@@ -476,9 +702,29 @@
     "categoryId": "bib-overalls",
     "excerpt": "Функціональний напівкомбінезон для технічних і виробничих команд.",
     "description": "Зносостійка саржа, регульовані бретелі та посилені коліна розраховані на активну роботу. Нагрудна, бокові та інструментальні кишені допомагають тримати необхідне поруч.",
-    "image": "/assets/images/products/bib-overall-pro.webp",
+    "image": "/assets/images/products/bib-overall-pro/01-studio-three-quarter.webp",
+    "imageAlt": "Напівкомбінезон Pro з вишивкою «ВАШЕ ЛОГО», ракурс три чверті",
     "gallery": [
-      "/assets/images/products/bib-overall-pro.webp"
+      {
+        "src": "/assets/images/products/bib-overall-pro/02-studio-back-blank.webp",
+        "alt": "Напівкомбінезон Pro, чистий вигляд ззаду без нанесення",
+        "role": "studio-back-blank"
+      },
+      {
+        "src": "/assets/images/products/bib-overall-pro/03-branding-detail.webp",
+        "alt": "Крупний план вишивки «ВАШЕ ЛОГО» на нагрудній кишені напівкомбінезона",
+        "role": "branding-detail"
+      },
+      {
+        "src": "/assets/images/products/bib-overall-pro/04-lifestyle-auto-mechanic.webp",
+        "alt": "Автомеханік оглядає вузол у напівкомбінезоні Pro",
+        "role": "lifestyle-primary"
+      },
+      {
+        "src": "/assets/images/products/bib-overall-pro/05-lifestyle-furniture-maker.webp",
+        "alt": "Мебляр працює з деревиною у напівкомбінезоні Pro",
+        "role": "lifestyle-secondary"
+      }
     ],
     "material": "Сумішова саржа з посиленими зонами",
     "composition": "65% поліестер, 35% бавовна",
@@ -488,6 +734,7 @@
     "leadTime": "10–15 робочих днів",
     "sizes": ["S", "M", "L", "XL", "2XL", "3XL", "4XL"],
     "colors": [
+      { "name": "Білий", "hex": "#F8F8F5" },
       { "name": "Графіт", "hex": "#4D5154" },
       { "name": "Темно-синій", "hex": "#18283D" },
       { "name": "Васильковий", "hex": "#315D8A" },
@@ -513,9 +760,29 @@
     "categoryId": "work-jackets",
     "excerpt": "Куртка для щоденної роботи з функціональними кишенями.",
     "description": "Щільна саржа витримує інтенсивне використання, а підсилення в зоні ліктів збільшує ресурс виробу. Манжети та низ регулюються для зручної посадки.",
-    "image": "/assets/images/products/work-jacket-strong.webp",
+    "image": "/assets/images/products/work-jacket-strong/01-studio-three-quarter.webp",
+    "imageAlt": "Робоча куртка Strong з вишивкою «ВАШЕ ЛОГО», ракурс три чверті",
     "gallery": [
-      "/assets/images/products/work-jacket-strong.webp"
+      {
+        "src": "/assets/images/products/work-jacket-strong/02-studio-back-blank.webp",
+        "alt": "Робоча куртка Strong, чистий вигляд ззаду без нанесення",
+        "role": "studio-back-blank"
+      },
+      {
+        "src": "/assets/images/products/work-jacket-strong/03-branding-detail.webp",
+        "alt": "Крупний план вишивки «ВАШЕ ЛОГО» на щільній робочій саржі",
+        "role": "branding-detail"
+      },
+      {
+        "src": "/assets/images/products/work-jacket-strong/04-lifestyle-coffee-service-technician.webp",
+        "alt": "Сервісний технік обслуговує кавове обладнання у куртці Strong",
+        "role": "lifestyle-primary"
+      },
+      {
+        "src": "/assets/images/products/work-jacket-strong/05-lifestyle-bicycle-mechanic.webp",
+        "alt": "Веломеханік регулює гальма у робочій куртці Strong",
+        "role": "lifestyle-secondary"
+      }
     ],
     "material": "Сумішова саржа з підсиленнями",
     "composition": "65% поліестер, 35% бавовна",
@@ -525,6 +792,7 @@
     "leadTime": "10–15 робочих днів",
     "sizes": ["S", "M", "L", "XL", "2XL", "3XL", "4XL"],
     "colors": [
+      { "name": "Білий", "hex": "#F8F8F5" },
       { "name": "Графіт", "hex": "#4D5154" },
       { "name": "Темно-синій", "hex": "#18283D" },
       { "name": "Васильковий", "hex": "#315D8A" },
@@ -550,9 +818,29 @@
     "categoryId": "work-trousers",
     "excerpt": "Зносостійкі штани з підсиленими колінами та місткими кишенями.",
     "description": "Ергономічний крій дає свободу рухів, а кишені для наколінників і інструментів адаптовані до робочої зміни. Світловідбивні канти підвищують помітність.",
-    "image": "/assets/images/products/work-trousers-strong.webp",
+    "image": "/assets/images/products/work-trousers-strong/01-studio-three-quarter.webp",
+    "imageAlt": "Робочі штани Strong з нанесенням «ВАШЕ ЛОГО», ракурс три чверті",
     "gallery": [
-      "/assets/images/products/work-trousers-strong.webp"
+      {
+        "src": "/assets/images/products/work-trousers-strong/02-studio-back-blank.webp",
+        "alt": "Робочі штани Strong, чистий вигляд ззаду без нанесення",
+        "role": "studio-back-blank"
+      },
+      {
+        "src": "/assets/images/products/work-trousers-strong/03-branding-detail.webp",
+        "alt": "Крупний план термотрансферу «ВАШЕ ЛОГО» на кишені робочих штанів",
+        "role": "branding-detail"
+      },
+      {
+        "src": "/assets/images/products/work-trousers-strong/04-lifestyle-kitchen-installer.webp",
+        "alt": "Монтажник встановлює кухонну секцію у робочих штанах Strong",
+        "role": "lifestyle-primary"
+      },
+      {
+        "src": "/assets/images/products/work-trousers-strong/05-lifestyle-warehouse-worker.webp",
+        "alt": "Працівниця складу сканує товар у робочих штанах Strong",
+        "role": "lifestyle-secondary"
+      }
     ],
     "material": "Сумішова саржа з підсиленнями",
     "composition": "65% поліестер, 35% бавовна",
@@ -562,6 +850,7 @@
     "leadTime": "10–15 робочих днів",
     "sizes": ["S", "M", "L", "XL", "2XL", "3XL", "4XL"],
     "colors": [
+      { "name": "Білий", "hex": "#F8F8F5" },
       { "name": "Графіт", "hex": "#4D5154" },
       { "name": "Темно-синій", "hex": "#18283D" },
       { "name": "Васильковий", "hex": "#315D8A" },
@@ -587,9 +876,29 @@
     "categoryId": "headwear",
     "excerpt": "Класична шестипанельна кепка для вишивки й термотрансферу.",
     "description": "Щільний бавовняний твіл, вигнутий козирок і металева застібка створюють універсальну посадку. Посилена передня панель добре тримає невелику вишивку.",
-    "image": "/assets/images/products/cap-six-panel.webp",
+    "image": "/assets/images/products/cap-six-panel/01-studio-three-quarter.webp",
+    "imageAlt": "Кепка Six Panel з вишивкою «ВАШЕ ЛОГО», ракурс три чверті",
     "gallery": [
-      "/assets/images/products/cap-six-panel.webp"
+      {
+        "src": "/assets/images/products/cap-six-panel/02-studio-back-blank.webp",
+        "alt": "Кепка Six Panel, чистий вигляд ззаду без нанесення",
+        "role": "studio-back-blank"
+      },
+      {
+        "src": "/assets/images/products/cap-six-panel/03-branding-detail.webp",
+        "alt": "Крупний план вишивки «ВАШЕ ЛОГО» на передній панелі кепки",
+        "role": "branding-detail"
+      },
+      {
+        "src": "/assets/images/products/cap-six-panel/04-lifestyle-market-vendor.webp",
+        "alt": "Продавець міського маркету працює у кепці Six Panel",
+        "role": "lifestyle-primary"
+      },
+      {
+        "src": "/assets/images/products/cap-six-panel/05-lifestyle-event-worker.webp",
+        "alt": "Працівник літньої події закріплює навігацію у кепці Six Panel",
+        "role": "lifestyle-secondary"
+      }
     ],
     "material": "Бавовняний твіл",
     "composition": "100% бавовна",
@@ -625,9 +934,29 @@
     "categoryId": "aprons",
     "excerpt": "Функціональний фартух для бариста, кухарів і майстрів.",
     "description": "Щільна тканина із захисним просоченням легко очищується, а регульована шийна лямка підлаштовує посадку. Велика подвійна кишеня вміщує робочі дрібниці.",
-    "image": "/assets/images/products/apron-bistro.webp",
+    "image": "/assets/images/products/apron-bistro/01-studio-three-quarter.webp",
+    "imageAlt": "Фартух Bistro з вишивкою «ВАШЕ ЛОГО», ракурс три чверті",
     "gallery": [
-      "/assets/images/products/apron-bistro.webp"
+      {
+        "src": "/assets/images/products/apron-bistro/02-studio-back-blank.webp",
+        "alt": "Фартух Bistro, чистий вигляд ззаду без нанесення",
+        "role": "studio-back-blank"
+      },
+      {
+        "src": "/assets/images/products/apron-bistro/03-branding-detail.webp",
+        "alt": "Крупний план вишивки «ВАШЕ ЛОГО» на нагрудній частині фартуха",
+        "role": "branding-detail"
+      },
+      {
+        "src": "/assets/images/products/apron-bistro/04-lifestyle-baker.webp",
+        "alt": "Пекар формує тісто у фартуху Bistro з логотипом",
+        "role": "lifestyle-primary"
+      },
+      {
+        "src": "/assets/images/products/apron-bistro/05-lifestyle-florist.webp",
+        "alt": "Флорист підрізає стебла у фартуху Bistro з логотипом",
+        "role": "lifestyle-secondary"
+      }
     ],
     "material": "Сумішова саржа з водовідштовхувальним просоченням",
     "composition": "65% поліестер, 35% бавовна",
@@ -637,6 +966,7 @@
     "leadTime": "7–10 робочих днів",
     "sizes": ["One size: 78 × 88 см"],
     "colors": [
+      { "name": "Білий", "hex": "#F8F8F5" },
       { "name": "Чорний", "hex": "#171717" },
       { "name": "Графіт", "hex": "#4D5154" },
       { "name": "Олива", "hex": "#59624A" },
@@ -663,9 +993,29 @@
     "categoryId": "tote-bags",
     "excerpt": "Щільний бавовняний шопер для наборів, подій і ритейлу.",
     "description": "Посилені ручки витримують щоденне навантаження, а широка площина підходить для виразного повноколірного або трафаретного друку. Внутрішні шви закриті бейкою.",
-    "image": "/assets/images/products/tote-everyday.webp",
+    "image": "/assets/images/products/tote-everyday/01-studio-three-quarter.webp",
+    "imageAlt": "Шопер Everyday з нанесенням «ВАШЕ ЛОГО», ракурс три чверті",
     "gallery": [
-      "/assets/images/products/tote-everyday.webp"
+      {
+        "src": "/assets/images/products/tote-everyday/02-studio-back-blank.webp",
+        "alt": "Шопер Everyday, чистий вигляд ззаду без нанесення",
+        "role": "studio-back-blank"
+      },
+      {
+        "src": "/assets/images/products/tote-everyday/03-branding-detail.webp",
+        "alt": "Крупний план шовкодруку «ВАШЕ ЛОГО» на бавовняній саржі шопера",
+        "role": "branding-detail"
+      },
+      {
+        "src": "/assets/images/products/tote-everyday/04-lifestyle-bookstore.webp",
+        "alt": "Працівниця книгарні пакує книги у шопер Everyday",
+        "role": "lifestyle-primary"
+      },
+      {
+        "src": "/assets/images/products/tote-everyday/05-lifestyle-conference.webp",
+        "alt": "Учасниця конференції несе шопер Everyday у бізнес-центрі",
+        "role": "lifestyle-secondary"
+      }
     ],
     "material": "Бавовняна саржа",
     "composition": "100% бавовна",
@@ -675,6 +1025,7 @@
     "leadTime": "7–10 робочих днів",
     "sizes": ["38 × 42 см"],
     "colors": [
+      { "name": "Білий", "hex": "#F8F8F5" },
       { "name": "Натуральний", "hex": "#D8C8A8" },
       { "name": "Чорний", "hex": "#171717" },
       { "name": "Темно-синій", "hex": "#18283D" },

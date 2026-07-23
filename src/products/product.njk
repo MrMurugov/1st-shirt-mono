@@ -36,14 +36,14 @@ bodyClass: product-page
             height="960"
             data-gallery-main
           >
-          {% if product.gallery and product.gallery.length and product.gallery[0].role %}
+          {% if product.gallery and product.gallery.length and product.gallery[0].src %}
             <span class="product-gallery__count" aria-live="polite" data-gallery-count>
               01 / {% if product.gallery.length + 1 < 10 %}0{% endif %}{{ product.gallery.length + 1 }}
             </span>
           {% endif %}
         </div>
 
-        {% if product.gallery and product.gallery.length and product.gallery[0].role %}
+        {% if product.gallery and product.gallery.length and product.gallery[0].src %}
           <div class="product-gallery__thumbs" aria-label="Фотографії товару">
             <button
               class="product-gallery__thumb is-active"
