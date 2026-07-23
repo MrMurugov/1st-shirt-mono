@@ -11,11 +11,6 @@
     "imageAlt": "Футболка Base 180 з нанесенням «ВАШЕ ЛОГО», ракурс три чверті",
     "gallery": [
       {
-        "src": "/assets/images/products/tshirt-base/01-studio-front.webp",
-        "alt": "Футболка Base 180 з нанесенням «ВАШЕ ЛОГО», вигляд спереду",
-        "role": "studio-front"
-      },
-      {
         "src": "/assets/images/products/tshirt-base/03-studio-back-blank.webp",
         "alt": "Футболка Base 180, чистий вигляд ззаду без нанесення",
         "role": "studio-back-blank"
