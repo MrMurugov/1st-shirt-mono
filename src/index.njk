@@ -148,7 +148,7 @@ bodyClass: home-page
       {% for method in printMethods %}
         {% if method.featured %}
           <article class="print-card">
-            <img class="print-card__image" src="{{ method.image | url }}" alt="{{ method.name }} на текстилі" loading="lazy" width="880" height="660">
+            <img class="print-card__image" src="{{ method.image | url }}" alt="{{ method.imageAlt or method.name }}" loading="lazy" width="880" height="660">
             <div class="print-card__body">
               <div class="print-card__topline"><span>0{{ loop.index }}</span><span>від {{ method.minOrder }} шт.</span></div>
               <h3 class="print-card__title">{{ method.name }}</h3>

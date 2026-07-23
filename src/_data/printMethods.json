@@ -10,7 +10,8 @@
     "limitations": "Кожен колір потребує окремого трафарета; складні градієнти розраховуються індивідуально.",
     "leadTime": "7–12 робочих днів",
     "minOrder": 30,
-    "image": "/assets/images/print-methods/screen-printing-v2.png",
+    "image": "/assets/images/print-methods/screen-printing-process-v4.webp",
+    "imageAlt": "Майстер наносить синю фарбу крізь трафарет на білий світшот",
     "advantages": [
       "Стійкість до регулярного прання",
       "Точне потрапляння у фірмові кольори",
@@ -30,7 +31,8 @@
     "limitations": "Великі суцільні заливки можуть бути менш повітропроникними, ніж шовкодрук.",
     "leadTime": "5–9 робочих днів",
     "minOrder": 20,
-    "image": "/assets/images/print-methods/dtf.webp",
+    "image": "/assets/images/print-methods/dtf-process-v2.webp",
+    "imageAlt": "Майстер знімає прозору DTF-плівку після перенесення принта термопресом",
     "advantages": [
       "Повноколірні зображення й градієнти",
       "Чіткі дрібні елементи",
@@ -50,7 +52,8 @@
     "limitations": "Дуже дрібний текст і складні фотографічні деталі потрібно спрощувати під стібки.",
     "leadTime": "7–12 робочих днів",
     "minOrder": 20,
-    "image": "/assets/images/print-methods/embroidery.webp",
+    "image": "/assets/images/print-methods/embroidery-process-v2.webp",
+    "imageAlt": "Багатоголкова машина вишиває синьо-жовтий знак на тканині в п’яльцях",
     "advantages": [
       "Стійкість до інтенсивного використання",
       "Об'ємна преміальна фактура",
@@ -70,7 +73,8 @@
     "limitations": "Працює переважно на білому або світлому поліестері; не підходить для бавовни.",
     "leadTime": "10–15 робочих днів",
     "minOrder": 20,
-    "image": "/assets/images/print-methods/sublimation.webp",
+    "image": "/assets/images/print-methods/sublimation-process-v2.webp",
+    "imageAlt": "Майстер знімає папір після сублімаційного друку на білому поліестері",
     "advantages": [
       "Не створює шару на тканині",
       "Необмежена кількість кольорів",
@@ -90,7 +94,8 @@
     "limitations": "Не рекомендується для дуже великих суцільних зображень і високотемпературного прасування.",
     "leadTime": "5–9 робочих днів",
     "minOrder": 20,
-    "image": "/assets/images/print-methods/transfer.webp",
+    "image": "/assets/images/print-methods/transfer-process-v2.webp",
+    "imageAlt": "Майстер знімає монтажну плівку з жовтого термотрансферного елемента",
     "advantages": [
       "Персоналізація кожного виробу",
       "Металізовані та світловідбивні плівки",

@@ -168,7 +168,7 @@ bodyClass: product-page
           {% for method in printMethods %}
             {% if method.id == methodId %}
               <article class="method-list__item">
-                <img src="{{ method.image | url }}" alt="{{ method.name }}" loading="lazy" width="560" height="420">
+                <img src="{{ method.image | url }}" alt="{{ method.imageAlt or method.name }}" loading="lazy" width="560" height="420">
                 <div><p>від {{ method.minOrder }} шт.</p><h3>{{ method.name }}</h3><span>{{ method.tagline }}</span></div>
               </article>
             {% endif %}

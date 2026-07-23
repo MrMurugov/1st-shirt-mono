@@ -20,7 +20,7 @@ bodyClass: printing-page
     {% for method in printMethods %}
       <article class="printing-method" id="{{ method.slug }}">
         <div class="printing-method__media">
-          <img src="{{ method.image | url }}" alt="Приклад: {{ method.name }} на текстилі" loading="lazy" width="960" height="720">
+          <img src="{{ method.image | url }}" alt="{{ method.imageAlt or method.name }}" loading="lazy" width="960" height="720">
           <span class="printing-method__number" aria-hidden="true">0{{ loop.index }}</span>
         </div>
         <div class="printing-method__body">
