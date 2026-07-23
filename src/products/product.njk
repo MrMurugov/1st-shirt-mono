@@ -31,7 +31,7 @@ bodyClass: product-page
           <img
             class="product-gallery__image"
             src="{{ product.image | url }}"
-            alt="{{ product.name }}, вигляд спереду"
+            alt="{{ product.imageAlt or (product.name ~ ', вигляд спереду') }}"
             width="960"
             height="960"
             data-gallery-main
@@ -48,11 +48,11 @@ bodyClass: product-page
             <button
               class="product-gallery__thumb is-active"
               type="button"
-              aria-label="Показати фото 1: {{ product.name }}, вигляд спереду"
+              aria-label="Показати фото 1: {{ product.imageAlt or (product.name ~ ', вигляд спереду') }}"
               aria-pressed="true"
               data-gallery-thumb
               data-gallery-src="{{ product.image | url }}"
-              data-gallery-alt="{{ product.name }}, вигляд спереду"
+              data-gallery-alt="{{ product.imageAlt or (product.name ~ ', вигляд спереду') }}"
               data-gallery-index="01"
             >
               <img src="{{ product.image | url }}" alt="" loading="lazy" width="180" height="180">

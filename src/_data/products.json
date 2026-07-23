@@ -7,12 +7,13 @@
     "categoryId": "t-shirts",
     "excerpt": "Щільна базова футболка унісекс для корпоративних тиражів.",
     "description": "Гладка гребінна бавовна добре тримає форму та підходить для великих зон друку. Посилена горловина й стабілізуюча тасьма розраховані на регулярне носіння.",
-    "image": "/assets/images/products/tshirt-base/01-studio-front.webp",
+    "image": "/assets/images/products/tshirt-base/02-studio-three-quarter-white.webp",
+    "imageAlt": "Футболка Base 180 з нанесенням «ВАШЕ ЛОГО», ракурс три чверті",
     "gallery": [
       {
-        "src": "/assets/images/products/tshirt-base/02-studio-three-quarter-white.webp",
-        "alt": "Футболка Base 180 з нанесенням «ВАШЕ ЛОГО», ракурс три чверті",
-        "role": "studio-three-quarter"
+        "src": "/assets/images/products/tshirt-base/01-studio-front.webp",
+        "alt": "Футболка Base 180 з нанесенням «ВАШЕ ЛОГО», вигляд спереду",
+        "role": "studio-front"
       },
       {
         "src": "/assets/images/products/tshirt-base/03-studio-back-blank.webp",
@@ -20,9 +21,9 @@
         "role": "studio-back-blank"
       },
       {
-        "src": "/assets/images/products/tshirt-base/04-branding-detail.webp",
-        "alt": "Макродеталь шовкодруку «ВАШЕ ЛОГО» на білій бавовні",
-        "role": "branding-detail"
+        "src": "/assets/images/products/tshirt-base/04-print-macro-v2.webp",
+        "alt": "Крупний план фактури шовкодруку «ВАШЕ ЛОГО» на білій бавовні",
+        "role": "print-detail"
       },
       {
         "src": "/assets/images/products/tshirt-base/05-lifestyle-barista.webp",
