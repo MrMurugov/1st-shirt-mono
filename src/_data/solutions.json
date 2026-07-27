@@ -5,7 +5,7 @@
     "title": "Корпоративні команди",
     "eyebrow": "Офіси та розподілені команди",
     "description": "Повсякденний одяг, welcome-набори та подарунки, які підтримують культуру компанії й не виглядають як стандартне промо.",
-    "image": "/assets/images/products/tshirt-premium/05-lifestyle-conference-coordinator.webp",
+    "image": "/assets/images/products/tshirt-premium/05-lifestyle-welcome-desk-v2.webp",
     "productIds": ["tshirt-premium", "hoodie-classic", "sweatshirt-core", "tote-everyday"],
     "benefits": [
       "Розмірні сітки для різних типів фігури",
@@ -21,7 +21,7 @@
     "title": "HoReCa",
     "eyebrow": "Кав'ярні, ресторани та готелі",
     "description": "Практична форма для залу, бару й кухні, що витримує часте прання та підсилює впізнаваність закладу.",
-    "image": "/assets/images/products/tshirt-base/06-lifestyle-waiter.webp",
+    "image": "/assets/images/products/tshirt-base/06-lifestyle-waiter-service-v2.webp",
     "productIds": ["polo-pro", "shirt-staff", "apron-bistro", "cap-six-panel"],
     "benefits": [
       "Тканини для інтенсивного використання",
@@ -53,7 +53,7 @@
     "title": "Події та промо",
     "eyebrow": "Фестивалі, конференції та активації",
     "description": "Помітний одяг для організаторів, волонтерів і гостей із маркуванням ролей та швидким виробничим циклом.",
-    "image": "/assets/images/products/hoodie-zip/04-lifestyle-venue-technician.webp",
+    "image": "/assets/images/products/hoodie-zip/04-lifestyle-venue-team-v2.webp",
     "productIds": ["tshirt-base", "longsleeve-base", "jacket-softshell", "cap-six-panel"],
     "benefits": [
       "Кольорове кодування команд",

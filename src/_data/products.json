@@ -21,13 +21,13 @@
         "role": "branding-detail"
       },
       {
-        "src": "/assets/images/products/tshirt-base/05-lifestyle-barista.webp",
-        "alt": "Бариста у футболці Base 180 готує еспресо в кав’ярні",
+        "src": "/assets/images/products/tshirt-base/05-lifestyle-barista-service-v2.webp",
+        "alt": "Бариста у футболці Base 180 передає гості готову каву",
         "role": "lifestyle-primary"
       },
       {
-        "src": "/assets/images/products/tshirt-base/06-lifestyle-waiter.webp",
-        "alt": "Офіціантка у футболці Base 180 обслуговує гостей ресторану",
+        "src": "/assets/images/products/tshirt-base/06-lifestyle-waiter-service-v2.webp",
+        "alt": "Офіціант у футболці Base 180 подає страву гостю ресторану",
         "role": "lifestyle-secondary"
       }
     ],
@@ -79,13 +79,13 @@
         "role": "branding-detail"
       },
       {
-        "src": "/assets/images/products/tshirt-premium/04-lifestyle-creative-director.webp",
-        "alt": "Креативний директор працює у футболці Premium 210 з логотипом",
+        "src": "/assets/images/products/tshirt-premium/04-lifestyle-creative-review-v2.webp",
+        "alt": "Креативна директорка у футболці Premium 210 обговорює з колегою зразок мерчу",
         "role": "lifestyle-primary"
       },
       {
-        "src": "/assets/images/products/tshirt-premium/05-lifestyle-conference-coordinator.webp",
-        "alt": "Координатор конференції у футболці Premium 210 перевіряє програму події",
+        "src": "/assets/images/products/tshirt-premium/05-lifestyle-welcome-desk-v2.webp",
+        "alt": "Координатор у футболці Premium 210 вітає учасницю біля welcome-стійки",
         "role": "lifestyle-secondary"
       }
     ],
@@ -257,8 +257,8 @@
         "role": "lifestyle-primary"
       },
       {
-        "src": "/assets/images/products/sweatshirt-core/05-lifestyle-workshop-coordinator.webp",
-        "alt": "Координатор майстер-класу готує робочі місця у світшоті Core 300",
+        "src": "/assets/images/products/sweatshirt-core/05-lifestyle-maker-review-v2.webp",
+        "alt": "Координаторка майстерні у світшоті Core 300 разом із колегою оцінює готовий виріб",
         "role": "lifestyle-secondary"
       }
     ],
@@ -369,8 +369,8 @@
         "role": "branding-detail"
       },
       {
-        "src": "/assets/images/products/hoodie-classic/04-lifestyle-motion-designer.webp",
-        "alt": "Моушн-дизайнер працює у худі Classic 320 з логотипом",
+        "src": "/assets/images/products/hoodie-classic/04-lifestyle-studio-collaboration-v2.webp",
+        "alt": "Моушн-дизайнер у худі Classic 320 обговорює роботу з колегою",
         "role": "lifestyle-primary"
       },
       {
@@ -427,8 +427,8 @@
         "role": "branding-detail"
       },
       {
-        "src": "/assets/images/products/hoodie-zip/04-lifestyle-venue-technician.webp",
-        "alt": "Технік концертного майданчика працює у худі Zip 330",
+        "src": "/assets/images/products/hoodie-zip/04-lifestyle-venue-team-v2.webp",
+        "alt": "Технік концертного майданчика у худі Zip 330 передає рацію колезі",
         "role": "lifestyle-primary"
       },
       {
@@ -600,8 +600,8 @@
         "role": "branding-detail"
       },
       {
-        "src": "/assets/images/products/jacket-softshell/04-lifestyle-field-surveyor.webp",
-        "alt": "Польовий інженер проводить вимірювання у куртці Softshell Pro",
+        "src": "/assets/images/products/jacket-softshell/04-lifestyle-site-handover-v2.webp",
+        "alt": "Польовий інженер у куртці Softshell Pro обговорює вимірювання з колегою",
         "role": "lifestyle-primary"
       },
       {
@@ -832,8 +832,8 @@
         "role": "branding-detail"
       },
       {
-        "src": "/assets/images/products/work-trousers-strong/04-lifestyle-kitchen-installer.webp",
-        "alt": "Монтажник встановлює кухонну секцію у робочих штанах Strong",
+        "src": "/assets/images/products/work-trousers-strong/04-lifestyle-installer-handover-v2.webp",
+        "alt": "Монтажник у робочих штанах Strong показує колезі готову кухонну секцію",
         "role": "lifestyle-primary"
       },
       {

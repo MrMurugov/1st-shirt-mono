@@ -44,6 +44,18 @@ navKey: catalog
             <span class="product-gallery__count" aria-live="polite" data-gallery-count>
               01 / {% if product.gallery.length + 1 < 10 %}0{% endif %}{{ product.gallery.length + 1 }}
             </span>
+            <button
+              class="product-gallery__arrow product-gallery__arrow--prev"
+              type="button"
+              aria-label="Попереднє фото товару"
+              data-gallery-prev
+            ><span aria-hidden="true">←</span></button>
+            <button
+              class="product-gallery__arrow product-gallery__arrow--next"
+              type="button"
+              aria-label="Наступне фото товару"
+              data-gallery-next
+            ><span aria-hidden="true">→</span></button>
           {% endif %}
         </div>
 

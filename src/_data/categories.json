@@ -5,7 +5,7 @@
     "name": "Літній одяг",
     "parentId": null,
     "description": "Базові моделі для промокоманд, офісів, подій і корпоративного мерчу.",
-    "image": "/assets/images/products/tshirt-premium/04-lifestyle-creative-director.webp",
+    "image": "/assets/images/products/tshirt-premium/04-lifestyle-creative-review-v2.webp",
     "featured": true,
     "order": 1
   },
@@ -15,7 +15,7 @@
     "name": "Футболки",
     "parentId": "summer-wear",
     "description": "Футболки різної щільності та посадки для друку й вишивки.",
-    "image": "/assets/images/products/tshirt-base/05-lifestyle-barista.webp",
+    "image": "/assets/images/products/tshirt-base/05-lifestyle-barista-service-v2.webp",
     "featured": true,
     "order": 1
   },
@@ -45,7 +45,7 @@
     "name": "Кофти",
     "parentId": null,
     "description": "Теплий корпоративний одяг із начосом або петльовою виворітною стороною.",
-    "image": "/assets/images/products/sweatshirt-core/05-lifestyle-workshop-coordinator.webp",
+    "image": "/assets/images/products/sweatshirt-core/05-lifestyle-maker-review-v2.webp",
     "featured": true,
     "order": 2
   },
@@ -75,7 +75,7 @@
     "name": "Худі",
     "parentId": "sweaters",
     "description": "Універсальні худі для внутрішніх команд, подарунків і мерчу.",
-    "image": "/assets/images/products/hoodie-classic/04-lifestyle-motion-designer.webp",
+    "image": "/assets/images/products/hoodie-classic/04-lifestyle-studio-collaboration-v2.webp",
     "featured": true,
     "order": 3
   },
@@ -105,7 +105,7 @@
     "name": "Верхній одяг",
     "parentId": null,
     "description": "Захисний верхній шар для виїзних команд і роботи просто неба.",
-    "image": "/assets/images/products/jacket-softshell/04-lifestyle-field-surveyor.webp",
+    "image": "/assets/images/products/jacket-softshell/04-lifestyle-site-handover-v2.webp",
     "featured": true,
     "order": 5
   },
@@ -135,7 +135,7 @@
     "name": "Спецодяг",
     "parentId": null,
     "description": "Зносостійкий робочий одяг із функціональними кишенями та посиленими зонами.",
-    "image": "/assets/images/products/work-trousers-strong/04-lifestyle-kitchen-installer.webp",
+    "image": "/assets/images/products/work-trousers-strong/04-lifestyle-installer-handover-v2.webp",
     "featured": true,
     "order": 6
   },

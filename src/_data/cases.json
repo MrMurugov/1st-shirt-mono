@@ -5,16 +5,16 @@
     "title": "Форма для команди міських кав'ярень",
     "client": "Демонстраційний кейс: мережа кав'ярень",
     "industry": "horeca",
-    "image": "/assets/images/cases/case-coffee-team-v2.webp",
+    "image": "/assets/images/cases/case-coffee-team-v3.webp",
     "gallery": [
-      "/assets/images/cases/case-coffee-team-v2.webp"
+      "/assets/images/cases/case-coffee-team-v3.webp"
     ],
     "productIds": ["tshirt-base", "apron-bistro", "cap-six-panel"],
     "printMethodIds": ["embroidery", "screen-printing"],
     "quantity": 186,
     "leadTime": "12 робочих днів",
     "challenge": "Зібрати впізнаваний комплект для бариста й адміністраторів у трьох форматах закладів.",
-    "solution": "Використали один графітовий колір текстилю, теракотову вишивку на фартухах і компактний шовкодрук на футболках.",
+    "solution": "Використали один графітовий колір текстилю, кобальтову вишивку на фартухах і компактний шовкодрук на футболках.",
     "result": "Єдина система форми, яку легко дозамовляти окремими позиціями.",
     "featured": true
   },
@@ -43,9 +43,9 @@
     "title": "Одяг для команди літнього фестивалю",
     "client": "Демонстраційний кейс: культурна подія",
     "industry": "events",
-    "image": "/assets/images/cases/case-festival-crew-v2.webp",
+    "image": "/assets/images/cases/case-festival-crew-v3.webp",
     "gallery": [
-      "/assets/images/cases/case-festival-crew-v2.webp"
+      "/assets/images/cases/case-festival-crew-v3.webp"
     ],
     "productIds": ["tshirt-base", "longsleeve-base", "track-jacket-team", "jacket-softshell"],
     "printMethodIds": ["screen-printing", "sublimation", "transfer"],

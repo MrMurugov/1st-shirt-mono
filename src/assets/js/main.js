@@ -351,38 +351,75 @@
   document.querySelectorAll("[data-product-gallery]").forEach((gallery) => {
     const mainImage = gallery.querySelector("[data-gallery-main]");
     const counter = gallery.querySelector("[data-gallery-count]");
+    const thumbsContainer = gallery.querySelector(".product-gallery__thumbs");
     const thumbs = [...gallery.querySelectorAll("[data-gallery-thumb]")];
+    const previousButton = gallery.querySelector("[data-gallery-prev]");
+    const nextButton = gallery.querySelector("[data-gallery-next]");
 
     if (!mainImage || thumbs.length < 2) return;
 
-    thumbs.forEach((thumb) => {
-      thumb.addEventListener("click", () => {
-        const nextSrc = thumb.dataset.gallerySrc;
-        const nextAlt = thumb.dataset.galleryAlt;
-        if (!nextSrc) return;
+    let activeIndex = Math.max(
+      0,
+      thumbs.findIndex((thumb) => thumb.classList.contains("is-active"))
+    );
 
-        mainImage.src = nextSrc;
-        mainImage.alt = nextAlt || "";
-        if (counter) {
-          counter.textContent = `${thumb.dataset.galleryIndex} / ${String(thumbs.length).padStart(2, "0")}`;
-        }
+    const showGalleryImage = (requestedIndex) => {
+      const index = (requestedIndex + thumbs.length) % thumbs.length;
+      const thumb = thumbs[index];
+      const nextSrc = thumb.dataset.gallerySrc;
+      const nextAlt = thumb.dataset.galleryAlt;
+      if (!nextSrc) return;
 
-        thumbs.forEach((item) => {
-          const active = item === thumb;
-          item.classList.toggle("is-active", active);
-          item.setAttribute("aria-pressed", String(active));
-        });
+      activeIndex = index;
+      mainImage.src = nextSrc;
+      mainImage.alt = nextAlt || "";
+      if (counter) {
+        counter.textContent = `${String(index + 1).padStart(2, "0")} / ${String(thumbs.length).padStart(2, "0")}`;
+      }
 
-        if (!reducedMotion.matches) {
-          mainImage.animate(
-            [
-              { opacity: 0.45, transform: "scale(0.992)" },
-              { opacity: 1, transform: "scale(1)" }
-            ],
-            { duration: 260, easing: "ease-out" }
-          );
-        }
+      thumbs.forEach((item, itemIndex) => {
+        const active = itemIndex === index;
+        item.classList.toggle("is-active", active);
+        item.setAttribute("aria-pressed", String(active));
       });
+
+      if (thumbsContainer) {
+        const thumbRect = thumb.getBoundingClientRect();
+        const containerRect = thumbsContainer.getBoundingClientRect();
+        const outsideViewport =
+          thumbRect.left < containerRect.left || thumbRect.right > containerRect.right;
+
+        if (outsideViewport) {
+          thumb.scrollIntoView({
+            behavior: reducedMotion.matches ? "auto" : "smooth",
+            block: "nearest",
+            inline: "nearest"
+          });
+        }
+      }
+
+      if (!reducedMotion.matches) {
+        mainImage.animate(
+          [
+            { opacity: 0.45, transform: "scale(0.992)" },
+            { opacity: 1, transform: "scale(1)" }
+          ],
+          { duration: 260, easing: "ease-out" }
+        );
+      }
+    };
+
+    thumbs.forEach((thumb, index) => {
+      thumb.addEventListener("click", () => showGalleryImage(index));
+    });
+
+    previousButton?.addEventListener("click", () => showGalleryImage(activeIndex - 1));
+    nextButton?.addEventListener("click", () => showGalleryImage(activeIndex + 1));
+
+    gallery.addEventListener("keydown", (event) => {
+      if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+      event.preventDefault();
+      showGalleryImage(activeIndex + (event.key === "ArrowLeft" ? -1 : 1));
     });
   });
 

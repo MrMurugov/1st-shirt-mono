@@ -54,6 +54,12 @@ navKey: printing
     <header class="section-heading section-heading--split"><div><p class="eyebrow">Швидке порівняння</p><h2 class="section-heading__title" id="comparison-title">Який спосіб обрати?</h2></div><p class="section-heading__aside">Це базова орієнтація. Точну рекомендацію дамо після перевірки макета й тканини.</p></header>
     <div class="table-wrap">
       <table class="comparison-table">
+        <colgroup>
+          <col class="comparison-table__technology">
+          <col class="comparison-table__minimum">
+          <col class="comparison-table__lead-time">
+          <col class="comparison-table__application">
+        </colgroup>
         <thead><tr><th scope="col">Технологія</th><th scope="col">Мін. тираж</th><th scope="col">Строк</th><th scope="col">Основне застосування</th></tr></thead>
         <tbody>{% for method in printMethods %}<tr><th scope="row">{{ method.shortName }}</th><td>від {{ method.minOrder }} шт.</td><td>{{ method.leadTime }}</td><td>{{ method.bestFor }}</td></tr>{% endfor %}</tbody>
       </table>

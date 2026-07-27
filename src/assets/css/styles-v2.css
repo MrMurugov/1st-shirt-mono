@@ -640,18 +640,34 @@ h3 {
   grid-template-columns: 28px minmax(0, 1fr) auto;
   align-items: center;
   gap: 12px;
-  padding-block: 12px;
+  padding: 12px;
   font-size: clamp(25px, 6.5vw, 35px);
   font-weight: 750;
   line-height: 1;
   letter-spacing: -0.045em;
-  transition: color var(--transition), padding-left var(--transition);
+  transition: color var(--transition), background-color var(--transition);
 }
 
 .mobile-nav__link:hover,
 .mobile-nav__link[aria-current="page"] {
   color: var(--sun);
-  padding-left: 6px;
+}
+
+.mobile-menu :focus-visible {
+  outline: 2px solid var(--sun);
+  outline-offset: 3px;
+  box-shadow: none !important;
+}
+
+.mobile-nav__link:focus,
+.mobile-nav__link:focus-visible {
+  outline: 0;
+  background: rgba(255, 216, 77, 0.1);
+  box-shadow: inset 3px 0 0 var(--sun) !important;
+}
+
+.mobile-menu .button:focus-visible {
+  outline-color: var(--white);
 }
 
 .mobile-nav__index {
@@ -2318,6 +2334,7 @@ h3 {
 
 .product-gallery__stage {
   position: relative;
+  aspect-ratio: 1;
   overflow: hidden;
   border: 1px solid var(--ink);
   background: var(--surface);
@@ -2326,7 +2343,7 @@ h3 {
 .product-gallery__image {
   display: block;
   width: 100%;
-  aspect-ratio: 1;
+  height: 100%;
   object-fit: cover;
   background: var(--surface);
 }
@@ -2346,6 +2363,7 @@ h3 {
 
 .product-gallery__count {
   position: absolute;
+  z-index: 2;
   right: 14px;
   bottom: 14px;
   padding: 8px 10px;
@@ -2355,6 +2373,54 @@ h3 {
   font-size: 10px;
   font-weight: 750;
   letter-spacing: 0.08em;
+}
+
+.product-gallery__arrow {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  padding: 0;
+  color: var(--ink);
+  background: rgba(255, 253, 247, 0.92);
+  border: 1px solid var(--ink);
+  box-shadow: 4px 4px 0 rgba(255, 216, 77, 0.9);
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition:
+    color var(--transition),
+    background-color var(--transition),
+    box-shadow var(--transition),
+    transform var(--transition);
+}
+
+.product-gallery__arrow--prev {
+  left: 14px;
+}
+
+.product-gallery__arrow--next {
+  right: 14px;
+}
+
+.product-gallery__arrow:hover {
+  color: var(--sun-dark);
+  background: var(--sun);
+  box-shadow: 2px 2px 0 var(--cobalt);
+  transform: translateY(-50%) translate(2px, 2px);
+}
+
+.product-gallery__arrow:focus-visible {
+  outline: 3px solid var(--cobalt-deep);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px var(--sun) !important;
+}
+
+.product-gallery__arrow span {
+  font-size: 25px;
+  line-height: 1;
 }
 
 .product-gallery__thumbs {
@@ -2618,6 +2684,27 @@ h3 {
   width: 100%;
   min-width: 680px;
   border-collapse: collapse;
+}
+
+.comparison-table {
+  min-width: 760px;
+  table-layout: fixed;
+}
+
+.comparison-table__technology {
+  width: 25%;
+}
+
+.comparison-table__minimum {
+  width: 20%;
+}
+
+.comparison-table__lead-time {
+  width: 22%;
+}
+
+.comparison-table__application {
+  width: 33%;
 }
 
 .price-table th,
@@ -3882,12 +3969,11 @@ h3 {
   }
 
   .product-gallery__image {
-    aspect-ratio: 4 / 3;
-    object-fit: contain;
+    object-fit: cover;
   }
 
   .product-gallery__thumbs {
-    grid-template-columns: repeat(5, 64px);
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 
   .product-summary {
@@ -3953,12 +4039,11 @@ h3 {
   }
 
   .product-gallery__image {
-    aspect-ratio: 4 / 3;
-    object-fit: contain;
+    object-fit: cover;
   }
 
   .product-gallery__thumbs {
-    grid-template-columns: repeat(5, 64px);
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 
   .product-detail__hero {
@@ -4066,11 +4151,11 @@ h3 {
   }
 
   .product-gallery__image {
-    aspect-ratio: 3 / 2;
+    object-fit: cover;
   }
 
   .product-gallery__thumbs {
-    grid-template-columns: repeat(5, 52px);
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 
   .product-detail__hero {
@@ -4096,7 +4181,7 @@ h3 {
   .mobile-nav__link {
     min-height: 46px;
     padding-block: 7px;
-    font-size: clamp(22px, 5.4vh, 29px);
+    font-size: clamp(20px, 4.2vh, 23px);
   }
 
   .mobile-menu__footer {

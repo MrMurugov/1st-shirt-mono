@@ -52,6 +52,10 @@
 - Каталог использует стабильные ID таксономий в `data-category`,
   `data-parent-category` и `data-methods`; при переносе эти ID заменяются slug/term ID
   WooCommerce без изменения DOM-компонентов.
+- Галерея товара сохраняет `data-product-gallery`, `data-gallery-main`,
+  `data-gallery-count`, `data-gallery-thumb`, `data-gallery-prev` и
+  `data-gallery-next`: миниатюры и обе стрелки используют один и тот же
+  циклический переключатель кадров.
 - На статическом стенде submit намеренно демонстрационный. В WordPress обработчик
   должен заменить только transport-слой, сохранив поля, busy/status states и разметку.
 
