@@ -3,18 +3,27 @@
 
   const root = document.documentElement;
   const body = document.body;
+  const siteHeader = document.querySelector("[data-site-header]");
   const menuToggle = document.querySelector("[data-menu-toggle]");
+  const menuToggleLabel = document.querySelector("[data-menu-toggle-label]");
   const mobileMenu = document.querySelector("[data-mobile-menu]");
   const mobileMenuShell = document.querySelector("[data-mobile-menu-shell]");
-  const menuClose = document.querySelector("[data-menu-close]");
   const quoteModal = document.querySelector("[data-quote-modal]");
   const quoteClose = document.querySelector("[data-quote-close]");
+  const menuBackground = [
+    document.querySelector(".topbar"),
+    document.querySelector("main"),
+    document.querySelector(".site-footer"),
+    quoteModal
+  ].filter(Boolean);
   const mobileNavigation = window.matchMedia("(max-width: 1180px)");
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const menuStateKey = "__formaBureauMenu";
 
   let menuHistoryActive = false;
   let menuClosing = false;
+  let menuPageScrollY = 0;
+  let menuScrollFrame = 0;
   let actionAfterMenuClose = null;
 
   const setOverlayClasses = () => {
@@ -25,6 +34,9 @@
     root.classList.toggle("modal-open", modalOpen);
     body.classList.toggle("menu-open", menuOpen);
     body.classList.toggle("modal-open", modalOpen);
+    menuBackground.forEach((element) => {
+      element.inert = menuOpen;
+    });
   };
 
   const focusableSelector = [
@@ -63,24 +75,66 @@
     }
   };
 
+  const trapMenuFocus = (event) => {
+    if (event.key !== "Tab" || !mobileMenu?.open) return;
+
+    const focusable = [siteHeader, mobileMenu]
+      .filter(Boolean)
+      .flatMap((scope) => [...scope.querySelectorAll(focusableSelector)])
+      .filter((element) => {
+        const style = window.getComputedStyle(element);
+        return style.visibility !== "hidden" && style.display !== "none" && element.getClientRects().length > 0;
+      });
+
+    if (!focusable.length) {
+      event.preventDefault();
+      menuToggle?.focus({ preventScroll: true });
+      return;
+    }
+
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    const activeIndex = focusable.indexOf(document.activeElement);
+
+    if (event.shiftKey && activeIndex <= 0) {
+      event.preventDefault();
+      last.focus({ preventScroll: true });
+    } else if (!event.shiftKey && activeIndex === focusable.length - 1) {
+      event.preventDefault();
+      first.focus({ preventScroll: true });
+    }
+  };
+
+  const syncMobileMenuTop = () => {
+    if (!siteHeader || !mobileMenu) return;
+    const headerBottom = Math.max(0, Math.min(window.innerHeight, siteHeader.getBoundingClientRect().bottom));
+    root.style.setProperty("--mobile-menu-top", `${Math.round(headerBottom)}px`);
+  };
+
   const setMenuToggleState = (open) => {
     if (!menuToggle) return;
     menuToggle.setAttribute("aria-expanded", String(open));
     menuToggle.setAttribute("aria-label", open ? "Закрити меню" : "Відкрити меню");
+    if (menuToggleLabel) menuToggleLabel.textContent = open ? "Закрити" : "Меню";
   };
 
   const runMenuCloseAction = () => {
     const action = actionAfterMenuClose;
     actionAfterMenuClose = null;
-    if (typeof action === "function") action();
+    if (typeof action === "function") {
+      action();
+      return;
+    }
+
+    if (mobileNavigation.matches) menuToggle?.focus({ preventScroll: true });
   };
 
   const finishMenuClose = () => {
     if (!mobileMenu?.open) {
       menuClosing = false;
       setMenuToggleState(false);
-      runMenuCloseAction();
       setOverlayClasses();
+      runMenuCloseAction();
       return;
     }
 
@@ -90,8 +144,8 @@
       if (mobileMenu.open) mobileMenu.close();
       menuClosing = false;
       setMenuToggleState(false);
-      runMenuCloseAction();
       setOverlayClasses();
+      runMenuCloseAction();
     };
 
     window.setTimeout(complete, reducedMotion.matches ? 0 : 280);
@@ -127,16 +181,19 @@
       menuHistoryActive = Boolean(history.state?.[menuStateKey]);
     }
 
-    mobileMenu.showModal();
+    menuPageScrollY = window.scrollY;
+    syncMobileMenuTop();
+    mobileMenu.show();
     setMenuToggleState(true);
     setOverlayClasses();
 
     window.requestAnimationFrame(() => {
+      syncMobileMenuTop();
       mobileMenu.classList.add("is-visible");
       const preferredFocus =
         mobileMenu.querySelector('[aria-current="page"]') ||
         mobileMenu.querySelector(".mobile-nav__link") ||
-        menuClose;
+        menuToggle;
       preferredFocus?.focus({ preventScroll: true });
     });
   };
@@ -152,13 +209,10 @@
     else openMenu();
   });
 
-  menuClose?.addEventListener("click", () => requestMenuClose());
-
   mobileMenu?.addEventListener("cancel", (event) => {
     event.preventDefault();
     requestMenuClose();
   });
-  mobileMenu?.addEventListener("keydown", (event) => trapDialogFocus(mobileMenu, event));
 
   mobileMenu?.addEventListener("close", () => {
     mobileMenu.classList.remove("is-visible");
@@ -180,7 +234,7 @@
     if (clickedOutside) requestMenuClose();
   });
 
-  mobileMenu?.querySelectorAll(".mobile-nav__link, .brand--menu").forEach((link) => {
+  mobileMenu?.querySelectorAll(".mobile-nav__link").forEach((link) => {
     link.addEventListener("click", (event) => {
       event.preventDefault();
       requestMenuClose(() => window.location.assign(link.href));
@@ -206,6 +260,40 @@
       });
     }
   });
+
+  document.addEventListener("keydown", (event) => {
+    if (!mobileMenu?.open) return;
+
+    if (event.key === "Escape") {
+      event.preventDefault();
+      requestMenuClose();
+      return;
+    }
+
+    trapMenuFocus(event);
+  });
+
+  const updateOpenMenuTop = () => {
+    if (mobileMenu?.open) syncMobileMenuTop();
+  };
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!mobileMenu?.open || Math.abs(window.scrollY - menuPageScrollY) <= 1) return;
+      window.cancelAnimationFrame(menuScrollFrame);
+      menuScrollFrame = window.requestAnimationFrame(() => {
+        window.scrollTo({ top: menuPageScrollY, behavior: "auto" });
+      });
+    },
+    { passive: true }
+  );
+
+  window.addEventListener("resize", updateOpenMenuTop);
+  window.visualViewport?.addEventListener("resize", updateOpenMenuTop);
+  if ("ResizeObserver" in window && siteHeader) {
+    new ResizeObserver(updateOpenMenuTop).observe(siteHeader);
+  }
 
   window.addEventListener("pagehide", () => {
     mobileMenu?.classList.remove("is-visible");
@@ -541,16 +629,114 @@
     applyFilters();
   }
 
-  document.querySelectorAll("[data-accordion]").forEach((accordion) => {
-    accordion.addEventListener(
-      "toggle",
-      (event) => {
-        if (event.target.tagName !== "DETAILS" || !event.target.open) return;
-        accordion.querySelectorAll("details[open]").forEach((item) => {
-          if (item !== event.target) item.removeAttribute("open");
-        });
+  document.querySelectorAll("[data-table-scroll]").forEach((tableScroll) => {
+    const viewport = tableScroll.querySelector("[data-table-scroll-viewport]");
+    const hint = tableScroll.querySelector("[data-table-scroll-hint]");
+    if (!viewport) return;
+
+    let updateFrame = 0;
+
+    const updateTableScroll = () => {
+      const maxScroll = Math.max(0, viewport.scrollWidth - viewport.clientWidth);
+      const isScrollable = maxScroll > 2;
+      const isAtStart = viewport.scrollLeft <= 2;
+      const isAtEnd = viewport.scrollLeft >= maxScroll - 2;
+
+      tableScroll.classList.toggle("is-scrollable", isScrollable);
+      tableScroll.classList.toggle("is-at-start", !isScrollable || isAtStart);
+      tableScroll.classList.toggle("is-at-end", !isScrollable || isAtEnd);
+      if (hint) hint.hidden = !isScrollable;
+    };
+
+    const requestTableScrollUpdate = () => {
+      window.cancelAnimationFrame(updateFrame);
+      updateFrame = window.requestAnimationFrame(updateTableScroll);
+    };
+
+    viewport.addEventListener(
+      "scroll",
+      () => {
+        if (viewport.scrollLeft > 12) tableScroll.classList.add("has-interacted");
+        requestTableScrollUpdate();
       },
-      true
+      { passive: true }
     );
+
+    if ("ResizeObserver" in window) {
+      new ResizeObserver(requestTableScrollUpdate).observe(viewport);
+    } else {
+      window.addEventListener("resize", requestTableScrollUpdate);
+    }
+
+    updateTableScroll();
+    window.requestAnimationFrame(updateTableScroll);
+  });
+
+  document.querySelectorAll("[data-accordion]").forEach((accordion) => {
+    const items = [...accordion.querySelectorAll("details")];
+    const closeJobs = new Map();
+
+    const cancelClose = (item) => {
+      const job = closeJobs.get(item);
+      if (!job) return;
+      window.clearTimeout(job.timer);
+      job.content.removeEventListener("transitionend", job.onTransitionEnd);
+      closeJobs.delete(item);
+      item.classList.remove("is-closing");
+    };
+
+    const finishClose = (item) => {
+      const job = closeJobs.get(item);
+      if (job) {
+        window.clearTimeout(job.timer);
+        job.content.removeEventListener("transitionend", job.onTransitionEnd);
+        closeJobs.delete(item);
+      }
+
+      item.open = false;
+      item.classList.remove("is-closing");
+    };
+
+    const closeItem = (item) => {
+      if (!item.open || item.classList.contains("is-closing")) return;
+      const content = item.querySelector(".accordion__content");
+      if (!content || reducedMotion.matches) {
+        finishClose(item);
+        return;
+      }
+
+      item.classList.add("is-closing");
+
+      const onTransitionEnd = (event) => {
+        if (event.target === content && event.propertyName === "grid-template-rows") {
+          finishClose(item);
+        }
+      };
+      const timer = window.setTimeout(() => finishClose(item), 380);
+
+      closeJobs.set(item, { content, onTransitionEnd, timer });
+      content.addEventListener("transitionend", onTransitionEnd);
+    };
+
+    items.forEach((item) => {
+      const summary = item.querySelector("summary");
+      if (!summary) return;
+
+      summary.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        if (item.open && !item.classList.contains("is-closing")) {
+          closeItem(item);
+          return;
+        }
+
+        items.forEach((sibling) => {
+          if (sibling !== item) closeItem(sibling);
+        });
+
+        cancelClose(item);
+        item.open = true;
+      });
+    });
   });
 })();

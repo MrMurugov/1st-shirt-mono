@@ -41,11 +41,12 @@
 ## Интерактивные контракты
 
 - Desktop- и mobile-навигация получают один массив пунктов. Мобильная версия выводится
-  в нативном `<dialog>`-drawer; WordPress должен сохранить атрибуты
-  `data-menu-toggle`, `data-mobile-menu`, `data-menu-close` и `aria-current`.
+  в нативном немодальном `<dialog>`-drawer под настоящим sticky-header; WordPress должен
+  сохранить атрибуты `data-site-header`, `data-menu-toggle`, `data-menu-toggle-label`,
+  `data-mobile-menu`, `data-mobile-menu-shell` и `aria-current`.
 - Единый breakpoint навигации — `1180px` одновременно в CSS и `matchMedia()` в JS.
-  Drawer поддерживает Escape, backdrop, системную кнопку Back, возврат фокуса,
-  safe-area и независимую прокрутку.
+  Настоящая кнопка header открывает и закрывает drawer; он поддерживает Escape,
+  затемнение, системную кнопку Back, возврат фокуса, safe-area и независимую прокрутку.
 - Любая CTA расчёта может передать `product`, `category`, `solution` и `method`
   через query string и соответствующие `data-*` атрибуты. Отдельная страница формы
   и modal используют один и тот же `quoteContext`.
@@ -56,6 +57,12 @@
   `data-gallery-count`, `data-gallery-thumb`, `data-gallery-prev` и
   `data-gallery-next`: миниатюры и обе стрелки используют один и тот же
   циклический переключатель кадров.
+- FAQ сохраняет структуру `data-accordion` → `<details>` → `.accordion__content`
+  → `.accordion__content-inner`: JavaScript координирует плавное закрытие соседней
+  строки, а без JavaScript остаётся штатное поведение `<details>`.
+- Каждая широкая таблица оборачивается в `data-table-scroll` с
+  `data-table-scroll-viewport` и `data-table-scroll-hint`: подсказка, edge-fade и
+  состояния начала/конца включаются только при реальном горизонтальном overflow.
 - На статическом стенде submit намеренно демонстрационный. В WordPress обработчик
   должен заменить только transport-слой, сохранив поля, busy/status states и разметку.
 

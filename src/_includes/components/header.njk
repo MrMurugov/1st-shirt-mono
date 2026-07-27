@@ -39,7 +39,7 @@
         <span class="menu-toggle__line"></span>
         <span class="menu-toggle__line"></span>
       </span>
-      <span class="menu-toggle__label">Меню</span>
+      <span class="menu-toggle__label" data-menu-toggle-label>Меню</span>
     </button>
 
     <a
@@ -56,24 +56,14 @@
   class="mobile-menu"
   id="mobile-navigation"
   aria-labelledby="mobile-navigation-title"
+  aria-describedby="mobile-navigation-description"
   data-mobile-menu
 >
   <div class="mobile-menu__shell" data-mobile-menu-shell>
-    <div class="mobile-menu__header">
-      <a class="brand brand--menu" href="{{ '/' | url }}" aria-label="{{ site.name }} — на головну">
-        <span class="brand__mark" aria-hidden="true">F/B</span>
-        <span class="brand__name">Forma Bureau</span>
-      </a>
-      <button class="mobile-menu__close" type="button" aria-label="Закрити меню" data-menu-close>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </button>
-    </div>
-
     <div class="mobile-menu__scroll">
       <div class="mobile-menu__intro">
         <p class="eyebrow eyebrow--light" id="mobile-navigation-title">Навігація</p>
-        <p>Одяг і брендування для команд від {{ site.minimumOrder }} одиниць</p>
+        <p id="mobile-navigation-description">Одяг і брендування для команд від {{ site.minimumOrder }} одиниць</p>
       </div>
 
       <nav class="mobile-nav" aria-label="Мобільна навігація">

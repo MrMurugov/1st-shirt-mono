@@ -52,17 +52,24 @@ navKey: printing
 <section class="section section--tint method-comparison" aria-labelledby="comparison-title">
   <div class="container">
     <header class="section-heading section-heading--split"><div><p class="eyebrow">Швидке порівняння</p><h2 class="section-heading__title" id="comparison-title">Який спосіб обрати?</h2></div><p class="section-heading__aside">Це базова орієнтація. Точну рекомендацію дамо після перевірки макета й тканини.</p></header>
-    <div class="table-wrap">
-      <table class="comparison-table">
-        <colgroup>
-          <col class="comparison-table__technology">
-          <col class="comparison-table__minimum">
-          <col class="comparison-table__lead-time">
-          <col class="comparison-table__application">
-        </colgroup>
-        <thead><tr><th scope="col">Технологія</th><th scope="col">Мін. тираж</th><th scope="col">Строк</th><th scope="col">Основне застосування</th></tr></thead>
-        <tbody>{% for method in printMethods %}<tr><th scope="row">{{ method.shortName }}</th><td>від {{ method.minOrder }} шт.</td><td>{{ method.leadTime }}</td><td>{{ method.bestFor }}</td></tr>{% endfor %}</tbody>
-      </table>
+    <div class="table-scroll" data-table-scroll>
+      <p class="table-scroll__hint" id="comparison-scroll-hint" data-table-scroll-hint hidden>
+        <span>Проведіть вбік — є ще колонки</span><span class="table-scroll__gesture" aria-hidden="true">↔</span>
+      </p>
+      <div class="table-scroll__frame">
+        <div class="table-wrap" data-table-scroll-viewport tabindex="0" role="region" aria-labelledby="comparison-title" aria-describedby="comparison-scroll-hint">
+          <table class="comparison-table">
+            <colgroup>
+              <col class="comparison-table__technology">
+              <col class="comparison-table__minimum">
+              <col class="comparison-table__lead-time">
+              <col class="comparison-table__application">
+            </colgroup>
+            <thead><tr><th scope="col">Технологія</th><th scope="col">Мін. тираж</th><th scope="col">Строк</th><th scope="col">Основне застосування</th></tr></thead>
+            <tbody>{% for method in printMethods %}<tr><th scope="row">{{ method.shortName }}</th><td>від {{ method.minOrder }} шт.</td><td>{{ method.leadTime }}</td><td>{{ method.bestFor }}</td></tr>{% endfor %}</tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </div>
 </section>
