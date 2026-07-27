@@ -1,83 +1,330 @@
 (() => {
   "use strict";
 
+  const root = document.documentElement;
   const body = document.body;
   const menuToggle = document.querySelector("[data-menu-toggle]");
-  const siteNav = document.querySelector("[data-site-nav]");
+  const mobileMenu = document.querySelector("[data-mobile-menu]");
+  const mobileMenuShell = document.querySelector("[data-mobile-menu-shell]");
+  const menuClose = document.querySelector("[data-menu-close]");
   const quoteModal = document.querySelector("[data-quote-modal]");
   const quoteClose = document.querySelector("[data-quote-close]");
+  const mobileNavigation = window.matchMedia("(max-width: 1180px)");
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const menuStateKey = "__formaBureauMenu";
 
-  const closeMenu = () => {
-    if (!menuToggle || !siteNav) return;
-    menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.setAttribute("aria-label", "Відкрити меню");
-    siteNav.classList.remove("is-open");
-    body.classList.remove("menu-open");
+  let menuHistoryActive = false;
+  let menuClosing = false;
+  let actionAfterMenuClose = null;
+
+  const setOverlayClasses = () => {
+    const menuOpen = Boolean(mobileMenu?.open);
+    const modalOpen = Boolean(quoteModal?.open);
+
+    root.classList.toggle("menu-open", menuOpen);
+    root.classList.toggle("modal-open", modalOpen);
+    body.classList.toggle("menu-open", menuOpen);
+    body.classList.toggle("modal-open", modalOpen);
   };
 
-  if (menuToggle && siteNav) {
-    menuToggle.addEventListener("click", () => {
-      const willOpen = menuToggle.getAttribute("aria-expanded") !== "true";
-      menuToggle.setAttribute("aria-expanded", String(willOpen));
-      menuToggle.setAttribute("aria-label", willOpen ? "Закрити меню" : "Відкрити меню");
-      siteNav.classList.toggle("is-open", willOpen);
-      body.classList.toggle("menu-open", willOpen);
+  const focusableSelector = [
+    "a[href]",
+    "button:not([disabled])",
+    "input:not([disabled]):not([type='hidden'])",
+    "select:not([disabled])",
+    "textarea:not([disabled])",
+    "[tabindex]:not([tabindex='-1'])"
+  ].join(",");
+
+  const trapDialogFocus = (dialog, event) => {
+    if (event.key !== "Tab" || !dialog?.open) return;
+
+    const focusable = [...dialog.querySelectorAll(focusableSelector)].filter((element) => {
+      const style = window.getComputedStyle(element);
+      return style.visibility !== "hidden" && style.display !== "none" && element.getClientRects().length > 0;
     });
 
-    siteNav.addEventListener("click", (event) => {
-      if (event.target.closest("a")) closeMenu();
+    if (!focusable.length) {
+      event.preventDefault();
+      dialog.focus({ preventScroll: true });
+      return;
+    }
+
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    const activeInside = dialog.contains(document.activeElement);
+
+    if (event.shiftKey && (!activeInside || document.activeElement === first)) {
+      event.preventDefault();
+      last.focus({ preventScroll: true });
+    } else if (!event.shiftKey && (!activeInside || document.activeElement === last)) {
+      event.preventDefault();
+      first.focus({ preventScroll: true });
+    }
+  };
+
+  const setMenuToggleState = (open) => {
+    if (!menuToggle) return;
+    menuToggle.setAttribute("aria-expanded", String(open));
+    menuToggle.setAttribute("aria-label", open ? "Закрити меню" : "Відкрити меню");
+  };
+
+  const runMenuCloseAction = () => {
+    const action = actionAfterMenuClose;
+    actionAfterMenuClose = null;
+    if (typeof action === "function") action();
+  };
+
+  const finishMenuClose = () => {
+    if (!mobileMenu?.open) {
+      menuClosing = false;
+      setMenuToggleState(false);
+      runMenuCloseAction();
+      setOverlayClasses();
+      return;
+    }
+
+    mobileMenu.classList.remove("is-visible");
+
+    const complete = () => {
+      if (mobileMenu.open) mobileMenu.close();
+      menuClosing = false;
+      setMenuToggleState(false);
+      runMenuCloseAction();
+      setOverlayClasses();
+    };
+
+    window.setTimeout(complete, reducedMotion.matches ? 0 : 280);
+  };
+
+  const requestMenuClose = (afterClose) => {
+    if (typeof afterClose === "function") actionAfterMenuClose = afterClose;
+
+    if (!mobileMenu?.open) {
+      runMenuCloseAction();
+      return;
+    }
+
+    if (menuClosing) return;
+    menuClosing = true;
+
+    if (menuHistoryActive && history.state?.[menuStateKey]) {
+      history.back();
+      return;
+    }
+
+    menuHistoryActive = false;
+    finishMenuClose();
+  };
+
+  const openMenu = ({ pushHistory = true } = {}) => {
+    if (!mobileMenu || !menuToggle || !mobileNavigation.matches || mobileMenu.open) return;
+
+    if (pushHistory) {
+      history.pushState({ ...(history.state || {}), [menuStateKey]: true }, "");
+      menuHistoryActive = true;
+    } else {
+      menuHistoryActive = Boolean(history.state?.[menuStateKey]);
+    }
+
+    mobileMenu.showModal();
+    setMenuToggleState(true);
+    setOverlayClasses();
+
+    window.requestAnimationFrame(() => {
+      mobileMenu.classList.add("is-visible");
+      const preferredFocus =
+        mobileMenu.querySelector('[aria-current="page"]') ||
+        mobileMenu.querySelector(".mobile-nav__link") ||
+        menuClose;
+      preferredFocus?.focus({ preventScroll: true });
     });
+  };
+
+  if (history.state?.[menuStateKey]) {
+    const cleanState = { ...history.state };
+    delete cleanState[menuStateKey];
+    history.replaceState(Object.keys(cleanState).length ? cleanState : null, "");
   }
 
-  const setQuoteProduct = (trigger) => {
-    if (!quoteModal) return;
-    const productSlug = trigger?.dataset.productSlug || "";
-    const productName = trigger?.dataset.productName || "";
-    const productInput = quoteModal.querySelector("[data-quote-product]");
-    const modalTitle = quoteModal.querySelector("#quote-modal-title");
+  menuToggle?.addEventListener("click", () => {
+    if (mobileMenu?.open) requestMenuClose();
+    else openMenu();
+  });
 
-    if (productInput) productInput.value = productSlug;
-    if (modalTitle) {
-      modalTitle.textContent = productName ? `Розрахуємо ${productName}` : "Порахуємо ваш тираж";
+  menuClose?.addEventListener("click", () => requestMenuClose());
+
+  mobileMenu?.addEventListener("cancel", (event) => {
+    event.preventDefault();
+    requestMenuClose();
+  });
+  mobileMenu?.addEventListener("keydown", (event) => trapDialogFocus(mobileMenu, event));
+
+  mobileMenu?.addEventListener("close", () => {
+    mobileMenu.classList.remove("is-visible");
+    menuClosing = false;
+    menuHistoryActive = false;
+    setMenuToggleState(false);
+    setOverlayClasses();
+  });
+
+  mobileMenu?.addEventListener("click", (event) => {
+    if (event.target !== mobileMenu || !mobileMenuShell) return;
+    const rect = mobileMenuShell.getBoundingClientRect();
+    const clickedOutside =
+      event.clientX < rect.left ||
+      event.clientX > rect.right ||
+      event.clientY < rect.top ||
+      event.clientY > rect.bottom;
+
+    if (clickedOutside) requestMenuClose();
+  });
+
+  mobileMenu?.querySelectorAll(".mobile-nav__link, .brand--menu").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      requestMenuClose(() => window.location.assign(link.href));
+    });
+  });
+
+  window.addEventListener("popstate", () => {
+    if (mobileMenu?.open && !history.state?.[menuStateKey]) {
+      menuHistoryActive = false;
+      finishMenuClose();
+      return;
+    }
+
+    if (!mobileMenu?.open && history.state?.[menuStateKey] && mobileNavigation.matches) {
+      openMenu({ pushHistory: false });
+    }
+  });
+
+  mobileNavigation.addEventListener("change", (event) => {
+    if (!event.matches && mobileMenu?.open) {
+      requestMenuClose(() => {
+        document.querySelector(".site-header .brand")?.focus({ preventScroll: true });
+      });
+    }
+  });
+
+  window.addEventListener("pagehide", () => {
+    mobileMenu?.classList.remove("is-visible");
+  });
+
+  const contextFromTrigger = (trigger) => {
+    const url = new URL(trigger?.href || window.location.href, window.location.href);
+    const params = url.searchParams;
+
+    return {
+      product: trigger?.dataset.productSlug || params.get("product") || "",
+      productName: trigger?.dataset.productName || "",
+      solution: trigger?.dataset.solutionSlug || params.get("solution") || "",
+      solutionName: trigger?.dataset.solutionName || "",
+      method: trigger?.dataset.methodId || params.get("method") || "",
+      methodName: trigger?.dataset.methodName || "",
+      category: trigger?.dataset.categoryId || params.get("category") || "",
+      categoryName: trigger?.dataset.categoryName || ""
+    };
+  };
+
+  const optionLabel = (form, fieldName, value) => {
+    if (!value) return "";
+    const select = form.elements.namedItem(fieldName);
+    if (!(select instanceof HTMLSelectElement)) return "";
+    return [...select.options].find((option) => option.value === value)?.textContent?.trim() || "";
+  };
+
+  const applyQuoteContext = (form, context) => {
+    if (!form) return;
+
+    ["product", "solution", "method", "category"].forEach((key) => {
+      const input = form.querySelector(`[data-quote-${key}]`);
+      if (input) input.value = context[key] || "";
+    });
+
+    const methodSelect = form.elements.namedItem("printMethod");
+    if (methodSelect instanceof HTMLSelectElement && context.method) {
+      const hasMethod = [...methodSelect.options].some((option) => option.value === context.method);
+      if (hasMethod) methodSelect.value = context.method;
+    }
+
+    const categorySelect = form.elements.namedItem("category");
+    if (categorySelect instanceof HTMLSelectElement && context.category) {
+      const hasCategory = [...categorySelect.options].some((option) => option.value === context.category);
+      if (hasCategory) categorySelect.value = context.category;
+    }
+
+    const labels = [
+      context.productName || context.product,
+      context.solutionName || optionLabel(form, "solution", context.solution) || context.solution,
+      context.methodName || optionLabel(form, "printMethod", context.method) || context.method,
+      context.categoryName || optionLabel(form, "category", context.category) || context.category
+    ].filter(Boolean);
+    const summary = form.querySelector("[data-quote-context]");
+
+    if (summary) {
+      summary.hidden = labels.length === 0;
+      summary.textContent = labels.length ? `Контекст запиту: ${labels.join(" · ")}` : "";
     }
   };
 
   const openQuote = (trigger) => {
     if (!quoteModal || typeof quoteModal.showModal !== "function") return false;
-    setQuoteProduct(trigger);
-    closeMenu();
+
+    const context = contextFromTrigger(trigger);
+    const form = quoteModal.querySelector("[data-quote-form]");
+    const modalTitle = quoteModal.querySelector("#quote-modal-title");
+
+    applyQuoteContext(form, context);
+
+    if (modalTitle) {
+      if (context.productName) modalTitle.textContent = `Розрахуємо ${context.productName}`;
+      else if (context.methodName) modalTitle.textContent = `Розрахунок: ${context.methodName}`;
+      else if (context.solutionName) modalTitle.textContent = `Рішення для ${context.solutionName}`;
+      else modalTitle.textContent = "Порахуємо ваш тираж";
+    }
+
     quoteModal.showModal();
-    body.classList.add("modal-open");
-    window.setTimeout(() => quoteModal.querySelector("input:not([type='hidden'])")?.focus(), 80);
+    setOverlayClasses();
+    window.setTimeout(() => quoteModal.querySelector("input:not([type='hidden'])")?.focus(), 60);
     return true;
   };
 
   document.addEventListener("click", (event) => {
     const trigger = event.target.closest("[data-quote-open]");
     if (!trigger) return;
-    if (openQuote(trigger)) event.preventDefault();
+
+    event.preventDefault();
+    const action = () => openQuote(trigger);
+
+    if (mobileMenu?.open) requestMenuClose(action);
+    else action();
   });
 
   const closeQuote = () => {
-    if (!quoteModal?.open) return;
-    quoteModal.close();
+    if (quoteModal?.open) quoteModal.close();
   };
 
   quoteClose?.addEventListener("click", closeQuote);
   quoteModal?.addEventListener("click", (event) => {
-    if (event.target === quoteModal) closeQuote();
+    if (event.target !== quoteModal) return;
+    const inner = quoteModal.querySelector(".quote-modal__inner");
+    if (!inner) return;
+    const rect = inner.getBoundingClientRect();
+    const clickedOutside =
+      event.clientX < rect.left ||
+      event.clientX > rect.right ||
+      event.clientY < rect.top ||
+      event.clientY > rect.bottom;
+    if (clickedOutside) closeQuote();
   });
-  quoteModal?.addEventListener("close", () => body.classList.remove("modal-open"));
+  quoteModal?.addEventListener("close", setOverlayClasses);
+  quoteModal?.addEventListener("keydown", (event) => trapDialogFocus(quoteModal, event));
 
-  document.addEventListener("keydown", (event) => {
-    if (event.key !== "Escape") return;
-    closeMenu();
-    closeQuote();
-  });
-
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 860) closeMenu();
-  });
+  if (body.classList.contains("quote-page")) {
+    const context = contextFromTrigger();
+    document.querySelectorAll("[data-quote-form]").forEach((form) => applyQuoteContext(form, context));
+  }
 
   document.querySelectorAll("[data-quote-form]").forEach((form) => {
     form.addEventListener("submit", (event) => {
@@ -86,10 +333,16 @@
       const submit = form.querySelector("button[type='submit']");
 
       if (!form.reportValidity()) return;
+
+      form.setAttribute("aria-busy", "true");
       if (submit) submit.disabled = true;
-      if (status) status.textContent = "Демо-заявку сформовано. На WordPress тут працюватиме реальна відправка менеджеру.";
+      if (status) {
+        status.textContent =
+          "Демо-заявку сформовано. На WordPress тут працюватиме реальна відправка менеджеру.";
+      }
 
       window.setTimeout(() => {
+        form.removeAttribute("aria-busy");
         if (submit) submit.disabled = false;
       }, 1200);
     });
@@ -110,7 +363,9 @@
 
         mainImage.src = nextSrc;
         mainImage.alt = nextAlt || "";
-        if (counter) counter.textContent = `${thumb.dataset.galleryIndex} / ${String(thumbs.length).padStart(2, "0")}`;
+        if (counter) {
+          counter.textContent = `${thumb.dataset.galleryIndex} / ${String(thumbs.length).padStart(2, "0")}`;
+        }
 
         thumbs.forEach((item) => {
           const active = item === thumb;
@@ -118,7 +373,7 @@
           item.setAttribute("aria-pressed", String(active));
         });
 
-        if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        if (!reducedMotion.matches) {
           mainImage.animate(
             [
               { opacity: 0.45, transform: "scale(0.992)" },
@@ -136,6 +391,7 @@
   if (catalog) {
     const cards = [...catalog.querySelectorAll("[data-product-card]")];
     const categoryButtons = [...catalog.querySelectorAll("[data-filter-category]")];
+    const categorySelect = catalog.querySelector("[data-filter-category-select]");
     const methodSelect = catalog.querySelector("[data-filter-method]");
     const searchInput = catalog.querySelector("[data-product-search]");
     const resetButton = catalog.querySelector("[data-filter-reset]");
@@ -147,13 +403,19 @@
     let method = params.get("method") || "all";
     let query = params.get("q") || "";
 
-    const categoryExists = categoryButtons.some((button) => button.dataset.filterCategory === category);
-    if (!categoryExists) category = "all";
+    const validCategories = new Set(["all"]);
+    cards.forEach((card) => {
+      if (card.dataset.category) validCategories.add(card.dataset.category);
+      if (card.dataset.parentCategory) validCategories.add(card.dataset.parentCategory);
+    });
+    if (!validCategories.has(category)) category = "all";
+
     if (methodSelect && [...methodSelect.options].some((option) => option.value === method)) {
       methodSelect.value = method;
     } else {
       method = "all";
     }
+
     if (searchInput) searchInput.value = query;
 
     const updateUrl = () => {
@@ -171,7 +433,9 @@
 
       cards.forEach((card) => {
         const matchesCategory =
-          category === "all" || card.dataset.category === category || card.dataset.parentCategory === category;
+          category === "all" ||
+          card.dataset.category === category ||
+          card.dataset.parentCategory === category;
         const methods = (card.dataset.methods || "").split(/\s+/);
         const matchesMethod = method === "all" || methods.includes(method);
         const matchesQuery = !normalizedQuery || (card.dataset.name || "").includes(normalizedQuery);
@@ -182,10 +446,20 @@
       });
 
       categoryButtons.forEach((button) => {
-        const active = button.dataset.filterCategory === category;
+        const selectedOption =
+          categorySelect instanceof HTMLSelectElement
+            ? [...categorySelect.options].find((option) => option.value === category)
+            : null;
+        const activeCategory = selectedOption?.dataset.parentCategory || category;
+        const active = button.dataset.filterCategory === activeCategory;
         button.classList.toggle("is-active", active);
         button.setAttribute("aria-pressed", String(active));
       });
+
+      if (categorySelect instanceof HTMLSelectElement) {
+        const hasExactOption = [...categorySelect.options].some((option) => option.value === category);
+        categorySelect.value = hasExactOption ? category : "";
+      }
 
       if (count) count.textContent = String(visible);
       if (empty) empty.hidden = visible !== 0;
@@ -196,7 +470,14 @@
       button.addEventListener("click", () => {
         category = button.dataset.filterCategory || "all";
         applyFilters();
+        button.scrollIntoView({ behavior: reducedMotion.matches ? "auto" : "smooth", block: "nearest", inline: "center" });
       });
+    });
+
+    categorySelect?.addEventListener("change", () => {
+      if (!categorySelect.value) return;
+      category = categorySelect.value;
+      applyFilters();
     });
 
     methodSelect?.addEventListener("change", () => {
@@ -215,18 +496,24 @@
       query = "";
       if (methodSelect) methodSelect.value = "all";
       if (searchInput) searchInput.value = "";
+      if (categorySelect) categorySelect.value = "";
       applyFilters();
+      searchInput?.focus();
     });
 
     applyFilters();
   }
 
   document.querySelectorAll("[data-accordion]").forEach((accordion) => {
-    accordion.addEventListener("toggle", (event) => {
-      if (event.target.tagName !== "DETAILS" || !event.target.open) return;
-      accordion.querySelectorAll("details[open]").forEach((item) => {
-        if (item !== event.target) item.removeAttribute("open");
-      });
-    }, true);
+    accordion.addEventListener(
+      "toggle",
+      (event) => {
+        if (event.target.tagName !== "DETAILS" || !event.target.open) return;
+        accordion.querySelectorAll("details[open]").forEach((item) => {
+          if (item !== event.target) item.removeAttribute("open");
+        });
+      },
+      true
+    );
   });
 })();

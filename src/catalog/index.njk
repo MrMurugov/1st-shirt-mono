@@ -3,36 +3,57 @@ layout: layouts/base.njk
 title: Каталог одягу для брендування — FORMA BUREAU
 description: 18 моделей одягу та аксесуарів для корпоративних тиражів від 20 одиниць.
 bodyClass: catalog-page
+navKey: catalog
 ---
 
-<section class="page-intro page-intro--catalog" aria-labelledby="catalog-title">
-  <div class="container page-intro__inner">
-    <nav class="breadcrumb" aria-label="Хлібні крихти">
-      <ol><li><a href="{{ '/' | url }}">Головна</a></li><li aria-current="page">Каталог</li></ol>
-    </nav>
-    <div class="page-intro__grid">
-      <div>
-        <p class="eyebrow">Основа вашої форми</p>
-        <h1 class="page-intro__title" id="catalog-title">Каталог одягу для брендування</h1>
-      </div>
-      <div class="page-intro__copy">
-        <p>Виберіть модель, а ми перевіримо доступність кольорів і розмірів, підберемо нанесення та розрахуємо весь тираж.</p>
-        <p class="page-intro__note">Мінімальне замовлення — {{ site.minimumOrder }} одиниць. Ціни вказані без нанесення.</p>
-      </div>
-    </div>
-  </div>
-</section>
+{% from "components/page-intro.njk" import pageIntro %}
+{{ pageIntro(
+  "catalog-title",
+  "Каталог",
+  "Основа вашої форми",
+  "Каталог одягу для брендування",
+  "Виберіть модель, а ми перевіримо доступність кольорів і розмірів, підберемо нанесення та розрахуємо весь тираж.",
+  "Мінімальне замовлення — " ~ site.minimumOrder ~ " одиниць. Ціни вказані без нанесення.",
+  "page-intro--catalog"
+) }}
 
 <section class="catalog" aria-labelledby="catalog-products-title" data-catalog>
   <div class="container">
     <div class="catalog-toolbar">
       <div class="catalog-toolbar__group">
         <p class="catalog-toolbar__label" id="category-filter-label">Категорія</p>
-        <div class="filter-chips" role="group" aria-labelledby="category-filter-label" data-filter-group="category">
-          <button class="filter-chip is-active" type="button" data-filter-category="all" aria-pressed="true">Усі моделі</button>
-          {% for category in categories %}
-            {% if not category.parentId %}<button class="filter-chip" type="button" data-filter-category="{{ category.id }}" aria-pressed="false">{{ category.name }}</button>{% endif %}
-          {% endfor %}
+        <div class="catalog-toolbar__taxonomy">
+          <div class="filter-chips" role="group" aria-labelledby="category-filter-label" data-filter-group="category">
+            <button class="filter-chip is-active" type="button" data-filter-category="all" aria-pressed="true">Усі моделі</button>
+            {% for category in categories %}
+              {% if not category.parentId %}
+                <button class="filter-chip" type="button" data-filter-category="{{ category.id }}" aria-pressed="false">{{ category.name }}</button>
+              {% endif %}
+            {% endfor %}
+          </div>
+          <label class="catalog-subcategory">
+            <span class="catalog-subcategory__label">Точніше</span>
+            <select class="catalog-subcategory__control" data-filter-category-select>
+              <option value="">Оберіть підкатегорію</option>
+              {% for parent in categories %}
+                {% if not parent.parentId %}
+                  {% set hasChildren = false %}
+                  {% for category in categories %}
+                    {% if category.parentId == parent.id %}{% set hasChildren = true %}{% endif %}
+                  {% endfor %}
+                  {% if hasChildren %}
+                    <optgroup label="{{ parent.name }}">
+                      {% for category in categories %}
+                        {% if category.parentId == parent.id %}
+                          <option value="{{ category.id }}" data-parent-category="{{ parent.id }}">{{ category.name }}</option>
+                        {% endif %}
+                      {% endfor %}
+                    </optgroup>
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+            </select>
+          </label>
         </div>
       </div>
 
@@ -54,13 +75,13 @@ bodyClass: catalog-page
 
     <div class="catalog-summary">
       <h2 class="catalog-summary__title" id="catalog-products-title">Усі моделі</h2>
-      <p class="catalog-summary__count"><span data-product-count>{{ products.length }}</span> товарів</p>
+      <p class="catalog-summary__count" aria-live="polite" aria-atomic="true"><span data-product-count>{{ products.length }}</span> товарів</p>
     </div>
 
     <div class="product-grid catalog__grid" data-product-grid>
       {% for product in products %}{% include "components/product-card.njk" %}{% endfor %}
     </div>
-    <p class="catalog__empty" hidden data-catalog-empty>За цими параметрами нічого не знайдено. Скиньте фільтри або напишіть нам — підберемо альтернативу.</p>
+    <p class="catalog__empty" hidden role="status" data-catalog-empty>За цими параметрами нічого не знайдено. Скиньте фільтри або напишіть нам — підберемо альтернативу.</p>
   </div>
 </section>
 

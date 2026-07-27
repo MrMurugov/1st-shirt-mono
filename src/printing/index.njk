@@ -3,17 +3,19 @@ layout: layouts/base.njk
 title: Види нанесення на одяг — FORMA BUREAU
 description: Шовкодрук, DTF, вишивка, сублімація та термотрансфер для корпоративного одягу.
 bodyClass: printing-page
+navKey: printing
 ---
 
-<section class="page-intro" aria-labelledby="printing-title">
-  <div class="container page-intro__inner">
-    <nav class="breadcrumb" aria-label="Хлібні крихти"><ol><li><a href="{{ '/' | url }}">Головна</a></li><li aria-current="page">Види нанесення</li></ol></nav>
-    <div class="page-intro__grid">
-      <div><p class="eyebrow">Технології</p><h1 class="page-intro__title" id="printing-title">Нанесення, яке відповідає задачі</h1></div>
-      <div class="page-intro__copy"><p>Обираємо технологію за матеріалом виробу, деталізацією макета, тиражем і умовами використання.</p><p class="page-intro__note">Перед запуском погоджуємо розмір, позицію та колір нанесення.</p></div>
-    </div>
-  </div>
-</section>
+{% from "components/page-intro.njk" import pageIntro %}
+{% from "components/page-cta.njk" import pageCta %}
+{{ pageIntro(
+  "printing-title",
+  "Види нанесення",
+  "Технології",
+  "Нанесення, яке відповідає задачі",
+  "Обираємо технологію за матеріалом виробу, деталізацією макета, тиражем і умовами використання.",
+  "Перед запуском погоджуємо розмір, позицію та колір нанесення."
+) }}
 
 <section class="section printing-methods" aria-label="Способи нанесення">
   <div class="container printing-methods__list">
@@ -33,7 +35,14 @@ bodyClass: printing-page
             <div><dt>Варто врахувати</dt><dd>{{ method.limitations }}</dd></div>
           </dl>
           <ul class="check-list">{% for advantage in method.advantages %}<li>{{ advantage }}</li>{% endfor %}</ul>
-          <a class="text-link" href="{{ ('/quote/?method=' ~ method.slug) | url }}" data-quote-open data-modal-open="quote">Розрахувати цим методом <span aria-hidden="true">↗</span></a>
+          <a
+            class="text-link"
+            href="{{ ('/quote/?method=' ~ method.id) | url }}"
+            data-quote-open
+            data-modal-open="quote"
+            data-method-id="{{ method.id }}"
+            data-method-name="{{ method.name }}"
+          >Розрахувати цим методом <span aria-hidden="true">↗</span></a>
         </div>
       </article>
     {% endfor %}
@@ -52,4 +61,9 @@ bodyClass: printing-page
   </div>
 </section>
 
-<section class="page-cta" aria-labelledby="printing-cta-title"><div class="container page-cta__inner"><div><p class="eyebrow eyebrow--light">Є логотип або макет?</p><h2 id="printing-cta-title">Перевіримо й запропонуємо технологію</h2></div><p>Додайте файл до заявки — повернемося з рекомендацією та попереднім кошторисом.</p><a class="button button--accent" href="{{ '/quote/' | url }}" data-quote-open data-modal-open="quote">Розрахувати тираж</a></div></section>
+{{ pageCta(
+  "printing-cta-title",
+  "Є логотип або макет?",
+  "Перевіримо й запропонуємо технологію",
+  "Додайте файл до заявки — повернемося з рекомендацією та попереднім кошторисом."
+) }}

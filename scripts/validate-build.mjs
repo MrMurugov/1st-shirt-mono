@@ -1,4 +1,5 @@
 import { access, readFile, readdir } from "node:fs/promises";
+import { createHash } from "node:crypto";
 import path from "node:path";
 
 const projectRoot = process.cwd();
@@ -42,6 +43,20 @@ function collectAssetPaths(value, output = []) {
   return output;
 }
 
+function validateUnique(items, key, label) {
+  const seen = new Set();
+
+  for (const item of items) {
+    const value = item?.[key];
+    if (!value) {
+      violations.push(`${label}: missing ${key}`);
+      continue;
+    }
+    if (seen.has(value)) violations.push(`${label}: duplicate ${key} "${value}"`);
+    seen.add(value);
+  }
+}
+
 const dataFiles = (await listFiles(dataRoot)).filter((filePath) => filePath.endsWith(".json"));
 let dataAssetCount = 0;
 
@@ -57,6 +72,62 @@ for (const filePath of dataFiles) {
 }
 
 const products = JSON.parse(await readFile(path.join(dataRoot, "products.json"), "utf8"));
+const categories = JSON.parse(await readFile(path.join(dataRoot, "categories.json"), "utf8"));
+const printMethods = JSON.parse(await readFile(path.join(dataRoot, "printMethods.json"), "utf8"));
+const solutions = JSON.parse(await readFile(path.join(dataRoot, "solutions.json"), "utf8"));
+const cases = JSON.parse(await readFile(path.join(dataRoot, "cases.json"), "utf8"));
+
+[
+  [products, "products"],
+  [categories, "categories"],
+  [printMethods, "print methods"],
+  [solutions, "solutions"],
+  [cases, "cases"]
+].forEach(([items, label]) => {
+  validateUnique(items, "id", label);
+  validateUnique(items, "slug", label);
+});
+
+const productIds = new Set(products.map((item) => item.id));
+const categoryIds = new Set(categories.map((item) => item.id));
+const printMethodIds = new Set(printMethods.map((item) => item.id));
+
+for (const category of categories) {
+  if (category.parentId && !categoryIds.has(category.parentId)) {
+    violations.push(`${category.id}: unknown parent category "${category.parentId}"`);
+  }
+  if (category.parentId === category.id) {
+    violations.push(`${category.id}: category cannot be its own parent`);
+  }
+}
+
+for (const method of printMethods) {
+  if (typeof method.imageAlt !== "string" || !method.imageAlt.trim()) {
+    violations.push(`${method.id}: imageAlt is required`);
+  }
+}
+
+for (const solution of solutions) {
+  for (const productId of solution.productIds || []) {
+    if (!productIds.has(productId)) {
+      violations.push(`${solution.id}: unknown product "${productId}"`);
+    }
+  }
+}
+
+for (const caseItem of cases) {
+  for (const productId of caseItem.productIds || []) {
+    if (!productIds.has(productId)) {
+      violations.push(`${caseItem.id}: unknown product "${productId}"`);
+    }
+  }
+  for (const methodId of caseItem.printMethodIds || []) {
+    if (!printMethodIds.has(methodId)) {
+      violations.push(`${caseItem.id}: unknown print method "${methodId}"`);
+    }
+  }
+}
+
 const expectedGalleryRoles = [
   "studio-back-blank",
   "branding-detail",
@@ -73,6 +144,32 @@ for (const product of products) {
 
   if (typeof product.imageAlt !== "string" || !product.imageAlt.trim()) {
     violations.push(`${label}: imageAlt is required`);
+  }
+
+  if (!categoryIds.has(product.categoryId)) {
+    violations.push(`${label}: unknown category "${product.categoryId}"`);
+  }
+
+  for (const methodId of product.printMethods || []) {
+    if (!printMethodIds.has(methodId)) {
+      violations.push(`${label}: unknown print method "${methodId}"`);
+    }
+  }
+
+  if (!Array.isArray(product.tierPrices) || product.tierPrices.length === 0) {
+    violations.push(`${label}: tierPrices must contain at least one tier`);
+  } else {
+    product.tierPrices.forEach((tier, index) => {
+      if (!Number.isFinite(tier.quantity) || tier.quantity <= 0) {
+        violations.push(`${label}: tier ${index + 1} has invalid quantity`);
+      }
+      if (!Number.isFinite(tier.unitPrice) || tier.unitPrice <= 0) {
+        violations.push(`${label}: tier ${index + 1} has invalid unitPrice`);
+      }
+      if (index > 0 && tier.quantity <= product.tierPrices[index - 1].quantity) {
+        violations.push(`${label}: tier quantities must increase`);
+      }
+    });
   }
 
   if (!Array.isArray(product.gallery) || product.gallery.length !== 4) {
@@ -107,12 +204,43 @@ for (const product of products) {
   }
 }
 
+const caseImageHashes = new Map();
+
+for (const caseItem of cases) {
+  const sourcePath = path.join(sourceRoot, caseItem.image.slice(1));
+  if (!await exists(sourcePath)) continue;
+  const hash = createHash("sha256").update(await readFile(sourcePath)).digest("hex");
+  const previous = caseImageHashes.get(hash);
+  if (previous) {
+    violations.push(`${caseItem.id}: case image duplicates "${previous}" byte-for-byte`);
+  } else {
+    caseImageHashes.set(hash, caseItem.id);
+  }
+}
+
 const htmlFiles = (await listFiles(outputRoot)).filter((filePath) => filePath.endsWith(".html"));
 let internalReferenceCount = 0;
 
 for (const filePath of htmlFiles) {
   const html = await readFile(filePath, "utf8");
   const references = [...html.matchAll(/(?:href|src)="([^"]+)"/g)].map((match) => match[1]);
+  const ids = [...html.matchAll(/\sid="([^"]+)"/g)].map((match) => match[1]);
+  const seenIds = new Set();
+
+  for (const id of ids) {
+    if (seenIds.has(id)) {
+      violations.push(`${path.relative(projectRoot, filePath)}: duplicate id "${id}"`);
+    }
+    seenIds.add(id);
+  }
+
+  if (references.includes("#")) {
+    violations.push(`${path.relative(projectRoot, filePath)}: contains a no-op href="#"`);
+  }
+
+  if (!/<link rel="canonical" href="https:\/\//.test(html)) {
+    violations.push(`${path.relative(projectRoot, filePath)}: canonical URL is missing`);
+  }
 
   for (const reference of references) {
     if (!reference.startsWith(pagesPrefix)) continue;

@@ -1,0 +1,32 @@
+---
+layout: layouts/base.njk
+title: Рішення для команд і бізнесу — FORMA BUREAU
+description: Брендований одяг і робоча форма для офісів, HoReCa, ритейлу, подій, виробництва та сервісних команд.
+bodyClass: solutions-page
+navKey: solutions
+---
+
+{% from "components/page-intro.njk" import pageIntro %}
+{% from "components/page-cta.njk" import pageCta %}
+{{ pageIntro(
+  "solutions-page-title",
+  "Рішення",
+  "За сценарієм",
+  "Одяг має відповідати реальній роботі команди",
+  "Для бариста, кур’єра й офісної команди потрібні різні тканини, посадки та способи нанесення. Тут ми починаємо саме зі сценарію.",
+  "Кожне рішення адаптуємо під ваш бренд, сезон, ролі й бюджет."
+) }}
+
+<section class="section solutions-archive" aria-label="Рішення за сферою використання">
+  <div class="container solution-grid solution-grid--archive">
+    {% set solutionArchive = true %}
+    {% for solution in solutions %}{% include "components/solution-card.njk" %}{% endfor %}
+  </div>
+</section>
+
+{{ pageCta(
+  "solutions-cta-title",
+  "Не бачите свого сценарію?",
+  "Зберемо рішення навколо вашої команди",
+  "Опишіть умови роботи, кількість людей і бажаний образ — запропонуємо основу, нанесення та комплект."
+) }}

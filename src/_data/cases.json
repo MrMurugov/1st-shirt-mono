@@ -5,9 +5,9 @@
     "title": "Форма для команди міських кав'ярень",
     "client": "Демонстраційний кейс: мережа кав'ярень",
     "industry": "horeca",
-    "image": "/assets/images/cases/case-coffee-team.webp",
+    "image": "/assets/images/cases/case-coffee-team-v2.webp",
     "gallery": [
-      "/assets/images/cases/case-coffee-team.webp"
+      "/assets/images/cases/case-coffee-team-v2.webp"
     ],
     "productIds": ["tshirt-base", "apron-bistro", "cap-six-panel"],
     "printMethodIds": ["embroidery", "screen-printing"],
@@ -24,9 +24,9 @@
     "title": "Welcome-набір для продуктової IT-команди",
     "client": "Демонстраційний кейс: технологічна компанія",
     "industry": "corporate",
-    "image": "/assets/images/cases/case-tech-welcome.webp",
+    "image": "/assets/images/cases/case-tech-welcome-v2.webp",
     "gallery": [
-      "/assets/images/cases/case-tech-welcome.webp"
+      "/assets/images/cases/case-tech-welcome-v2.webp"
     ],
     "productIds": ["hoodie-classic", "tshirt-premium", "tote-everyday"],
     "printMethodIds": ["dtf", "embroidery"],
@@ -43,9 +43,9 @@
     "title": "Одяг для команди літнього фестивалю",
     "client": "Демонстраційний кейс: культурна подія",
     "industry": "events",
-    "image": "/assets/images/cases/case-festival-crew.webp",
+    "image": "/assets/images/cases/case-festival-crew-v2.webp",
     "gallery": [
-      "/assets/images/cases/case-festival-crew.webp"
+      "/assets/images/cases/case-festival-crew-v2.webp"
     ],
     "productIds": ["tshirt-base", "longsleeve-base", "track-jacket-team", "jacket-softshell"],
     "printMethodIds": ["screen-printing", "sublimation", "transfer"],
@@ -62,9 +62,9 @@
     "title": "Демісезонний комплект для служби доставки",
     "client": "Демонстраційний кейс: міська доставка",
     "industry": "delivery",
-    "image": "/assets/images/cases/case-delivery-uniform.webp",
+    "image": "/assets/images/cases/case-delivery-uniform-v2.webp",
     "gallery": [
-      "/assets/images/cases/case-delivery-uniform.webp"
+      "/assets/images/cases/case-delivery-uniform-v2.webp"
     ],
     "productIds": ["polo-pro", "hoodie-zip", "vest-urban"],
     "printMethodIds": ["embroidery", "transfer"],
@@ -81,9 +81,9 @@
     "title": "Спецодяг для сервісної команди",
     "client": "Демонстраційний кейс: мережа майстерень",
     "industry": "workwear",
-    "image": "/assets/images/cases/case-workshop-uniform.webp",
+    "image": "/assets/images/cases/case-workshop-uniform-v2.webp",
     "gallery": [
-      "/assets/images/cases/case-workshop-uniform.webp"
+      "/assets/images/cases/case-workshop-uniform-v2.webp"
     ],
     "productIds": ["work-jacket-strong", "work-trousers-strong", "bib-overall-pro"],
     "printMethodIds": ["embroidery", "transfer"],
@@ -100,9 +100,9 @@
     "title": "Мерч до відкриття нового магазину",
     "client": "Демонстраційний кейс: локальний ритейл",
     "industry": "retail",
-    "image": "/assets/images/cases/case-retail-launch.webp",
+    "image": "/assets/images/cases/case-retail-launch-v2.webp",
     "gallery": [
-      "/assets/images/cases/case-retail-launch.webp"
+      "/assets/images/cases/case-retail-launch-v2.webp"
     ],
     "productIds": ["tshirt-premium", "sweatshirt-core", "tote-everyday"],
     "printMethodIds": ["screen-printing", "dtf"],

@@ -14,6 +14,7 @@
       <ul class="site-footer__links">
         <li><a href="{{ '/catalog/' | url }}">Каталог</a></li>
         <li><a href="{{ '/printing/' | url }}">Види нанесення</a></li>
+        <li><a href="{{ '/solutions/' | url }}">Рішення для команд</a></li>
         <li><a href="{{ '/cases/' | url }}">Наші роботи</a></li>
         <li><a href="{{ '/about/' | url }}">Про виробництво</a></li>
         <li><a href="{{ '/contacts/' | url }}">Контакти</a></li>
@@ -42,7 +43,13 @@
     <p>{{ site.demoNotice }}</p>
     <ul class="site-footer__socials" aria-label="Соціальні мережі">
       {% for social in site.socials %}
-        <li><a href="{{ social.url }}" aria-label="{{ social.name }} — демонстраційне посилання">{{ social.name }}</a></li>
+        <li>
+          {% if social.isDemo %}
+            <span class="site-footer__social-placeholder" title="Посилання буде додано після запуску">{{ social.name }}</span>
+          {% else %}
+            <a href="{{ social.url }}">{{ social.name }}</a>
+          {% endif %}
+        </li>
       {% endfor %}
     </ul>
   </div>

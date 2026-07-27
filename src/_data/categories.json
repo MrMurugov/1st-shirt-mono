@@ -5,7 +5,7 @@
     "name": "Літній одяг",
     "parentId": null,
     "description": "Базові моделі для промокоманд, офісів, подій і корпоративного мерчу.",
-    "image": "/assets/images/categories/summer-wear.webp",
+    "image": "/assets/images/products/tshirt-premium/04-lifestyle-creative-director.webp",
     "featured": true,
     "order": 1
   },
@@ -15,7 +15,7 @@
     "name": "Футболки",
     "parentId": "summer-wear",
     "description": "Футболки різної щільності та посадки для друку й вишивки.",
-    "image": "/assets/images/products/tshirt-base.webp",
+    "image": "/assets/images/products/tshirt-base/05-lifestyle-barista.webp",
     "featured": true,
     "order": 1
   },
@@ -25,7 +25,7 @@
     "name": "Поло",
     "parentId": "summer-wear",
     "description": "Поло для персоналу, сервісних команд і представницьких комплектів.",
-    "image": "/assets/images/products/polo-pro.webp",
+    "image": "/assets/images/products/polo-pro/01-studio-three-quarter.webp",
     "featured": false,
     "order": 2
   },
@@ -35,7 +35,7 @@
     "name": "Лонгсліви",
     "parentId": "summer-wear",
     "description": "Трикотажні моделі з довгим рукавом для міжсезоння.",
-    "image": "/assets/images/products/longsleeve-base.webp",
+    "image": "/assets/images/products/longsleeve-base/04-lifestyle-florist.webp",
     "featured": false,
     "order": 3
   },
@@ -45,7 +45,7 @@
     "name": "Кофти",
     "parentId": null,
     "description": "Теплий корпоративний одяг із начосом або петльовою виворітною стороною.",
-    "image": "/assets/images/categories/sweaters.webp",
+    "image": "/assets/images/products/sweatshirt-core/05-lifestyle-workshop-coordinator.webp",
     "featured": true,
     "order": 2
   },
@@ -55,7 +55,7 @@
     "name": "Світшоти",
     "parentId": "sweaters",
     "description": "Лаконічні світшоти під шовкодрук, DTF і вишивку.",
-    "image": "/assets/images/products/sweatshirt-core.webp",
+    "image": "/assets/images/products/sweatshirt-core/04-lifestyle-av-technician.webp",
     "featured": false,
     "order": 1
   },
@@ -65,7 +65,7 @@
     "name": "Олімпійки",
     "parentId": "sweaters",
     "description": "Кофти на блискавці для командної форми та активних подій.",
-    "image": "/assets/images/products/track-jacket-team.webp",
+    "image": "/assets/images/products/track-jacket-team/04-lifestyle-football-coach.webp",
     "featured": false,
     "order": 2
   },
@@ -75,7 +75,7 @@
     "name": "Худі",
     "parentId": "sweaters",
     "description": "Універсальні худі для внутрішніх команд, подарунків і мерчу.",
-    "image": "/assets/images/products/hoodie-classic.webp",
+    "image": "/assets/images/products/hoodie-classic/04-lifestyle-motion-designer.webp",
     "featured": true,
     "order": 3
   },
@@ -85,7 +85,7 @@
     "name": "Штани",
     "parentId": null,
     "description": "Трикотажні штани для комплектів із худі та світшотами.",
-    "image": "/assets/images/products/joggers-core.webp",
+    "image": "/assets/images/products/joggers-core/04-lifestyle-fitness-trainer.webp",
     "featured": false,
     "order": 3
   },
@@ -95,7 +95,7 @@
     "name": "Сорочки та халати",
     "parentId": null,
     "description": "Практичний одяг для сервісу, виробництва, лабораторій і персоналу.",
-    "image": "/assets/images/products/shirt-staff.webp",
+    "image": "/assets/images/products/shirt-staff/04-lifestyle-hotel-reception.webp",
     "featured": false,
     "order": 4
   },
@@ -105,7 +105,7 @@
     "name": "Верхній одяг",
     "parentId": null,
     "description": "Захисний верхній шар для виїзних команд і роботи просто неба.",
-    "image": "/assets/images/categories/outerwear.webp",
+    "image": "/assets/images/products/jacket-softshell/04-lifestyle-field-surveyor.webp",
     "featured": true,
     "order": 5
   },
@@ -115,7 +115,7 @@
     "name": "Куртки",
     "parentId": "outerwear",
     "description": "Демісезонні куртки та софтшели з корпоративним брендуванням.",
-    "image": "/assets/images/products/jacket-softshell.webp",
+    "image": "/assets/images/products/jacket-softshell/05-lifestyle-service-engineer.webp",
     "featured": false,
     "order": 1
   },
@@ -125,7 +125,7 @@
     "name": "Жилетки",
     "parentId": "outerwear",
     "description": "Утеплені жилетки для мобільних команд і персоналу закладів.",
-    "image": "/assets/images/products/vest-urban.webp",
+    "image": "/assets/images/products/vest-urban/04-lifestyle-garden-center.webp",
     "featured": false,
     "order": 2
   },
@@ -135,7 +135,7 @@
     "name": "Спецодяг",
     "parentId": null,
     "description": "Зносостійкий робочий одяг із функціональними кишенями та посиленими зонами.",
-    "image": "/assets/images/categories/workwear.webp",
+    "image": "/assets/images/products/work-trousers-strong/04-lifestyle-kitchen-installer.webp",
     "featured": true,
     "order": 6
   },
@@ -145,7 +145,7 @@
     "name": "Напівкомбінезони",
     "parentId": "workwear",
     "description": "Робочі напівкомбінезони для монтажних, сервісних і виробничих команд.",
-    "image": "/assets/images/products/bib-overall-pro.webp",
+    "image": "/assets/images/products/bib-overall-pro/05-lifestyle-furniture-maker.webp",
     "featured": false,
     "order": 1
   },
@@ -155,7 +155,7 @@
     "name": "Робочі куртки",
     "parentId": "workwear",
     "description": "Куртки з посиленими швами та зонами для нанесення логотипа.",
-    "image": "/assets/images/products/work-jacket-strong.webp",
+    "image": "/assets/images/products/work-jacket-strong/04-lifestyle-coffee-service-technician.webp",
     "featured": false,
     "order": 2
   },
@@ -165,7 +165,7 @@
     "name": "Робочі штани",
     "parentId": "workwear",
     "description": "Функціональні штани для щоденного інтенсивного використання.",
-    "image": "/assets/images/products/work-trousers-strong.webp",
+    "image": "/assets/images/products/work-trousers-strong/05-lifestyle-warehouse-worker.webp",
     "featured": false,
     "order": 3
   },
@@ -175,7 +175,7 @@
     "name": "Головні убори",
     "parentId": null,
     "description": "Кепки, панами та шапки для командних комплектів і промоакцій.",
-    "image": "/assets/images/products/cap-six-panel.webp",
+    "image": "/assets/images/products/cap-six-panel/04-lifestyle-market-vendor.webp",
     "featured": false,
     "order": 7
   },
@@ -185,7 +185,7 @@
     "name": "Фартухи",
     "parentId": null,
     "description": "Фартухи для бариста, кухарів, майстрів і консультантів.",
-    "image": "/assets/images/products/apron-bistro.webp",
+    "image": "/assets/images/products/apron-bistro/04-lifestyle-baker.webp",
     "featured": true,
     "order": 8
   },
@@ -195,7 +195,7 @@
     "name": "Шопери",
     "parentId": null,
     "description": "Багаторазові текстильні сумки для welcome-наборів, подій і ритейлу.",
-    "image": "/assets/images/products/tote-everyday.webp",
+    "image": "/assets/images/products/tote-everyday/04-lifestyle-bookstore.webp",
     "featured": true,
     "order": 9
   }

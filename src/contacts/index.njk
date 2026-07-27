@@ -3,14 +3,18 @@ layout: layouts/base.njk
 title: Контакти — FORMA BUREAU
 description: Демонстраційні контакти виробництва брендованого одягу FORMA BUREAU.
 bodyClass: contacts-page
+navKey: contacts
 ---
 
-<section class="page-intro" aria-labelledby="contacts-title">
-  <div class="container page-intro__inner">
-    <nav class="breadcrumb" aria-label="Хлібні крихти"><ol><li><a href="{{ '/' | url }}">Головна</a></li><li aria-current="page">Контакти</li></ol></nav>
-    <div class="page-intro__grid"><div><p class="eyebrow">Зв’язок</p><h1 class="page-intro__title" id="contacts-title">Обговорімо вашу задачу</h1></div><div class="page-intro__copy"><p>Напишіть або залиште заявку. Для попереднього розрахунку достатньо категорії виробу, тиражу та бажаного строку.</p><p class="page-intro__note">{{ site.brandStatus }}: контакти нижче не використовуються для реальних замовлень.</p></div></div>
-  </div>
-</section>
+{% from "components/page-intro.njk" import pageIntro %}
+{{ pageIntro(
+  "contacts-title",
+  "Контакти",
+  "Зв’язок",
+  "Обговорімо вашу задачу",
+  "Напишіть або залиште заявку. Для попереднього розрахунку достатньо категорії виробу, тиражу та бажаного строку.",
+  site.brandStatus ~ ": контакти нижче не використовуються для реальних замовлень."
+) }}
 
 <section class="section contacts" aria-label="Контактна інформація">
   <div class="container contacts__layout">
@@ -27,4 +31,4 @@ bodyClass: contacts-page
   </div>
 </section>
 
-<section class="section section--tint contacts-faq" aria-labelledby="contacts-faq-title"><div class="container faq__layout"><header class="section-heading faq__heading"><p class="eyebrow">Перед зверненням</p><h2 class="section-heading__title" id="contacts-faq-title">Часті питання</h2><a class="text-link" href="{{ '/printing/' | url }}">Про види нанесення <span aria-hidden="true">↗</span></a></header><div class="accordion">{% for item in faq %}{% if loop.index <= 5 %}<details class="accordion__item"><summary class="accordion__summary"><span>{{ item.question }}</span><span class="accordion__icon" aria-hidden="true">+</span></summary><div class="accordion__content"><p>{{ item.answer }}</p></div></details>{% endif %}{% endfor %}</div></div></section>
+<section class="section section--tint contacts-faq" aria-labelledby="contacts-faq-title"><div class="container faq__layout"><header class="section-heading faq__heading"><p class="eyebrow">Перед зверненням</p><h2 class="section-heading__title" id="contacts-faq-title">Часті питання</h2><a class="text-link" href="{{ '/printing/' | url }}">Про види нанесення <span aria-hidden="true">↗</span></a></header><div class="accordion" data-accordion>{% for item in faq %}{% if loop.index <= 5 %}<details class="accordion__item"><summary class="accordion__summary"><span>{{ item.question }}</span><span class="accordion__icon" aria-hidden="true">+</span></summary><div class="accordion__content"><p>{{ item.answer }}</p></div></details>{% endif %}{% endfor %}</div></div></section>

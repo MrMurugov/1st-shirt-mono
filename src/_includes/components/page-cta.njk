@@ -1,0 +1,17 @@
+{% macro pageCta(id, eyebrow, heading, copy, buttonLabel = "Розрахувати тираж") %}
+  <section class="page-cta" aria-labelledby="{{ id }}">
+    <div class="container page-cta__inner">
+      <div>
+        <p class="eyebrow eyebrow--light">{{ eyebrow }}</p>
+        <h2 id="{{ id }}">{{ heading }}</h2>
+      </div>
+      <p>{{ copy }}</p>
+      <a
+        class="button button--accent"
+        href="{{ '/quote/' | url }}"
+        data-quote-open
+        data-modal-open="quote"
+      >{{ buttonLabel }}</a>
+    </div>
+  </section>
+{% endmacro %}

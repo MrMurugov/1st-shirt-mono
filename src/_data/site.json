@@ -38,28 +38,34 @@
   ],
   "navigation": [
     {
+      "key": "catalog",
       "label": "Каталог",
       "url": "/catalog/"
     },
     {
+      "key": "printing",
       "label": "Види нанесення",
-      "url": "/#print-methods"
+      "url": "/printing/"
     },
     {
+      "key": "solutions",
       "label": "Рішення",
-      "url": "/#solutions"
+      "url": "/solutions/"
     },
     {
+      "key": "cases",
       "label": "Наші роботи",
-      "url": "/#cases"
+      "url": "/cases/"
     },
     {
+      "key": "about",
       "label": "Про виробництво",
-      "url": "/#production"
+      "url": "/about/"
     },
     {
+      "key": "contacts",
       "label": "Контакти",
-      "url": "/#contact"
+      "url": "/contacts/"
     }
   ],
   "hero": {

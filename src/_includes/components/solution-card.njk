@@ -1,0 +1,33 @@
+<article class="solution-card"{% if solutionArchive %} id="solution-{{ solution.slug }}"{% endif %}>
+  <div class="solution-card__media">
+    <img
+      class="solution-card__image"
+      src="{{ solution.image | url }}"
+      alt="{{ solution.title }} — {{ solution.eyebrow | lower }}"
+      loading="lazy"
+      width="800"
+      height="600"
+    >
+    <span class="solution-card__index" aria-hidden="true">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span>
+  </div>
+  <div class="solution-card__body">
+    <p class="solution-card__eyebrow">{{ solution.eyebrow }}</p>
+    {% if solutionArchive %}
+      <h2 class="solution-card__title">{{ solution.title }}</h2>
+    {% else %}
+      <h3 class="solution-card__title">{{ solution.title }}</h3>
+    {% endif %}
+    <p class="solution-card__description">{{ solution.description }}</p>
+    <ul class="solution-card__benefits">
+      {% for benefit in solution.benefits %}<li>{{ benefit }}</li>{% endfor %}
+    </ul>
+    <a
+      class="text-link"
+      href="{{ ('/quote/?solution=' ~ solution.slug) | url }}"
+      data-quote-open
+      data-modal-open="quote"
+      data-solution-slug="{{ solution.slug }}"
+      data-solution-name="{{ solution.title }}"
+    >Обговорити рішення <span aria-hidden="true">↗</span></a>
+  </div>
+</article>

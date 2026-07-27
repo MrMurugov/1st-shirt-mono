@@ -9,8 +9,10 @@ eleventyComputed:
   title: "{{ product.name }} — FORMA BUREAU"
   description: "{{ product.excerpt }}"
 bodyClass: product-page
+navKey: catalog
 ---
 
+{% set lowestTier = product.tierPrices | last %}
 <article class="product-detail">
   <div class="container">
     <nav class="breadcrumb" aria-label="Хлібні крихти">
@@ -34,6 +36,8 @@ bodyClass: product-page
             alt="{{ product.imageAlt or (product.name ~ ', вигляд спереду') }}"
             width="960"
             height="960"
+            fetchpriority="high"
+            decoding="async"
             data-gallery-main
           >
           {% if product.gallery and product.gallery.length and product.gallery[0].src %}
@@ -83,7 +87,7 @@ bodyClass: product-page
         <p class="product-summary__excerpt">{{ product.excerpt }}</p>
         <div class="product-summary__price">
           <span class="product-summary__price-label">Орієнтовна ціна від</span>
-          <strong>{{ product.tierPrices[3].unitPrice }} {{ site.currencySymbol }} <small>/ шт.</small></strong>
+          <strong>{{ lowestTier.unitPrice }} {{ site.currencySymbol }} <small>/ шт.</small></strong>
           <span>{{ product.priceNote }}</span>
         </div>
 

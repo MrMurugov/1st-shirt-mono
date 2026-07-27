@@ -1,0 +1,22 @@
+{% macro pageIntro(id, pageLabel, eyebrow, heading, copy, note, modifier = "") %}
+  <section class="page-intro{% if modifier %} {{ modifier }}{% endif %}" aria-labelledby="{{ id }}">
+    <div class="container page-intro__inner">
+      <nav class="breadcrumb" aria-label="Хлібні крихти">
+        <ol>
+          <li><a href="{{ '/' | url }}">Головна</a></li>
+          <li aria-current="page">{{ pageLabel }}</li>
+        </ol>
+      </nav>
+      <div class="page-intro__grid">
+        <div>
+          <p class="eyebrow">{{ eyebrow }}</p>
+          <h1 class="page-intro__title" id="{{ id }}">{{ heading }}</h1>
+        </div>
+        <div class="page-intro__copy">
+          <p>{{ copy }}</p>
+          {% if note %}<p class="page-intro__note">{{ note }}</p>{% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
+{% endmacro %}

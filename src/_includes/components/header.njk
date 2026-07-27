@@ -12,40 +12,101 @@
       <span class="brand__name">Forma Bureau</span>
     </a>
 
+    <nav class="site-nav site-nav--desktop" aria-label="Головна навігація">
+      <ul class="site-nav__list">
+        {% for item in site.navigation %}
+          <li class="site-nav__item">
+            <a
+              class="site-nav__link"
+              href="{{ item.url | url }}"
+              {% if navKey and navKey == item.key %}aria-current="page"{% endif %}
+            >{{ item.label }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+
     <button
       class="menu-toggle"
       type="button"
       aria-expanded="false"
-      aria-controls="site-navigation"
+      aria-controls="mobile-navigation"
+      aria-haspopup="dialog"
       aria-label="Відкрити меню"
       data-menu-toggle
     >
-      <span class="menu-toggle__line" aria-hidden="true"></span>
-      <span class="menu-toggle__line" aria-hidden="true"></span>
+      <span class="menu-toggle__icon" aria-hidden="true">
+        <span class="menu-toggle__line"></span>
+        <span class="menu-toggle__line"></span>
+      </span>
       <span class="menu-toggle__label">Меню</span>
     </button>
-
-    <nav class="site-nav" id="site-navigation" aria-label="Головна навігація" data-site-nav>
-      <ul class="site-nav__list">
-        {% for item in site.navigation %}
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="{{ item.url | url }}">{{ item.label }}</a>
-          </li>
-        {% endfor %}
-      </ul>
-      <a
-        class="button button--accent site-nav__mobile-cta"
-        href="{{ '/quote/' | url }}"
-        data-quote-open
-        data-modal-open="quote"
-      >Розрахувати тираж</a>
-    </nav>
 
     <a
       class="button button--dark site-header__cta"
       href="{{ '/quote/' | url }}"
       data-quote-open
       data-modal-open="quote"
+      {% if navKey == "quote" %}aria-current="page"{% endif %}
     >Розрахувати тираж</a>
   </div>
 </header>
+
+<dialog
+  class="mobile-menu"
+  id="mobile-navigation"
+  aria-labelledby="mobile-navigation-title"
+  data-mobile-menu
+>
+  <div class="mobile-menu__shell" data-mobile-menu-shell>
+    <div class="mobile-menu__header">
+      <a class="brand brand--menu" href="{{ '/' | url }}" aria-label="{{ site.name }} — на головну">
+        <span class="brand__mark" aria-hidden="true">F/B</span>
+        <span class="brand__name">Forma Bureau</span>
+      </a>
+      <button class="mobile-menu__close" type="button" aria-label="Закрити меню" data-menu-close>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu__scroll">
+      <div class="mobile-menu__intro">
+        <p class="eyebrow eyebrow--light" id="mobile-navigation-title">Навігація</p>
+        <p>Одяг і брендування для команд від {{ site.minimumOrder }} одиниць</p>
+      </div>
+
+      <nav class="mobile-nav" aria-label="Мобільна навігація">
+        <ol class="mobile-nav__list">
+          {% for item in site.navigation %}
+            <li class="mobile-nav__item">
+              <a
+                class="mobile-nav__link"
+                href="{{ item.url | url }}"
+                {% if navKey and navKey == item.key %}aria-current="page"{% endif %}
+              >
+                <span class="mobile-nav__index" aria-hidden="true">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span>
+                <span>{{ item.label }}</span>
+                <span class="mobile-nav__arrow" aria-hidden="true">↗</span>
+              </a>
+            </li>
+          {% endfor %}
+        </ol>
+      </nav>
+    </div>
+
+    <div class="mobile-menu__footer">
+      <a
+        class="button button--accent mobile-menu__cta"
+        href="{{ '/quote/' | url }}"
+        data-quote-open
+        data-modal-open="quote"
+        {% if navKey == "quote" %}aria-current="page"{% endif %}
+      >Розрахувати тираж</a>
+      <div class="mobile-menu__contacts">
+        <a href="tel:{{ site.contact.phoneHref }}">{{ site.contact.phone }}</a>
+        <a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a>
+      </div>
+    </div>
+  </div>
+</dialog>

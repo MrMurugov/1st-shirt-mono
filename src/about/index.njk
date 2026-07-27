@@ -3,18 +3,23 @@ layout: layouts/base.njk
 title: Про виробництво — FORMA BUREAU
 description: Як FORMA BUREAU підбирає текстиль, готує нанесення та контролює корпоративні тиражі.
 bodyClass: about-page
+navKey: about
 ---
 
-<section class="page-intro" aria-labelledby="about-title">
-  <div class="container page-intro__inner">
-    <nav class="breadcrumb" aria-label="Хлібні крихти"><ol><li><a href="{{ '/' | url }}">Головна</a></li><li aria-current="page">Про виробництво</li></ol></nav>
-    <div class="page-intro__grid"><div><p class="eyebrow">Про нас</p><h1 class="page-intro__title" id="about-title">Один процес від вибору тканини до підписаної коробки</h1></div><div class="page-intro__copy"><p>{{ site.description }}</p><p class="page-intro__note">Фіксуємо специфікацію та контрольні точки до старту робіт.</p></div></div>
-  </div>
-</section>
+{% from "components/page-intro.njk" import pageIntro %}
+{% from "components/page-cta.njk" import pageCta %}
+{{ pageIntro(
+  "about-title",
+  "Про виробництво",
+  "Про нас",
+  "Один процес від вибору тканини до підписаної коробки",
+  site.description,
+  "Фіксуємо специфікацію та контрольні точки до старту робіт."
+) }}
 
 <section class="section about-story" aria-labelledby="about-story-title">
   <div class="container about-story__layout">
-    <div class="about-story__media"><img src="{{ '/assets/images/hero/hero-studio-v2.png' | url }}" alt="Команда перевіряє якість виробу у текстильній майстерні" loading="lazy" width="1536" height="1024"></div>
+    <div class="about-story__media"><img src="{{ '/assets/images/hero/hero-production-v3.webp' | url }}" alt="Двоє фахівців перевіряють якість світшота у текстильній майстерні" loading="lazy" width="1254" height="1254"></div>
     <div class="about-story__content"><p class="eyebrow">Підхід</p><h2 id="about-story-title">Форма має бути не лише впізнаваною, а й зручною в роботі</h2><p>Тому починаємо зі сценарію: хто носитиме одяг, у яких умовах, як часто його пратимуть і як поповнюватиметься команда.</p><p>Після цього підбираємо сумісні моделі, створюємо візуалізацію та перевіряємо технологію нанесення на конкретній тканині.</p><a class="text-link" href="{{ '/catalog/' | url }}">Перейти до моделей <span aria-hidden="true">↗</span></a></div>
   </div>
 </section>
@@ -25,4 +30,9 @@ bodyClass: about-page
 
 <section class="section section--tint quality" aria-labelledby="quality-title"><div class="container quality__layout"><div><p class="eyebrow">Контроль якості</p><h2 id="quality-title">Що перевіряємо перед відправленням</h2></div><ul class="quality__list"><li><strong>Текстиль</strong><span>Модель, колір, розмір і відсутність фабричних дефектів.</span></li><li><strong>Нанесення</strong><span>Позицію, відтінок, чіткість і стійкість кожного елемента.</span></li><li><strong>Комплектацію</strong><span>Розмірну відомість, персональні набори та маркування коробок.</span></li><li><strong>Документи</strong><span>Фінальну кількість, специфікацію й адресу кожного відправлення.</span></li></ul></div></section>
 
-<section class="page-cta" aria-labelledby="about-cta-title"><div class="container page-cta__inner"><div><p class="eyebrow eyebrow--light">Потрібна консультація?</p><h2 id="about-cta-title">Покажемо варіанти під ваш бюджет</h2></div><p>Надішліть короткий бриф — почнемо з добірки моделей і технологій.</p><a class="button button--accent" href="{{ '/quote/' | url }}" data-quote-open data-modal-open="quote">Розрахувати тираж</a></div></section>
+{{ pageCta(
+  "about-cta-title",
+  "Потрібна консультація?",
+  "Покажемо варіанти під ваш бюджет",
+  "Надішліть короткий бриф — почнемо з добірки моделей і технологій."
+) }}
