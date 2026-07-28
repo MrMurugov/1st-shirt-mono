@@ -18,7 +18,7 @@
   ].filter(Boolean);
   const mobileNavigation = window.matchMedia("(max-width: 1180px)");
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-  const menuStateKey = "__formaBureauMenu";
+  const menuStateKey = "__firstShirtMenu";
 
   let menuHistoryActive = false;
   let menuClosing = false;
