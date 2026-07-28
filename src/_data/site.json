@@ -9,7 +9,7 @@
   "currency": "UAH",
   "currencySymbol": "₴",
   "minimumOrder": 20,
-  "baseUrl": "https://mrmurugov.github.io/1st-shirt/",
+  "baseUrl": "https://mrmurugov.github.io/1st-shirt-mono/",
   "contact": {
     "isDemo": true,
     "label": "Демонстраційні контакти",

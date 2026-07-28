@@ -4,7 +4,7 @@ import path from "node:path";
 const projectRoot = process.cwd();
 const outputRoot = path.resolve(projectRoot, "dist");
 const imageRoot = path.join(outputRoot, "assets", "images");
-const pagesPrefix = "/1st-shirt/";
+const pagesPrefix = "/1st-shirt-mono/";
 
 if (path.dirname(outputRoot) !== projectRoot || path.basename(outputRoot) !== "dist") {
   throw new Error(`Refusing to prune unexpected output path: ${outputRoot}`);

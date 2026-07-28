@@ -6,7 +6,7 @@ const projectRoot = process.cwd();
 const sourceRoot = path.join(projectRoot, "src");
 const dataRoot = path.join(sourceRoot, "_data");
 const outputRoot = path.join(projectRoot, "dist");
-const pagesPrefix = "/1st-shirt/";
+const pagesPrefix = "/1st-shirt-mono/";
 const missing = [];
 const violations = [];
 
