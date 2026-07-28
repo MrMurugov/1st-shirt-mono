@@ -4,6 +4,8 @@ export default function (eleventyConfig) {
     "src/assets/js/main.js": "assets/js/main.js",
     "src/assets/fonts/manrope-cyrillic.woff2": "assets/fonts/manrope-cyrillic.woff2",
     "src/assets/fonts/manrope-latin.woff2": "assets/fonts/manrope-latin.woff2",
+    "src/assets/fonts/cormorant-garamond-cyrillic.woff2": "assets/fonts/cormorant-garamond-cyrillic.woff2",
+    "src/assets/fonts/cormorant-garamond-latin.woff2": "assets/fonts/cormorant-garamond-latin.woff2",
     "src/assets/images": "assets/images"
   });
   eleventyConfig.addFilter("absoluteUrl", (value, baseUrl) => {
@@ -12,7 +14,7 @@ export default function (eleventyConfig) {
   });
 
   return {
-    pathPrefix: "/1st-shirt/",
+    pathPrefix: "/1st-shirt-mono/",
     dir: {
       input: "src",
       output: "dist"
